@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { X } from "lucide-react";
 import { useCartStore } from "@/lib/cart/store";
-import { getProductById, getCrossSells } from "@/data/products";
+import { getCardById, getCrossSellCards } from "@/data/catalog";
 import { formatPrice } from "@/lib/utilities/format";
 import { cartSubtotal, lineTotal } from "@/lib/pricing";
 import { QuantitySelector } from "@/components/ui/quantity-selector";
@@ -41,29 +40,23 @@ export function CartDrawer() {
     () =>
       items
         .map((item) => {
-          const product = getProductById(item.productId);
+          const product = getCardById(item.productId);
           if (!product) return null;
           return { item, product };
         })
-        .filter(Boolean) as { item: { productId: string; quantity: number }; product: NonNullable<ReturnType<typeof getProductById>> }[],
+        .filter(Boolean) as {
+        item: { productId: string; quantity: number };
+        product: NonNullable<ReturnType<typeof getCardById>>;
+      }[],
     [items],
   );
 
   const subtotal = cartSubtotal(lines.map(({ item, product }) => ({ price: product.price, quantity: item.quantity })));
-  const crossSells = getCrossSells(items.map((i) => i.productId));
+  const crossSells = getCrossSellCards(items.map((i) => i.productId));
 
   return (
-    <div
-      className={cn(
-        "fixed inset-0 z-50 transition",
-        open ? "pointer-events-auto" : "pointer-events-none",
-      )}
-      aria-hidden={!open}
-    >
-      <div
-        className={cn("absolute inset-0 bg-forest/50 transition", open ? "opacity-100" : "opacity-0")}
-        onClick={() => setOpen(false)}
-      />
+    <div className={cn("fixed inset-0 z-50 transition", open ? "pointer-events-auto" : "pointer-events-none")} aria-hidden={!open}>
+      <div className={cn("absolute inset-0 bg-forest/50 transition", open ? "opacity-100" : "opacity-0")} onClick={() => setOpen(false)} />
       <aside
         className={cn(
           "absolute right-0 top-0 flex h-full w-full max-w-md flex-col bg-cream shadow-2xl transition duration-300",
@@ -97,7 +90,8 @@ export function CartDrawer() {
             <ul className="space-y-4">
               {lines.map(({ item, product }) => (
                 <li key={product.id} className="flex gap-3 rounded-2xl border border-border bg-white p-3">
-                  <Image src={product.images[0].src} alt="" width={72} height={72} className="rounded-xl object-contain" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={product.image} alt="" width={72} height={72} className="rounded-xl object-contain" />
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-semibold uppercase text-muted">{product.brand}</p>
                     <Link href={`/product/${product.slug}`} className="line-clamp-2 text-sm font-semibold hover:text-grocery" onClick={() => setOpen(false)}>

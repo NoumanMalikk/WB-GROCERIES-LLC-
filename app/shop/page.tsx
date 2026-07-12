@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { getActiveProducts } from "@/data/products";
+import { toProductCards } from "@/data/product-mappers";
 import { ShopCatalog } from "@/components/commerce/shop-catalog";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -10,7 +11,7 @@ export const metadata = buildPageMetadata({
 });
 
 export default function ShopPage() {
-  const products = getActiveProducts();
+  const products = toProductCards(getActiveProducts());
   return (
     <Suspense fallback={<div className="p-10">Loading products...</div>}>
       <ShopCatalog

@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useMemo } from "react";
 import { useWishlistStore } from "@/lib/cart/wishlist-store";
 import { useCartStore } from "@/lib/cart/store";
-import { getProductById } from "@/data/products";
+import { getCardById } from "@/data/catalog";
 import { formatPrice } from "@/lib/utilities/format";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +14,7 @@ export function WishlistClient() {
   const addItem = useCartStore((s) => s.addItem);
 
   const products = useMemo(
-    () => productIds.map((id) => getProductById(id)).filter(Boolean),
+    () => productIds.map((id) => getCardById(id)).filter(Boolean),
     [productIds],
   );
 
@@ -38,7 +37,8 @@ export function WishlistClient() {
         {products.map((product) =>
           product ? (
             <li key={product.id} className="flex flex-col gap-4 rounded-2xl border border-border bg-white p-4 sm:flex-row sm:items-center">
-              <Image src={product.images[0].src} alt={product.imageAltText} width={96} height={96} className="rounded-xl object-contain" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={product.image} alt={product.imageAlt} width={96} height={96} className="rounded-xl object-contain" />
               <div className="min-w-0 flex-1">
                 <p className="text-xs font-semibold uppercase text-muted">{product.brand}</p>
                 <Link href={`/product/${product.slug}`} className="font-semibold hover:text-grocery">

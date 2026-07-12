@@ -4,8 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { Search, X } from "lucide-react";
-import { getActiveProducts } from "@/data/products";
-import { searchProducts } from "@/lib/search";
+import { searchCatalog } from "@/data/catalog";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utilities/cn";
 
@@ -34,7 +33,6 @@ export function SearchBox({ onNavigate }: { onNavigate?: () => void }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
-  const products = useMemo(() => getActiveProducts(), []);
   const recent = useSyncExternalStore(subscribeRecent, readRecent, () => []);
 
   useEffect(() => {
@@ -47,8 +45,8 @@ export function SearchBox({ onNavigate }: { onNavigate?: () => void }) {
 
   const suggestions = useMemo(() => {
     if (!query.trim()) return [];
-    return searchProducts(products, query).slice(0, 6);
-  }, [products, query]);
+    return searchCatalog(query).slice(0, 6);
+  }, [query]);
 
   const announce = !open
     ? ""
@@ -188,7 +186,7 @@ export function SearchBox({ onNavigate }: { onNavigate?: () => void }) {
                 onNavigate?.();
               }}
             >
-              <Image src={product.images[0].src} alt="" width={44} height={44} className="rounded-lg bg-white object-contain" />
+              <Image src={product.image} alt="" width={44} height={44} className="rounded-lg bg-white object-contain" />
               <span className="min-w-0">
                 <span className="block truncate text-sm font-semibold">{product.title}</span>
                 <span className="block text-xs text-muted">{product.brand}</span>

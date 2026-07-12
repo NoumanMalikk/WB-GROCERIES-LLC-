@@ -2,9 +2,9 @@
 
 import { useMemo, useState, useTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import type { Product } from "@/data/types";
+import type { ProductCardData } from "@/data/catalog";
+import { catalogBrands } from "@/data/catalog";
 import { filterProducts, sortProducts, type ProductSort } from "@/lib/search";
-import { getBrands } from "@/data/products";
 import { categories } from "@/data/categories";
 import { ProductGrid } from "@/components/product/product-card";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,7 @@ export function ShopCatalog({
   description,
   hideCategoryFilter = false,
 }: {
-  products: Product[];
+  products: ProductCardData[];
   title: string;
   description?: string;
   hideCategoryFilter?: boolean;
@@ -98,7 +98,7 @@ export function ShopCatalog({
           onChange={(e) => updateParams({ brand: e.target.value || null })}
         >
           <option value="">All brands</option>
-          {getBrands().map((brand) => (
+          {catalogBrands.map((brand) => (
             <option key={brand} value={brand}>
               {brand}
             </option>
@@ -209,7 +209,7 @@ export function ShopCatalog({
             <div className="mb-4 flex items-center justify-between">
               <h2 className="font-heading text-lg font-bold">Filters</h2>
               <Button variant="secondary" size="icon" aria-label="Close filters" onClick={() => setMobileFilters(false)}>
-                <X className="h-4 w-4" />
+                <X className="h-3 w-3" />
               </Button>
             </div>
             {FilterPanel}

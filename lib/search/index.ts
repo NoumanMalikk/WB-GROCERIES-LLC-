@@ -1,4 +1,5 @@
-import type { Product, ProductCategorySlug } from "@/data/types";
+import type { ProductCategorySlug } from "@/data/types";
+import type { ProductCardData } from "@/data/catalog";
 
 export type ProductSort =
   | "featured"
@@ -23,7 +24,7 @@ function normalize(value: string) {
   return value.toLowerCase().trim();
 }
 
-export function searchProducts(products: Product[], query: string): Product[] {
+export function searchProducts(products: ProductCardData[], query: string): ProductCardData[] {
   const q = normalize(query);
   if (!q) return products;
   return products.filter((product) => {
@@ -34,7 +35,6 @@ export function searchProducts(products: Product[], query: string): Product[] {
       product.packageSize,
       String(product.packCount),
       product.shortDescription,
-      product.fullDescription,
       ...product.synonyms,
     ]
       .join(" ")
@@ -43,7 +43,7 @@ export function searchProducts(products: Product[], query: string): Product[] {
   });
 }
 
-export function filterProducts(products: Product[], filters: ProductFilters): Product[] {
+export function filterProducts(products: ProductCardData[], filters: ProductFilters): ProductCardData[] {
   let result = [...products];
   if (filters.query) result = searchProducts(result, filters.query);
   if (filters.category) {
@@ -63,7 +63,7 @@ export function filterProducts(products: Product[], filters: ProductFilters): Pr
   return result;
 }
 
-export function sortProducts(products: Product[], sort: ProductSort = "featured"): Product[] {
+export function sortProducts(products: ProductCardData[], sort: ProductSort = "featured"): ProductCardData[] {
   const sorted = [...products];
   switch (sort) {
     case "price-asc":
@@ -76,6 +76,11 @@ export function sortProducts(products: Product[], sort: ProductSort = "featured"
       return sorted.sort((a, b) => b.title.localeCompare(a.title));
     case "featured":
     default:
-      return sorted.sort((a, b) => Number(b.featured) - Number(a.featured) || Number(b.weeklyEssential) - Number(a.weeklyEssential) || a.title.localeCompare(b.title));
+      return sorted.sort(
+        (a, b) =>
+          Number(b.featured) - Number(a.featured) ||
+          Number(b.weeklyEssential) - Number(a.weeklyEssential) ||
+          a.title.localeCompare(b.title),
+      );
   }
 }

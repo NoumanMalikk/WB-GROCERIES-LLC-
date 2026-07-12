@@ -4,6 +4,7 @@ import { validateMinimumPrice, cartSubtotal, lineTotal } from "@/lib/pricing";
 import { computeOrderTotals } from "@/lib/checkout/totals";
 import { filterProducts, searchProducts, sortProducts } from "@/lib/search";
 import { getActiveProducts } from "@/data/products";
+import { toProductCards } from "@/data/product-mappers";
 import { storeConfig } from "@/data/store-config";
 import { customerInfoSchema } from "@/lib/validation/checkout";
 
@@ -42,7 +43,7 @@ describe("shipping totals", () => {
 });
 
 describe("search and filters", () => {
-  const products = getActiveProducts();
+  const products = toProductCards(getActiveProducts());
 
   it("finds oats, coffee, pasta, chips, cookies, cleaning and paper towels", () => {
     expect(searchProducts(products, "oats").some((p) => p.slug.includes("quaker"))).toBe(true);

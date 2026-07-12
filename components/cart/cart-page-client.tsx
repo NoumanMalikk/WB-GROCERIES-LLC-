@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useCartStore } from "@/lib/cart/store";
-import { getCrossSells, getProductById } from "@/data/products";
+import { getCardById, getCrossSellCards } from "@/data/catalog";
 import { cartSubtotal, lineTotal } from "@/lib/pricing";
 import { formatPrice } from "@/lib/utilities/format";
 import { QuantitySelector } from "@/components/ui/quantity-selector";
@@ -20,17 +19,18 @@ export function CartPageClient() {
     () =>
       items
         .map((item) => {
-          const product = getProductById(item.productId);
+          const product = getCardById(item.productId);
           return product ? { item, product } : null;
         })
-        .filter(Boolean) as NonNullable<
-        ReturnType<() => { item: (typeof items)[number]; product: NonNullable<ReturnType<typeof getProductById>> } | null>
-      >[],
+        .filter(Boolean) as {
+        item: (typeof items)[number];
+        product: NonNullable<ReturnType<typeof getCardById>>;
+      }[],
     [items],
   );
 
   const subtotal = cartSubtotal(lines.map(({ item, product }) => ({ price: product.price, quantity: item.quantity })));
-  const crossSells = getCrossSells(items.map((i) => i.productId));
+  const crossSells = getCrossSellCards(items.map((i) => i.productId));
 
   if (lines.length === 0) {
     return (
@@ -51,7 +51,8 @@ export function CartPageClient() {
         <ul className="mt-8 space-y-4">
           {lines.map(({ item, product }) => (
             <li key={product.id} className="flex flex-col gap-4 rounded-2xl border border-border bg-white p-4 sm:flex-row">
-              <Image src={product.images[0].src} alt={product.imageAltText} width={100} height={100} className="rounded-xl object-contain" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={product.image} alt={product.imageAlt} width={100} height={100} className="rounded-xl object-contain" />
               <div className="min-w-0 flex-1">
                 <p className="text-xs font-semibold uppercase text-muted">{product.brand}</p>
                 <Link href={`/product/${product.slug}`} className="font-semibold hover:text-grocery">

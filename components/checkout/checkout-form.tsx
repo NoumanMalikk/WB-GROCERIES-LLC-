@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, type CheckoutFormValues, usStates } from "@/lib/validation/checkout";
 import { useCartStore } from "@/lib/cart/store";
-import { getProductById } from "@/data/products";
+import { getCardById } from "@/data/catalog";
 import { getShippingMethods, isDemoCheckout } from "@/lib/checkout/demo";
 import { computeOrderTotals } from "@/lib/checkout/totals";
 import { formatPrice } from "@/lib/utilities/format";
@@ -13,7 +13,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { storeConfig } from "@/data/store-config";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const steps = ["Customer", "Shipping", "Method", "Billing", "Payment", "Review"] as const;
@@ -48,10 +47,10 @@ export function CheckoutForm() {
     () =>
       items
         .map((item) => {
-          const product = getProductById(item.productId);
+          const product = getCardById(item.productId);
           return product ? { item, product } : null;
         })
-        .filter(Boolean) as { item: (typeof items)[number]; product: NonNullable<ReturnType<typeof getProductById>> }[],
+        .filter(Boolean) as { item: (typeof items)[number]; product: NonNullable<ReturnType<typeof getCardById>> }[],
     [items],
   );
 
@@ -227,7 +226,8 @@ export function CheckoutForm() {
               <ul className="divide-y divide-border rounded-xl border border-border">
                 {lines.map(({ item, product }) => (
                   <li key={product.id} className="flex items-center gap-3 p-3 text-sm">
-                    <Image src={product.images[0].src} alt="" width={48} height={48} className="rounded-lg object-contain" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={product.image} alt="" width={48} height={48} className="rounded-lg object-contain" />
                     <span className="flex-1">
                       {item.quantity} × {product.title} ({product.packageSize})
                     </span>

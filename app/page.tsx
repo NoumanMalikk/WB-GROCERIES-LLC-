@@ -7,6 +7,7 @@ import {
   getWeeklyEssentials,
   getProductBySlug,
 } from "@/data/products";
+import { toProductCards } from "@/data/product-mappers";
 import { ProductGrid } from "@/components/product/product-card";
 import { storeConfig } from "@/data/store-config";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
@@ -29,10 +30,10 @@ const householdSlugs = [
 ];
 
 export default function HomePage() {
-  const weekly = getWeeklyEssentials().slice(0, 8);
-  const underTen = getUnderTenProducts();
-  const snacks = snackSlugs.map((slug) => getProductBySlug(slug)!).filter(Boolean);
-  const household = householdSlugs.map((slug) => getProductBySlug(slug)!).filter(Boolean);
+  const weekly = toProductCards(getWeeklyEssentials().slice(0, 8));
+  const underTen = toProductCards(getUnderTenProducts().slice(0, 8));
+  const snacks = toProductCards(snackSlugs.map((slug) => getProductBySlug(slug)!).filter(Boolean));
+  const household = toProductCards(householdSlugs.map((slug) => getProductBySlug(slug)!).filter(Boolean));
 
   return (
     <div>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getActiveProducts, getProductBySlug, getRelatedProducts } from "@/data/products";
+import { toProductCards } from "@/data/product-mappers";
 import { RecentlyViewedLoader } from "@/components/product/recently-viewed-loader";
 import { buildPageMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
@@ -26,7 +27,7 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
-  const related = getRelatedProducts(product);
+  const related = toProductCards(getRelatedProducts(product));
 
   return (
     <>

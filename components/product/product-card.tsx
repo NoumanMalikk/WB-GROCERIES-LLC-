@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Heart } from "lucide-react";
-import type { Product } from "@/data/types";
+import type { ProductCardData } from "@/data/catalog";
 import { formatPrice } from "@/lib/utilities/format";
 import { useCartStore } from "@/lib/cart/store";
 import { useWishlistStore } from "@/lib/cart/wishlist-store";
@@ -12,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utilities/cn";
 import { useState } from "react";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product }: { product: ProductCardData }) {
   const addItem = useCartStore((s) => s.addItem);
   const toggle = useWishlistStore((s) => s.toggle);
   const wished = useWishlistStore((s) => s.productIds.includes(product.id));
@@ -23,13 +22,14 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative">
         <Link href={`/product/${product.slug}`} className="block p-3">
           <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white">
-            <Image
-              src={product.images[0]?.src ?? "/brand/logo-icon.svg"}
-              alt={product.imageAltText}
-              fill
-              unoptimized
-              sizes="(max-width:768px) 50vw, 25vw"
-              className="object-contain p-3 transition duration-300 group-hover:scale-[1.03]"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={product.image}
+              alt={product.imageAlt}
+              width={400}
+              height={400}
+              className="h-full w-full object-contain p-3 transition duration-300 group-hover:scale-[1.03]"
+              loading="lazy"
             />
           </div>
         </Link>
@@ -85,7 +85,7 @@ export function ProductCard({ product }: { product: Product }) {
   );
 }
 
-export function ProductGrid({ products }: { products: Product[] }) {
+export function ProductGrid({ products }: { products: ProductCardData[] }) {
   if (products.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-border bg-white p-10 text-center">

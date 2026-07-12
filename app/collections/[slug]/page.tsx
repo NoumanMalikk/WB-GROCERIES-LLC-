@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { getPantryStaples, getUnderTenProducts, getWeeklyEssentials } from "@/data/products";
+import { toProductCards } from "@/data/product-mappers";
 import { ShopCatalog } from "@/components/commerce/shop-catalog";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
@@ -46,7 +47,11 @@ export default async function CollectionPage({ params }: Props) {
   if (!collection) notFound();
   return (
     <Suspense fallback={<div className="p-10">Loading...</div>}>
-      <ShopCatalog products={collection.products()} title={collection.title} description={collection.description} />
+      <ShopCatalog
+        products={toProductCards(collection.products())}
+        title={collection.title}
+        description={collection.description}
+      />
     </Suspense>
   );
 }

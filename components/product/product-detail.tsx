@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Product } from "@/data/types";
+import type { ProductCardData } from "@/data/catalog";
 import { formatPrice, formatWeight } from "@/lib/utilities/format";
 import { QuantitySelector } from "@/components/ui/quantity-selector";
 import { Button } from "@/components/ui/button";
@@ -23,8 +24,8 @@ export function ProductDetail({
   recentlyViewed,
 }: {
   product: Product;
-  related: Product[];
-  recentlyViewed: Product[];
+  related: ProductCardData[];
+  recentlyViewed: ProductCardData[];
 }) {
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
