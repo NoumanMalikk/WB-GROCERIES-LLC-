@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="WB Groceries icon">
+  <rect width="128" height="128" rx="28" fill="#184C35"/>
+  <path d="M28 88 V48 h14 l10 24 10-24h14v40h-12V62L52 88H44L32 62v26H28z" fill="#FFF9EE"/>
+  <path d="M86 48h12c14 0 22 8 22 20s-8 20-22 20H86V48zm12 28c6 0 10-3 10-8s-4-8-10-8H98v16h0z" fill="#F2BE4B"/>
+  <path d="M36 34c10-14 46-14 56 0-16 5-40 5-56 0z" fill="#4E8A5A"/>
+</svg>

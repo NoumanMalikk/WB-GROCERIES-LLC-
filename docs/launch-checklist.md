@@ -1,0 +1,44 @@
+# Launch checklist
+
+- [ ] Confirm domain ownership
+- [ ] Verify public brand-name position
+- [ ] Add final support email
+- [ ] Confirm address visibility (`NEXT_PUBLIC_SHOW_FULL_ADDRESS`)
+- [ ] Confirm phone number
+- [ ] Confirm all 26 products
+- [ ] Confirm actual suppliers
+- [ ] Confirm exact product sizes
+- [ ] Confirm exact pack counts
+- [ ] Confirm exact prices
+- [ ] Confirm product availability
+- [ ] Confirm ingredients
+- [ ] Confirm nutrition data
+- [ ] Confirm allergens
+- [ ] Confirm shipping weights
+- [ ] Confirm shipping settings
+- [ ] Confirm tax settings
+- [ ] Replace every development placeholder
+- [ ] Verify every product image matches the exact title
+- [ ] Verify every image matches the exact size
+- [ ] Verify every image matches the exact pack count
+- [ ] Verify every main image has a white or clean solid background
+- [ ] Verify every product image is authorized
+- [ ] Verify every product card has equal dimensions
+- [ ] Verify every image box has the same ratio
+- [ ] Connect Stripe
+- [ ] Configure taxes
+- [ ] Configure shipping
+- [ ] Test complete checkout
+- [ ] Test payment webhook
+- [ ] Test order creation
+- [ ] Test order-success page
+- [ ] Test order-confirmation email
+- [ ] Test order tracking
+- [ ] Review return policy
+- [ ] Review legal pages
+- [ ] Test mobile design
+- [ ] Test accessibility
+- [ ] Test analytics consent
+- [ ] Submit sitemap
+- [ ] Run security review
+- [ ] Confirm `/admin` does not exist as a storefront feature

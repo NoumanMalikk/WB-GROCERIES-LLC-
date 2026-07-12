@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Assorted pantry groceries composition">
+  <rect width="1200" height="900" fill="#FFF9EE"/>
+  <rect x="80" y="120" width="160" height="220" rx="16" fill="#F2BE4B"/>
+  <rect x="280" y="160" width="140" height="180" rx="16" fill="#C84A42"/>
+  <rect x="460" y="100" width="130" height="240" rx="40" fill="#184C35"/>
+  <rect x="630" y="180" width="200" height="80" rx="12" fill="#4E8A5A"/>
+  <rect x="630" y="280" width="200" height="80" rx="12" fill="#E8793E"/>
+  <circle cx="240" cy="520" r="70" fill="#C84A42"/>
+  <rect x="360" y="460" width="120" height="150" rx="60" fill="#F2BE4B"/>
+  <rect x="520" y="480" width="160" height="120" rx="12" fill="#102F24"/>
+  <rect x="720" y="450" width="140" height="160" rx="12" fill="#4E8A5A"/>
+  <rect x="900" y="420" width="180" height="200" rx="16" fill="#DCE5DE"/>
+  <text x="80" y="820" font-family="Inter,Arial,sans-serif" font-size="20" fill="#606B64">Original unbranded grocery composition for WB Groceries</text>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FFF9EE"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#184C35"/>
+  <rect x="80" y="160" width="120" height="120" rx="28" fill="#184C35"/>
+  <text x="230" y="220" font-family="Manrope,Arial,sans-serif" font-size="64" font-weight="800" fill="#184C35">WB Groceries</text>
+  <text x="230" y="265" font-family="Inter,Arial,sans-serif" font-size="24" fill="#606B64">Groceries &amp; Everyday Essentials</text>
+  <text x="80" y="380" font-family="Manrope,Arial,sans-serif" font-size="48" font-weight="700" fill="#17221C">Stock the kitchen. Simplify the week.</text>
+  <text x="80" y="440" font-family="Inter,Arial,sans-serif" font-size="24" fill="#606B64">Crockett, Texas-based online grocery retailer</text>
+</svg>
