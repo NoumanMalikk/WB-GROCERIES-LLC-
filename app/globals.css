@@ -71,12 +71,23 @@ h6 {
   font-variant-numeric: tabular-nums;
 }
 
+.product-card-brand {
+  min-height: 1rem;
+}
+
 .product-card-title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 2.75rem;
+}
+
+.product-card-meta {
+  min-height: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .skip-link {

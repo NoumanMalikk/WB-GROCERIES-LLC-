@@ -18,17 +18,17 @@ export function ProductCard({ product }: { product: ProductCardData }) {
   const [added, setAdded] = useState(false);
 
   return (
-    <article className="group flex h-full min-h-[420px] max-h-[460px] flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-white shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="relative">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-white shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+      <div className="relative shrink-0">
         <Link href={`/product/${product.slug}`} className="block p-3">
-          <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white">
+          <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white ring-1 ring-border/60">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={product.image}
               alt={product.imageAlt}
               width={400}
               height={400}
-              className="h-full w-full object-contain p-3 transition duration-300 group-hover:scale-[1.03]"
+              className="h-full w-full object-contain p-4 transition duration-300 group-hover:scale-[1.03]"
               loading="lazy"
             />
           </div>
@@ -46,14 +46,14 @@ export function ProductCard({ product }: { product: ProductCardData }) {
         </button>
       </div>
 
-      <div className="flex flex-1 flex-col px-4 pb-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">{product.brand}</p>
+      <div className="flex min-h-0 flex-1 flex-col px-4 pb-4">
+        <p className="product-card-brand text-xs font-semibold uppercase tracking-wide text-muted">{product.brand}</p>
         <h3 className="product-card-title mt-1 font-heading text-sm font-bold leading-snug text-foreground">
           <Link href={`/product/${product.slug}`} title={product.title} className="hover:text-grocery">
             {product.title}
           </Link>
         </h3>
-        <p className="mt-1 text-xs text-muted">
+        <p className="product-card-meta mt-1 text-xs text-muted">
           {product.packageSize}
           {product.packCount > 1 ? ` · Pack of ${product.packCount}` : ""}
         </p>
@@ -61,14 +61,18 @@ export function ProductCard({ product }: { product: ProductCardData }) {
           <div className="flex items-end justify-between gap-2">
             <div>
               <p className="text-lg font-bold tabular-nums text-grocery">{formatPrice(product.price)}</p>
-              {product.unitPrice && <p className="text-xs tabular-nums text-muted">{product.unitPrice}</p>}
+              {product.unitPrice ? (
+                <p className="text-xs tabular-nums text-muted">{product.unitPrice}</p>
+              ) : (
+                <p className="text-xs text-transparent">—</p>
+              )}
             </div>
             <Badge className={product.stockStatus === "in_stock" ? "" : "bg-orange/20 text-warning"}>
               {product.stockStatus === "in_stock" ? "In stock" : "Unavailable"}
             </Badge>
           </div>
           <Button
-            className="w-full"
+            className="w-full whitespace-nowrap"
             disabled={product.stockStatus === "out_of_stock"}
             onClick={() => {
               addItem(product.id, 1, product.maximumOrderQuantity);
@@ -99,7 +103,7 @@ export function ProductGrid({ products }: { products: ProductCardData[] }) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-2 items-stretch gap-4 md:grid-cols-3 xl:grid-cols-4">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

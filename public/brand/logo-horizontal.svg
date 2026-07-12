@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" role="img" aria-label="WB Groceries">
   <rect x="0" y="8" width="48" height="48" rx="12" fill="#184C35"/>
-  <path d="M10 40 V24 h6 l4 10 4-10h6v16h-5V30l-4 10h-2l-4-10v10H10z" fill="#FFF9EE"/>
-  <path d="M34 24h5c6 0 9 3 9 8s-3 8-9 8h-5V24zm5 11c2.5 0 4-1.2 4-3s-1.5-3-4-3h-1v6h1z" fill="#F2BE4B"/>
-  <path d="M14 18c4-6 16-6 20 0-6 2-14 2-20 0z" fill="#4E8A5A"/>
+  <text x="24" y="41" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="20" font-weight="800" fill="#FFF9EE">WB</text>
+  <circle cx="38" cy="16" r="3.5" fill="#F2BE4B"/>
   <text x="60" y="30" font-family="Manrope,Arial,sans-serif" font-size="22" font-weight="800" fill="#184C35">WB Groceries</text>
   <text x="60" y="48" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="500" fill="#606B64">Groceries &amp; Everyday Essentials</text>
 </svg>

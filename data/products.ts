@@ -57,13 +57,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/quaker-old-fashioned-oats-42oz/main.svg",
+        "src": "/products/quaker-old-fashioned-oats-42oz/main.png",
         "alt": "Quaker Old Fashioned Oats, 42 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/quaker-old-fashioned-oats-42oz/angle.svg",
+        "src": "/products/quaker-old-fashioned-oats-42oz/angle.png",
         "alt": "Quaker Old Fashioned Oats, 42 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -124,13 +124,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/cheerios-original-cereal-18oz/main.svg",
+        "src": "/products/cheerios-original-cereal-18oz/main.png",
         "alt": "Cheerios Original Cereal, 18 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/cheerios-original-cereal-18oz/angle.svg",
+        "src": "/products/cheerios-original-cereal-18oz/angle.png",
         "alt": "Cheerios Original Cereal, 18 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -191,13 +191,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/kelloggs-frosted-flakes-17-3oz/main.svg",
+        "src": "/products/kelloggs-frosted-flakes-17-3oz/main.png",
         "alt": "Kellogg's Frosted Flakes Cereal, 17.3 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/kelloggs-frosted-flakes-17-3oz/angle.svg",
+        "src": "/products/kelloggs-frosted-flakes-17-3oz/angle.png",
         "alt": "Kellogg's Frosted Flakes Cereal, 17.3 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -263,13 +263,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/nature-valley-oats-honey-12-bars/main.svg",
+        "src": "/products/nature-valley-oats-honey-12-bars/main.png",
         "alt": "Nature Valley Oats 'n Honey Crunchy Granola Bars, 12 Bars product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/nature-valley-oats-honey-12-bars/angle.svg",
+        "src": "/products/nature-valley-oats-honey-12-bars/angle.png",
         "alt": "Nature Valley Oats 'n Honey Crunchy Granola Bars, 12 Bars alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -331,13 +331,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.svg",
+        "src": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.png",
         "alt": "Folgers Classic Roast Ground Coffee, 25.9 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/folgers-classic-roast-ground-coffee-25-9oz/angle.svg",
+        "src": "/products/folgers-classic-roast-ground-coffee-25-9oz/angle.png",
         "alt": "Folgers Classic Roast Ground Coffee, 25.9 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -397,13 +397,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/lipton-black-tea-bags-100-count/main.svg",
+        "src": "/products/lipton-black-tea-bags-100-count/main.png",
         "alt": "Lipton Black Tea Bags, 100 Count product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/lipton-black-tea-bags-100-count/angle.svg",
+        "src": "/products/lipton-black-tea-bags-100-count/angle.png",
         "alt": "Lipton Black Tea Bags, 100 Count alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -466,13 +466,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/barilla-spaghetti-16oz-two-pack/main.svg",
+        "src": "/products/barilla-spaghetti-16oz-two-pack/main.png",
         "alt": "Barilla Spaghetti Pasta, 16 oz, Two-Pack product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/barilla-spaghetti-16oz-two-pack/angle.svg",
+        "src": "/products/barilla-spaghetti-16oz-two-pack/angle.png",
         "alt": "Barilla Spaghetti Pasta, 16 oz, Two-Pack alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -534,13 +534,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/prego-traditional-italian-sauce-24oz/main.svg",
+        "src": "/products/prego-traditional-italian-sauce-24oz/main.png",
         "alt": "Prego Traditional Italian Sauce, 24 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/prego-traditional-italian-sauce-24oz/angle.svg",
+        "src": "/products/prego-traditional-italian-sauce-24oz/angle.png",
         "alt": "Prego Traditional Italian Sauce, 24 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -601,13 +601,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/kraft-original-macaroni-cheese-five-pack/main.svg",
+        "src": "/products/kraft-original-macaroni-cheese-five-pack/main.png",
         "alt": "Kraft Original Macaroni and Cheese Dinner, Five-Pack product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/kraft-original-macaroni-cheese-five-pack/angle.svg",
+        "src": "/products/kraft-original-macaroni-cheese-five-pack/angle.png",
         "alt": "Kraft Original Macaroni and Cheese Dinner, Five-Pack alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -670,13 +670,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/jif-creamy-peanut-butter-16oz/main.svg",
+        "src": "/products/jif-creamy-peanut-butter-16oz/main.png",
         "alt": "Jif Creamy Peanut Butter, 16 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/jif-creamy-peanut-butter-16oz/angle.svg",
+        "src": "/products/jif-creamy-peanut-butter-16oz/angle.png",
         "alt": "Jif Creamy Peanut Butter, 16 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -737,13 +737,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/smuckers-strawberry-preserves-18oz/main.svg",
+        "src": "/products/smuckers-strawberry-preserves-18oz/main.png",
         "alt": "Smucker's Strawberry Preserves, 18 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/smuckers-strawberry-preserves-18oz/angle.svg",
+        "src": "/products/smuckers-strawberry-preserves-18oz/angle.png",
         "alt": "Smucker's Strawberry Preserves, 18 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -805,13 +805,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/heinz-tomato-ketchup-32oz/main.svg",
+        "src": "/products/heinz-tomato-ketchup-32oz/main.png",
         "alt": "Heinz Tomato Ketchup, 32 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/heinz-tomato-ketchup-32oz/angle.svg",
+        "src": "/products/heinz-tomato-ketchup-32oz/angle.png",
         "alt": "Heinz Tomato Ketchup, 32 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -871,13 +871,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/hellmanns-real-mayonnaise-30oz/main.svg",
+        "src": "/products/hellmanns-real-mayonnaise-30oz/main.png",
         "alt": "Hellmann's Real Mayonnaise, 30 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/hellmanns-real-mayonnaise-30oz/angle.svg",
+        "src": "/products/hellmanns-real-mayonnaise-30oz/angle.png",
         "alt": "Hellmann's Real Mayonnaise, 30 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -940,13 +940,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/bushs-original-baked-beans-28oz/main.svg",
+        "src": "/products/bushs-original-baked-beans-28oz/main.png",
         "alt": "Bush's Original Baked Beans, 28 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/bushs-original-baked-beans-28oz/angle.svg",
+        "src": "/products/bushs-original-baked-beans-28oz/angle.png",
         "alt": "Bush's Original Baked Beans, 28 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1007,13 +1007,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/del-monte-whole-kernel-corn-four-pack/main.svg",
+        "src": "/products/del-monte-whole-kernel-corn-four-pack/main.png",
         "alt": "Del Monte Whole Kernel Corn, 15.25 oz, Four-Pack product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/del-monte-whole-kernel-corn-four-pack/angle.svg",
+        "src": "/products/del-monte-whole-kernel-corn-four-pack/angle.png",
         "alt": "Del Monte Whole Kernel Corn, 15.25 oz, Four-Pack alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1075,13 +1075,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/starkist-chunk-light-tuna-four-pack/main.svg",
+        "src": "/products/starkist-chunk-light-tuna-four-pack/main.png",
         "alt": "StarKist Chunk Light Tuna in Water, 5 oz, Four-Pack product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/starkist-chunk-light-tuna-four-pack/angle.svg",
+        "src": "/products/starkist-chunk-light-tuna-four-pack/angle.png",
         "alt": "StarKist Chunk Light Tuna in Water, 5 oz, Four-Pack alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1145,13 +1145,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/oreo-original-cookies-14-3oz/main.svg",
+        "src": "/products/oreo-original-cookies-14-3oz/main.png",
         "alt": "Oreo Original Chocolate Sandwich Cookies, 14.3 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/oreo-original-cookies-14-3oz/angle.svg",
+        "src": "/products/oreo-original-cookies-14-3oz/angle.png",
         "alt": "Oreo Original Chocolate Sandwich Cookies, 14.3 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1211,13 +1211,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/ritz-original-crackers-13-7oz/main.svg",
+        "src": "/products/ritz-original-crackers-13-7oz/main.png",
         "alt": "Ritz Original Crackers, 13.7 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/ritz-original-crackers-13-7oz/angle.svg",
+        "src": "/products/ritz-original-crackers-13-7oz/angle.png",
         "alt": "Ritz Original Crackers, 13.7 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1278,13 +1278,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/lays-classic-potato-chips-8oz/main.svg",
+        "src": "/products/lays-classic-potato-chips-8oz/main.png",
         "alt": "Lay's Classic Potato Chips, 8 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/lays-classic-potato-chips-8oz/angle.svg",
+        "src": "/products/lays-classic-potato-chips-8oz/angle.png",
         "alt": "Lay's Classic Potato Chips, 8 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1346,13 +1346,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/doritos-nacho-cheese-9-25oz/main.svg",
+        "src": "/products/doritos-nacho-cheese-9-25oz/main.png",
         "alt": "Doritos Nacho Cheese Flavored Tortilla Chips, 9.25 oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/doritos-nacho-cheese-9-25oz/angle.svg",
+        "src": "/products/doritos-nacho-cheese-9-25oz/angle.png",
         "alt": "Doritos Nacho Cheese Flavored Tortilla Chips, 9.25 oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1416,13 +1416,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/coca-cola-original-12-pack/main.svg",
+        "src": "/products/coca-cola-original-12-pack/main.png",
         "alt": "Coca-Cola Original Taste, 12 fl oz Cans, 12-Pack product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/coca-cola-original-12-pack/angle.svg",
+        "src": "/products/coca-cola-original-12-pack/angle.png",
         "alt": "Coca-Cola Original Taste, 12 fl oz Cans, 12-Pack alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1483,13 +1483,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/gatorade-variety-pack-12-count/main.svg",
+        "src": "/products/gatorade-variety-pack-12-count/main.png",
         "alt": "Gatorade Thirst Quencher Variety Pack, 12 fl oz Bottles, 12-Pack product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/gatorade-variety-pack-12-count/angle.svg",
+        "src": "/products/gatorade-variety-pack-12-count/angle.png",
         "alt": "Gatorade Thirst Quencher Variety Pack, 12 fl oz Bottles, 12-Pack alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1552,13 +1552,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/tide-simply-clean-fresh-84oz/main.svg",
+        "src": "/products/tide-simply-clean-fresh-84oz/main.png",
         "alt": "Tide Simply Clean and Fresh Liquid Laundry Detergent, 84 fl oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/tide-simply-clean-fresh-84oz/angle.svg",
+        "src": "/products/tide-simply-clean-fresh-84oz/angle.png",
         "alt": "Tide Simply Clean and Fresh Liquid Laundry Detergent, 84 fl oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1621,13 +1621,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/dawn-ultra-dishwashing-liquid-18oz/main.svg",
+        "src": "/products/dawn-ultra-dishwashing-liquid-18oz/main.png",
         "alt": "Dawn Ultra Dishwashing Liquid, 18 fl oz product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/dawn-ultra-dishwashing-liquid-18oz/angle.svg",
+        "src": "/products/dawn-ultra-dishwashing-liquid-18oz/angle.png",
         "alt": "Dawn Ultra Dishwashing Liquid, 18 fl oz alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1689,13 +1689,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/bounty-essentials-six-double-rolls/main.svg",
+        "src": "/products/bounty-essentials-six-double-rolls/main.png",
         "alt": "Bounty Essentials Paper Towels, Six Double Rolls product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/bounty-essentials-six-double-rolls/angle.svg",
+        "src": "/products/bounty-essentials-six-double-rolls/angle.png",
         "alt": "Bounty Essentials Paper Towels, Six Double Rolls alternate package view",
         "type": "angle",
         "replacementRequired": true
@@ -1756,13 +1756,13 @@ export const products: Product[] = assertMinimumPrices([
     "allergenInformation": null,
     "images": [
       {
-        "src": "/products/glad-forceflexplus-13-gallon-40-count/main.svg",
+        "src": "/products/glad-forceflexplus-13-gallon-40-count/main.png",
         "alt": "Glad ForceFlexPlus Tall Kitchen Trash Bags, 13 Gallon, 40 Count product package",
         "type": "main",
         "replacementRequired": true
       },
       {
-        "src": "/products/glad-forceflexplus-13-gallon-40-count/angle.svg",
+        "src": "/products/glad-forceflexplus-13-gallon-40-count/angle.png",
         "alt": "Glad ForceFlexPlus Tall Kitchen Trash Bags, 13 Gallon, 40 Count alternate package view",
         "type": "angle",
         "replacementRequired": true

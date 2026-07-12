@@ -45,7 +45,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 6.99,
     "unitPrice": "$0.17 / oz",
-    "image": "/products/quaker-old-fashioned-oats-42oz/main.svg",
+    "image": "/products/quaker-old-fashioned-oats-42oz/main.png",
     "imageAlt": "Quaker Old Fashioned Oats, 42 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -71,7 +71,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 6.49,
     "unitPrice": "$0.36 / oz",
-    "image": "/products/cheerios-original-cereal-18oz/main.svg",
+    "image": "/products/cheerios-original-cereal-18oz/main.png",
     "imageAlt": "Cheerios Original Cereal, 18 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -97,7 +97,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 6.49,
     "unitPrice": "$0.38 / oz",
-    "image": "/products/kelloggs-frosted-flakes-17-3oz/main.svg",
+    "image": "/products/kelloggs-frosted-flakes-17-3oz/main.png",
     "imageAlt": "Kellogg's Frosted Flakes Cereal, 17.3 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -123,7 +123,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 12,
     "price": 5.49,
     "unitPrice": "$0.46 / bar",
-    "image": "/products/nature-valley-oats-honey-12-bars/main.svg",
+    "image": "/products/nature-valley-oats-honey-12-bars/main.png",
     "imageAlt": "Nature Valley Oats 'n Honey Crunchy Granola Bars, 12 Bars product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -152,7 +152,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 12.99,
     "unitPrice": "$0.50 / oz",
-    "image": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.svg",
+    "image": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.png",
     "imageAlt": "Folgers Classic Roast Ground Coffee, 25.9 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -178,7 +178,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 100,
     "price": 7.49,
     "unitPrice": "$0.07 / bag",
-    "image": "/products/lipton-black-tea-bags-100-count/main.svg",
+    "image": "/products/lipton-black-tea-bags-100-count/main.png",
     "imageAlt": "Lipton Black Tea Bags, 100 Count product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -204,7 +204,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 2,
     "price": 5.49,
     "unitPrice": "$0.17 / oz",
-    "image": "/products/barilla-spaghetti-16oz-two-pack/main.svg",
+    "image": "/products/barilla-spaghetti-16oz-two-pack/main.png",
     "imageAlt": "Barilla Spaghetti Pasta, 16 oz, Two-Pack product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -230,7 +230,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.49,
     "unitPrice": "$0.23 / oz",
-    "image": "/products/prego-traditional-italian-sauce-24oz/main.svg",
+    "image": "/products/prego-traditional-italian-sauce-24oz/main.png",
     "imageAlt": "Prego Traditional Italian Sauce, 24 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -256,7 +256,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 5,
     "price": 7.99,
     "unitPrice": "$1.60 / box",
-    "image": "/products/kraft-original-macaroni-cheese-five-pack/main.svg",
+    "image": "/products/kraft-original-macaroni-cheese-five-pack/main.png",
     "imageAlt": "Kraft Original Macaroni and Cheese Dinner, Five-Pack product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -282,7 +282,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.99,
     "unitPrice": "$0.37 / oz",
-    "image": "/products/jif-creamy-peanut-butter-16oz/main.svg",
+    "image": "/products/jif-creamy-peanut-butter-16oz/main.png",
     "imageAlt": "Jif Creamy Peanut Butter, 16 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -308,7 +308,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.99,
     "unitPrice": "$0.33 / oz",
-    "image": "/products/smuckers-strawberry-preserves-18oz/main.svg",
+    "image": "/products/smuckers-strawberry-preserves-18oz/main.png",
     "imageAlt": "Smucker's Strawberry Preserves, 18 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -335,7 +335,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.99,
     "unitPrice": "$0.19 / oz",
-    "image": "/products/heinz-tomato-ketchup-32oz/main.svg",
+    "image": "/products/heinz-tomato-ketchup-32oz/main.png",
     "imageAlt": "Heinz Tomato Ketchup, 32 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -361,7 +361,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 7.99,
     "unitPrice": "$0.27 / oz",
-    "image": "/products/hellmanns-real-mayonnaise-30oz/main.svg",
+    "image": "/products/hellmanns-real-mayonnaise-30oz/main.png",
     "imageAlt": "Hellmann's Real Mayonnaise, 30 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -387,7 +387,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.49,
     "unitPrice": "$0.20 / oz",
-    "image": "/products/bushs-original-baked-beans-28oz/main.svg",
+    "image": "/products/bushs-original-baked-beans-28oz/main.png",
     "imageAlt": "Bush's Original Baked Beans, 28 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -413,7 +413,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 4,
     "price": 6.99,
     "unitPrice": "$1.75 / can",
-    "image": "/products/del-monte-whole-kernel-corn-four-pack/main.svg",
+    "image": "/products/del-monte-whole-kernel-corn-four-pack/main.png",
     "imageAlt": "Del Monte Whole Kernel Corn, 15.25 oz, Four-Pack product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -439,7 +439,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 4,
     "price": 7.49,
     "unitPrice": "$1.87 / can",
-    "image": "/products/starkist-chunk-light-tuna-four-pack/main.svg",
+    "image": "/products/starkist-chunk-light-tuna-four-pack/main.png",
     "imageAlt": "StarKist Chunk Light Tuna in Water, 5 oz, Four-Pack product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -465,7 +465,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.49,
     "unitPrice": "$0.38 / oz",
-    "image": "/products/oreo-original-cookies-14-3oz/main.svg",
+    "image": "/products/oreo-original-cookies-14-3oz/main.png",
     "imageAlt": "Oreo Original Chocolate Sandwich Cookies, 14.3 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -491,7 +491,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.49,
     "unitPrice": "$0.40 / oz",
-    "image": "/products/ritz-original-crackers-13-7oz/main.svg",
+    "image": "/products/ritz-original-crackers-13-7oz/main.png",
     "imageAlt": "Ritz Original Crackers, 13.7 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -516,7 +516,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.99,
     "unitPrice": "$0.75 / oz",
-    "image": "/products/lays-classic-potato-chips-8oz/main.svg",
+    "image": "/products/lays-classic-potato-chips-8oz/main.png",
     "imageAlt": "Lay's Classic Potato Chips, 8 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -542,7 +542,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.99,
     "unitPrice": "$0.65 / oz",
-    "image": "/products/doritos-nacho-cheese-9-25oz/main.svg",
+    "image": "/products/doritos-nacho-cheese-9-25oz/main.png",
     "imageAlt": "Doritos Nacho Cheese Flavored Tortilla Chips, 9.25 oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -568,7 +568,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 12,
     "price": 9.99,
     "unitPrice": "$0.83 / can",
-    "image": "/products/coca-cola-original-12-pack/main.svg",
+    "image": "/products/coca-cola-original-12-pack/main.png",
     "imageAlt": "Coca-Cola Original Taste, 12 fl oz Cans, 12-Pack product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 6,
@@ -595,7 +595,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 12,
     "price": 10.99,
     "unitPrice": "$0.92 / bottle",
-    "image": "/products/gatorade-variety-pack-12-count/main.svg",
+    "image": "/products/gatorade-variety-pack-12-count/main.png",
     "imageAlt": "Gatorade Thirst Quencher Variety Pack, 12 fl oz Bottles, 12-Pack product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 6,
@@ -621,7 +621,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 11.99,
     "unitPrice": "$0.14 / fl oz",
-    "image": "/products/tide-simply-clean-fresh-84oz/main.svg",
+    "image": "/products/tide-simply-clean-fresh-84oz/main.png",
     "imageAlt": "Tide Simply Clean and Fresh Liquid Laundry Detergent, 84 fl oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 4,
@@ -648,7 +648,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 1,
     "price": 5.49,
     "unitPrice": "$0.31 / fl oz",
-    "image": "/products/dawn-ultra-dishwashing-liquid-18oz/main.svg",
+    "image": "/products/dawn-ultra-dishwashing-liquid-18oz/main.png",
     "imageAlt": "Dawn Ultra Dishwashing Liquid, 18 fl oz product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -675,7 +675,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 6,
     "price": 12.99,
     "unitPrice": "$2.17 / roll",
-    "image": "/products/bounty-essentials-six-double-rolls/main.svg",
+    "image": "/products/bounty-essentials-six-double-rolls/main.png",
     "imageAlt": "Bounty Essentials Paper Towels, Six Double Rolls product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 4,
@@ -701,7 +701,7 @@ export const productCards: ProductCardData[] = [
     "packCount": 40,
     "price": 10.99,
     "unitPrice": "$0.27 / bag",
-    "image": "/products/glad-forceflexplus-13-gallon-40-count/main.svg",
+    "image": "/products/glad-forceflexplus-13-gallon-40-count/main.png",
     "imageAlt": "Glad ForceFlexPlus Tall Kitchen Trash Bags, 13 Gallon, 40 Count product package",
     "stockStatus": "in_stock",
     "maximumOrderQuantity": 10,
@@ -736,7 +736,7 @@ export const searchIndex: SearchIndexItem[] = [
       "quaker"
     ],
     "shortDescription": "Classic rolled oats for warm breakfasts, overnight oats and everyday recipes.",
-    "image": "/products/quaker-old-fashioned-oats-42oz/main.svg"
+    "image": "/products/quaker-old-fashioned-oats-42oz/main.png"
   },
   {
     "id": "wbg-002",
@@ -753,7 +753,7 @@ export const searchIndex: SearchIndexItem[] = [
       "breakfast"
     ],
     "shortDescription": "Classic toasted oat cereal for breakfast and everyday snacking.",
-    "image": "/products/cheerios-original-cereal-18oz/main.svg"
+    "image": "/products/cheerios-original-cereal-18oz/main.png"
   },
   {
     "id": "wbg-003",
@@ -770,7 +770,7 @@ export const searchIndex: SearchIndexItem[] = [
       "breakfast"
     ],
     "shortDescription": "Crunchy frosted corn cereal for simple breakfasts and snacks.",
-    "image": "/products/kelloggs-frosted-flakes-17-3oz/main.svg"
+    "image": "/products/kelloggs-frosted-flakes-17-3oz/main.png"
   },
   {
     "id": "wbg-004",
@@ -788,7 +788,7 @@ export const searchIndex: SearchIndexItem[] = [
       "honey"
     ],
     "shortDescription": "Crunchy oat-and-honey granola bars in individually packaged portions.",
-    "image": "/products/nature-valley-oats-honey-12-bars/main.svg"
+    "image": "/products/nature-valley-oats-honey-12-bars/main.png"
   },
   {
     "id": "wbg-005",
@@ -805,7 +805,7 @@ export const searchIndex: SearchIndexItem[] = [
       "roast"
     ],
     "shortDescription": "Medium-roast ground coffee for familiar everyday brewing.",
-    "image": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.svg"
+    "image": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.png"
   },
   {
     "id": "wbg-006",
@@ -822,7 +822,7 @@ export const searchIndex: SearchIndexItem[] = [
       "tea bags"
     ],
     "shortDescription": "Classic black tea bags for hot tea or iced tea.",
-    "image": "/products/lipton-black-tea-bags-100-count/main.svg"
+    "image": "/products/lipton-black-tea-bags-100-count/main.png"
   },
   {
     "id": "wbg-007",
@@ -839,7 +839,7 @@ export const searchIndex: SearchIndexItem[] = [
       "noodles"
     ],
     "shortDescription": "A convenient two-pack of classic spaghetti for pantry restocking.",
-    "image": "/products/barilla-spaghetti-16oz-two-pack/main.svg"
+    "image": "/products/barilla-spaghetti-16oz-two-pack/main.png"
   },
   {
     "id": "wbg-008",
@@ -856,7 +856,7 @@ export const searchIndex: SearchIndexItem[] = [
       "tomato sauce"
     ],
     "shortDescription": "A classic tomato-based pasta sauce for spaghetti and simple family meals.",
-    "image": "/products/prego-traditional-italian-sauce-24oz/main.svg"
+    "image": "/products/prego-traditional-italian-sauce-24oz/main.png"
   },
   {
     "id": "wbg-009",
@@ -873,7 +873,7 @@ export const searchIndex: SearchIndexItem[] = [
       "pasta"
     ],
     "shortDescription": "A five-box pantry pack of classic macaroni and cheese dinner.",
-    "image": "/products/kraft-original-macaroni-cheese-five-pack/main.svg"
+    "image": "/products/kraft-original-macaroni-cheese-five-pack/main.png"
   },
   {
     "id": "wbg-010",
@@ -890,7 +890,7 @@ export const searchIndex: SearchIndexItem[] = [
       "pb"
     ],
     "shortDescription": "Smooth creamy peanut butter for sandwiches, breakfast and snacks.",
-    "image": "/products/jif-creamy-peanut-butter-16oz/main.svg"
+    "image": "/products/jif-creamy-peanut-butter-16oz/main.png"
   },
   {
     "id": "wbg-011",
@@ -908,7 +908,7 @@ export const searchIndex: SearchIndexItem[] = [
       "jelly"
     ],
     "shortDescription": "Sweet strawberry preserves for toast, sandwiches and baking.",
-    "image": "/products/smuckers-strawberry-preserves-18oz/main.svg"
+    "image": "/products/smuckers-strawberry-preserves-18oz/main.png"
   },
   {
     "id": "wbg-012",
@@ -925,7 +925,7 @@ export const searchIndex: SearchIndexItem[] = [
       "condiment"
     ],
     "shortDescription": "Classic tomato ketchup in a family-sized squeeze bottle.",
-    "image": "/products/heinz-tomato-ketchup-32oz/main.svg"
+    "image": "/products/heinz-tomato-ketchup-32oz/main.png"
   },
   {
     "id": "wbg-013",
@@ -942,7 +942,7 @@ export const searchIndex: SearchIndexItem[] = [
       "condiment"
     ],
     "shortDescription": "Creamy mayonnaise for sandwiches, salads, dips and recipes.",
-    "image": "/products/hellmanns-real-mayonnaise-30oz/main.svg"
+    "image": "/products/hellmanns-real-mayonnaise-30oz/main.png"
   },
   {
     "id": "wbg-014",
@@ -959,7 +959,7 @@ export const searchIndex: SearchIndexItem[] = [
       "canned"
     ],
     "shortDescription": "Seasoned baked beans in a convenient family-sized can.",
-    "image": "/products/bushs-original-baked-beans-28oz/main.svg"
+    "image": "/products/bushs-original-baked-beans-28oz/main.png"
   },
   {
     "id": "wbg-015",
@@ -976,7 +976,7 @@ export const searchIndex: SearchIndexItem[] = [
       "vegetables"
     ],
     "shortDescription": "A pantry-ready four-pack of whole-kernel corn.",
-    "image": "/products/del-monte-whole-kernel-corn-four-pack/main.svg"
+    "image": "/products/del-monte-whole-kernel-corn-four-pack/main.png"
   },
   {
     "id": "wbg-016",
@@ -993,7 +993,7 @@ export const searchIndex: SearchIndexItem[] = [
       "fish"
     ],
     "shortDescription": "A convenient four-pack of chunk light tuna packed in water.",
-    "image": "/products/starkist-chunk-light-tuna-four-pack/main.svg"
+    "image": "/products/starkist-chunk-light-tuna-four-pack/main.png"
   },
   {
     "id": "wbg-017",
@@ -1010,7 +1010,7 @@ export const searchIndex: SearchIndexItem[] = [
       "snacks"
     ],
     "shortDescription": "Classic chocolate sandwich cookies with creme filling.",
-    "image": "/products/oreo-original-cookies-14-3oz/main.svg"
+    "image": "/products/oreo-original-cookies-14-3oz/main.png"
   },
   {
     "id": "wbg-018",
@@ -1026,7 +1026,7 @@ export const searchIndex: SearchIndexItem[] = [
       "snacks"
     ],
     "shortDescription": "Light crackers for snacks, dips and simple lunch plates.",
-    "image": "/products/ritz-original-crackers-13-7oz/main.svg"
+    "image": "/products/ritz-original-crackers-13-7oz/main.png"
   },
   {
     "id": "wbg-019",
@@ -1043,7 +1043,7 @@ export const searchIndex: SearchIndexItem[] = [
       "crisps"
     ],
     "shortDescription": "Classic salted potato chips in a shareable bag.",
-    "image": "/products/lays-classic-potato-chips-8oz/main.svg"
+    "image": "/products/lays-classic-potato-chips-8oz/main.png"
   },
   {
     "id": "wbg-020",
@@ -1060,7 +1060,7 @@ export const searchIndex: SearchIndexItem[] = [
       "tortilla chips"
     ],
     "shortDescription": "Crunchy tortilla chips with nacho-cheese seasoning.",
-    "image": "/products/doritos-nacho-cheese-9-25oz/main.svg"
+    "image": "/products/doritos-nacho-cheese-9-25oz/main.png"
   },
   {
     "id": "wbg-021",
@@ -1078,7 +1078,7 @@ export const searchIndex: SearchIndexItem[] = [
       "coca cola"
     ],
     "shortDescription": "A 12-pack of classic Coca-Cola in 12 fl oz cans.",
-    "image": "/products/coca-cola-original-12-pack/main.svg"
+    "image": "/products/coca-cola-original-12-pack/main.png"
   },
   {
     "id": "wbg-022",
@@ -1095,7 +1095,7 @@ export const searchIndex: SearchIndexItem[] = [
       "beverage"
     ],
     "shortDescription": "A mixed-flavor sports-drink pack for refrigerator and pantry restocking.",
-    "image": "/products/gatorade-variety-pack-12-count/main.svg"
+    "image": "/products/gatorade-variety-pack-12-count/main.png"
   },
   {
     "id": "wbg-023",
@@ -1113,7 +1113,7 @@ export const searchIndex: SearchIndexItem[] = [
       "wash"
     ],
     "shortDescription": "Liquid laundry detergent for regular household washing.",
-    "image": "/products/tide-simply-clean-fresh-84oz/main.svg"
+    "image": "/products/tide-simply-clean-fresh-84oz/main.png"
   },
   {
     "id": "wbg-024",
@@ -1131,7 +1131,7 @@ export const searchIndex: SearchIndexItem[] = [
       "dishes"
     ],
     "shortDescription": "Concentrated liquid dish soap for everyday hand-washing of dishes.",
-    "image": "/products/dawn-ultra-dishwashing-liquid-18oz/main.svg"
+    "image": "/products/dawn-ultra-dishwashing-liquid-18oz/main.png"
   },
   {
     "id": "wbg-025",
@@ -1148,7 +1148,7 @@ export const searchIndex: SearchIndexItem[] = [
       "kitchen towels"
     ],
     "shortDescription": "A six-double-roll multipack of everyday paper towels.",
-    "image": "/products/bounty-essentials-six-double-rolls/main.svg"
+    "image": "/products/bounty-essentials-six-double-rolls/main.png"
   },
   {
     "id": "wbg-026",
@@ -1165,7 +1165,7 @@ export const searchIndex: SearchIndexItem[] = [
       "kitchen bags"
     ],
     "shortDescription": "Tall-kitchen trash bags designed for standard 13-gallon kitchen bins.",
-    "image": "/products/glad-forceflexplus-13-gallon-40-count/main.svg"
+    "image": "/products/glad-forceflexplus-13-gallon-40-count/main.png"
   }
 ];
 

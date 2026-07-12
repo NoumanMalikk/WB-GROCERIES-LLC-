@@ -30,27 +30,30 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mx-auto flex max-w-lg flex-col gap-3 sm:flex-row">
-      <label htmlFor="newsletter-email" className="sr-only">
-        Email address
-      </label>
-      <Input
-        id="newsletter-email"
-        type="email"
-        required
-        placeholder="you@example.com"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <Button type="submit" disabled={status === "loading"} className="sm:w-40">
-        {status === "loading" ? "Joining..." : "Join the List"}
-      </Button>
+    <form onSubmit={onSubmit} className="mx-auto w-full max-w-xl space-y-3 text-left">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <label htmlFor="newsletter-email" className="sr-only">
+          Email address
+        </label>
+        <Input
+          id="newsletter-email"
+          type="email"
+          required
+          placeholder="you@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="min-w-0 flex-1"
+        />
+        <Button type="submit" disabled={status === "loading"} className="shrink-0 whitespace-nowrap px-6 sm:min-w-[9.5rem]">
+          {status === "loading" ? "Joining..." : "Join the List"}
+        </Button>
+      </div>
       {message && (
-        <p className={`basis-full text-sm ${status === "error" ? "text-error" : "text-success"}`} role="status">
+        <p className={`text-sm ${status === "error" ? "text-error" : "text-success"}`} role="status">
           {message}
         </p>
       )}
-      <p className="basis-full text-xs text-muted">
+      <p className="text-center text-xs text-muted sm:text-left">
         Marketing messages are optional. Submitting this form opts you in to the newsletter list only.
       </p>
     </form>
