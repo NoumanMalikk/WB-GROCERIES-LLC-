@@ -9,6 +9,10 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utilities/cn";
 
 const RECENT_KEY = "wb-groceries-recent-searches";
+const EMPTY_RECENT: string[] = [];
+
+let cachedRecentRaw: string | null = null;
+let cachedRecent: string[] = EMPTY_RECENT;
 
 function subscribeRecent(onStoreChange: () => void) {
   window.addEventListener("storage", onStoreChange);
@@ -21,9 +25,13 @@ function subscribeRecent(onStoreChange: () => void) {
 
 function readRecent(): string[] {
   try {
-    return JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+    const raw = localStorage.getItem(RECENT_KEY) || "[]";
+    if (raw === cachedRecentRaw) return cachedRecent;
+    cachedRecentRaw = raw;
+    cachedRecent = JSON.parse(raw) as string[];
+    return cachedRecent;
   } catch {
-    return [];
+    return EMPTY_RECENT;
   }
 }
 
@@ -33,7 +41,7 @@ export function SearchBox({ onNavigate }: { onNavigate?: () => void }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
-  const recent = useSyncExternalStore(subscribeRecent, readRecent, () => []);
+  const recent = useSyncExternalStore(subscribeRecent, readRecent, () => EMPTY_RECENT);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
