@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import type { OrderRecord } from "@/lib/orders/store";
 
 export function CheckoutSuccessClient({
@@ -15,8 +14,6 @@ export function CheckoutSuccessClient({
   reference: string;
   email: string;
 }) {
-  const reduce = useReducedMotion();
-
   if (demo) {
     return (
       <div className="rounded-2xl border border-warning/40 bg-[#fff7e8] p-8 text-center">
@@ -58,11 +55,7 @@ export function CheckoutSuccessClient({
   }
 
   return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl border border-border bg-white p-8 text-center"
-    >
+    <div className="rounded-2xl border border-border bg-white p-8 text-center">
       <h1 className="font-heading text-3xl font-bold text-grocery">Thank you for your order</h1>
       <p className="mt-3 text-muted">
         Order <strong>{order.reference}</strong> for {order.email} has verified payment status: {order.paymentStatus}.
@@ -80,6 +73,6 @@ export function CheckoutSuccessClient({
           Contact support
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 }

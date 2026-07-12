@@ -27,6 +27,7 @@ export function ProductCard({ product }: { product: Product }) {
               src={product.images[0]?.src ?? "/brand/logo-icon.svg"}
               alt={product.imageAltText}
               fill
+              unoptimized
               sizes="(max-width:768px) 50vw, 25vw"
               className="object-contain p-3 transition duration-300 group-hover:scale-[1.03]"
             />

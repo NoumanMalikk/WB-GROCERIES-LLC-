@@ -25,19 +25,19 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-grocery: var(--grocery-green);
-  --color-forest: var(--forest);
-  --color-fresh: var(--fresh);
-  --color-cream: var(--cream);
-  --color-mint: var(--mint);
-  --color-gold: var(--gold);
-  --color-orange: var(--orange);
-  --color-tomato: var(--tomato);
-  --color-muted: var(--text-secondary);
-  --color-border: var(--border);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
-  --color-error: var(--error);
+  --color-grocery: #184c35;
+  --color-forest: #102f24;
+  --color-fresh: #4e8a5a;
+  --color-cream: #fff9ee;
+  --color-mint: #e8f2e9;
+  --color-gold: #f2be4b;
+  --color-orange: #e8793e;
+  --color-tomato: #c84a42;
+  --color-muted: #606b64;
+  --color-border: #dce5de;
+  --color-success: #2d7d4f;
+  --color-warning: #a96a16;
+  --color-error: #b93e3e;
   --font-heading: var(--font-manrope);
   --font-sans: var(--font-inter);
 }
@@ -51,8 +51,8 @@ html {
 }
 
 body {
-  background: var(--cream);
-  color: var(--text);
+  background: #fff9ee;
+  color: #17221c;
   font-family: var(--font-inter), Inter, sans-serif;
   text-rendering: optimizeLegibility;
 }
