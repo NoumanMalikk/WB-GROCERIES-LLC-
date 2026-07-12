@@ -17,7 +17,7 @@ export default function Page() {
         
         <p>WB GROCERIES LLC collects information needed to process orders, respond to customer messages and improve the storefront.</p>
         <p>Payment card details are processed by the configured payment provider and are not collected through ordinary custom text fields on this website.</p>
-        <p>Analytics and marketing cookies load only after required consent when those integrations are enabled.</p>
+        <p>If analytics or marketing tools are connected later, they will be documented here along with how related data is handled.</p>
         <p>Customers may contact support to request account deletion or ask privacy-related questions.</p>
 
         <p>

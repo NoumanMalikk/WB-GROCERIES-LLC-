@@ -4,7 +4,6 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CartDrawer } from "@/components/cart/cart-drawer";
-import { CookieConsent } from "@/components/layout/cookie-consent";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Providers } from "@/components/layout/providers";
 import { buildPageMetadata, organizationJsonLd, websiteJsonLd, onlineStoreJsonLd } from "@/lib/seo/metadata";
@@ -71,7 +70,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </main>
           <SiteFooter />
           <CartDrawer />
-          <CookieConsent />
         </Providers>
       </body>
     </html>
