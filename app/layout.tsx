@@ -8,7 +8,7 @@ import { CookieConsent } from "@/components/layout/cookie-consent";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Providers } from "@/components/layout/providers";
 import { buildPageMetadata, organizationJsonLd, websiteJsonLd, onlineStoreJsonLd } from "@/lib/seo/metadata";
-import { storeConfig } from "@/data/store-config";
+import { getSiteUrl, storeConfig } from "@/data/store-config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,13 +23,21 @@ const manrope = Manrope({
   display: "swap",
 });
 
+function safeMetadataBase(): URL {
+  try {
+    return new URL(getSiteUrl());
+  } catch {
+    return new URL("https://wb-groceries-llc.vercel.app");
+  }
+}
+
 export const metadata: Metadata = {
   ...buildPageMetadata({
     title: storeConfig.seo.homepageTitle,
     description: storeConfig.seo.homepageDescription,
     path: "/",
   }),
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: safeMetadataBase(),
   icons: {
     icon: "/favicon.svg",
     apple: "/apple-touch-icon.svg",
