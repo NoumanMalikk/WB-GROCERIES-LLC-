@@ -10,7 +10,7 @@ export const categories: Category[] = [
     seoTitle: "Breakfast Products | WB Groceries",
     seoDescription:
       "Shop cereal, oats and granola bars online from WB Groceries.",
-    image: "/categories/breakfast.svg",
+    image: "/categories/breakfast.png",
     navGroup: "breakfast-drinks",
   },
   {
@@ -22,7 +22,7 @@ export const categories: Category[] = [
     seoTitle: "Coffee & Tea | WB Groceries",
     seoDescription:
       "Shop Folgers coffee, Lipton tea and everyday hot drink essentials.",
-    image: "/categories/coffee-tea.svg",
+    image: "/categories/coffee-tea.png",
     navGroup: "breakfast-drinks",
   },
   {
@@ -34,7 +34,7 @@ export const categories: Category[] = [
     seoTitle: "Pasta & Pantry Staples | WB Groceries",
     seoDescription:
       "Shop pasta, tomato sauce and macaroni and cheese pantry packs.",
-    image: "/categories/pasta-pantry.svg",
+    image: "/categories/pasta-pantry.png",
     navGroup: "pantry",
   },
   {
@@ -46,7 +46,7 @@ export const categories: Category[] = [
     seoTitle: "Condiments & Spreads | WB Groceries",
     seoDescription:
       "Shop peanut butter, strawberry preserves, ketchup and mayonnaise.",
-    image: "/categories/condiments-spreads.svg",
+    image: "/categories/condiments-spreads.png",
     navGroup: "pantry",
   },
   {
@@ -58,7 +58,7 @@ export const categories: Category[] = [
     seoTitle: "Canned Goods | WB Groceries",
     seoDescription:
       "Shop canned beans, corn and tuna multipacks for your pantry.",
-    image: "/categories/canned-goods.svg",
+    image: "/categories/canned-goods.png",
     navGroup: "pantry",
   },
   {
@@ -70,7 +70,7 @@ export const categories: Category[] = [
     seoTitle: "Snacks | WB Groceries",
     seoDescription:
       "Shop Oreo cookies, Ritz crackers, Lay’s chips, Doritos and Nature Valley bars.",
-    image: "/categories/snacks.svg",
+    image: "/categories/snacks.png",
     navGroup: "snacks",
   },
   {
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     seoTitle: "Beverages | WB Groceries",
     seoDescription:
       "Shop Coca-Cola and Gatorade multipacks for home beverage restocking.",
-    image: "/categories/beverages.svg",
+    image: "/categories/beverages.png",
     navGroup: "breakfast-drinks",
   },
   {
@@ -94,7 +94,7 @@ export const categories: Category[] = [
     seoTitle: "Household Essentials | WB Groceries",
     seoDescription:
       "Shop Tide, Dawn, Bounty and Glad household essentials online.",
-    image: "/categories/household.svg",
+    image: "/categories/household.png",
     navGroup: "household",
   },
 ];

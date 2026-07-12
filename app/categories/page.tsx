@@ -14,15 +14,25 @@ export default function CategoriesPage() {
     <div className="mx-auto max-w-7xl px-4 py-10">
       <h1 className="font-heading text-4xl font-bold text-grocery">All categories</h1>
       <p className="mt-3 max-w-2xl text-muted">Browse organized grocery categories with equal card layouts.</p>
-      <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="mt-8 grid grid-cols-2 items-stretch gap-4 md:grid-cols-4">
         {categories.map((category) => (
-          <Link key={category.slug} href={`/category/${category.slug}`} className="overflow-hidden rounded-[14px] border border-border bg-white shadow-[var(--shadow-card)] transition hover:-translate-y-1">
-            <div className="relative aspect-square bg-mint">
-              <Image src={category.image} alt="" fill className="object-contain p-6" />
+          <Link
+            key={category.slug}
+            href={`/category/${category.slug}`}
+            className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-border bg-white shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div className="relative aspect-[4/3] bg-white">
+              <Image
+                src={category.image}
+                alt=""
+                fill
+                className="object-contain p-3 transition duration-300 group-hover:scale-[1.03]"
+                sizes="(max-width:768px) 50vw, 25vw"
+              />
             </div>
-            <div className="p-4">
+            <div className="flex flex-1 flex-col border-t border-border/70 p-4">
               <h2 className="font-heading text-lg font-bold text-grocery">{category.name}</h2>
-              <p className="mt-1 text-sm text-muted">{category.description}</p>
+              <p className="mt-1 line-clamp-2 text-sm text-muted">{category.description}</p>
             </div>
           </Link>
         ))}

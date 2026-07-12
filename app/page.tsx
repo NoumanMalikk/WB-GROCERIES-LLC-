@@ -44,17 +44,23 @@ export default function HomePage() {
           <h2 className="font-heading text-3xl font-bold text-grocery">Shop by category</h2>
           <p className="mt-2 text-muted">Browse organized grocery categories with clear package details.</p>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 items-stretch gap-4 md:grid-cols-4">
           {categories.map((category) => (
             <Link
               key={category.slug}
               href={`/category/${category.slug}`}
-              className="group flex min-h-[180px] flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-white shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1"
+              className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-white shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="relative aspect-[4/3] bg-mint">
-                <Image src={category.image} alt="" fill className="object-cover p-4 transition group-hover:scale-105" />
+              <div className="relative aspect-[4/3] bg-white">
+                <Image
+                  src={category.image}
+                  alt=""
+                  fill
+                  className="object-contain p-3 transition duration-300 group-hover:scale-[1.03]"
+                  sizes="(max-width:768px) 50vw, 25vw"
+                />
               </div>
-              <div className="flex flex-1 items-center px-4 py-3">
+              <div className="flex min-h-[3.25rem] flex-1 items-center border-t border-border/70 px-4 py-3">
                 <h3 className="font-heading text-base font-bold text-grocery">{category.name}</h3>
               </div>
             </Link>
