@@ -202,15 +202,31 @@ export async function POST(request: Request) {
       checkoutUrl: session.url,
     });
   } catch (error) {
-    console.error("[checkout]", error instanceof Error ? error.message : "payment_link_failed");
-    return NextResponse.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unable to start secure checkout. Please try again or contact support.",
-      },
-      { status: 502 },
-    );
+    const message = formatCheckoutError(error);
+    console.error("[checkout]", message);
+    return NextResponse.json({ error: message }, { status: 502 });
   }
 }
+
+function formatCheckoutError(error: unknown): string {
+  if (error && typeof error === "object" && "errors" in error) {
+    const errors = (error as { errors?: Array<{ detail?: string; field?: string }> }).errors;
+    if (Array.isArray(errors) && errors.length > 0) {
+      return errors
+        .map((item) => item.detail || item.field || "Payment provider rejected the request")
+        .join("; ");
+    }
+  }
+  if (error instanceof Error && error.message) {
+    // Avoid dumping full Square JSON blobs into the UI.
+    if (error.message.includes("INVALID_EMAIL_ADDRESS") || error.message.includes("merchant_support_email")) {
+      return "Store support email is invalid. Add SUPPORT_EMAIL in Vercel with a real email, then redeploy.";
+    }
+    if (error.message.length > 180 || error.message.includes("Status code:")) {
+      return "Unable to start Square checkout. Please redeploy the latest site update and try again.";
+    }
+    return error.message;
+  }
+  return "Unable to start secure checkout. Please try again or contact support.";
+}
+

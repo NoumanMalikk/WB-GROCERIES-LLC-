@@ -46,7 +46,24 @@ export async function createSquareCheckoutUrl(order: OrderRecord): Promise<strin
   }
 
   const successUrl = `${getSiteUrl()}/checkout/success?reference=${encodeURIComponent(order.reference)}&email=${encodeURIComponent(order.email)}&provider=square`;
-  const supportEmail = resolveMerchantSupportEmail(order.email);
+
+  // Only send merchantSupportEmail when SUPPORT_EMAIL is a real address.
+  // Never send placeholders like support@example.com (Square returns 400).
+  const checkoutOptions: {
+    allowTipping: false;
+    askForShippingAddress: false;
+    redirectUrl: string;
+    merchantSupportEmail?: string;
+  } = {
+    allowTipping: false,
+    askForShippingAddress: false,
+    redirectUrl: successUrl,
+  };
+
+  const supportEmail = getSupportEmail().trim();
+  if (isUsableMerchantEmail(supportEmail)) {
+    checkoutOptions.merchantSupportEmail = supportEmail;
+  }
 
   const response = await square.checkout.paymentLinks.create({
     idempotencyKey: randomUUID(),
@@ -56,12 +73,7 @@ export async function createSquareCheckoutUrl(order: OrderRecord): Promise<strin
       referenceId: order.reference,
       lineItems,
     },
-    checkoutOptions: {
-      allowTipping: false,
-      askForShippingAddress: false,
-      ...(supportEmail ? { merchantSupportEmail: supportEmail } : {}),
-      redirectUrl: successUrl,
-    },
+    checkoutOptions,
     prePopulatedData: {
       buyerEmail: order.email,
       buyerPhoneNumber: normalizeSquarePhone(order.phone),
@@ -86,18 +98,15 @@ function normalizeSquarePhone(phone: string): string | undefined {
   return undefined;
 }
 
-/** Square rejects placeholder domains like example.com. */
-function resolveMerchantSupportEmail(fallbackBuyerEmail: string): string | undefined {
-  const configured = getSupportEmail().trim();
-  if (isUsableMerchantEmail(configured)) return configured;
-  if (isUsableMerchantEmail(fallbackBuyerEmail)) return fallbackBuyerEmail.trim();
-  return undefined;
-}
-
 function isUsableMerchantEmail(email: string): boolean {
   const value = email.trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return false;
-  if (value.endsWith("@example.com") || value.endsWith("@example.org") || value.endsWith("@test.com")) {
+  if (
+    value.endsWith("@example.com") ||
+    value.endsWith("@example.org") ||
+    value.endsWith("@test.com") ||
+    value.includes("example.com")
+  ) {
     return false;
   }
   return true;
