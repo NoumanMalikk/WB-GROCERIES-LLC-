@@ -32,6 +32,7 @@ export function CheckoutForm() {
   const [squareEnvironment, setSquareEnvironment] = useState<"sandbox" | "production">("sandbox");
   const squareCardRef = useRef<SquareCardFieldsHandle | null>(null);
   const [squareSourceId, setSquareSourceId] = useState<string | null>(null);
+  const [squareCardReady, setSquareCardReady] = useState(false);
   const methods = getShippingMethods();
 
   useEffect(() => {
@@ -260,6 +261,7 @@ export function CheckoutForm() {
                   applicationId={squareApplicationId!}
                   locationId={squareLocationId!}
                   environment={squareEnvironment}
+                  onReadyChange={setSquareCardReady}
                 />
               ) : provider === "stripe" ? (
                 <p className="text-sm text-muted">
@@ -358,6 +360,7 @@ export function CheckoutForm() {
             {step < steps.length - 1 ? (
               <Button
                 type="button"
+                disabled={step === 4 && squareReady && !squareCardReady}
                 onClick={async () => {
                   const fieldsByStep: (keyof CheckoutFormValues | string)[][] = [
                     ["customer.email", "customer.firstName", "customer.lastName", "customer.phone"],
@@ -372,7 +375,7 @@ export function CheckoutForm() {
                   if (step === 4 && squareReady) {
                     try {
                       setError(null);
-                      if (!squareCardRef.current) {
+                      if (!squareCardRef.current?.isReady()) {
                         throw new Error("Card form is still loading. Wait a moment, then try again.");
                       }
                       const token = await squareCardRef.current.tokenize();
@@ -387,7 +390,7 @@ export function CheckoutForm() {
                   setStep((s) => s + 1);
                 }}
               >
-                Continue
+                {step === 4 && squareReady && !squareCardReady ? "Loading card…" : "Continue"}
               </Button>
             ) : (
               <Button type="submit" disabled={submitting}>
