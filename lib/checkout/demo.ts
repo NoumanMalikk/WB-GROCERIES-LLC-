@@ -1,4 +1,4 @@
-import { isDemoMode, isSquareConfigured, isStripeConfigured, storeConfig } from "@/data/store-config";
+import { isSquareConfigured, isStripeConfigured, storeConfig } from "@/data/store-config";
 import type { ShippingMethod } from "@/data/types";
 
 /** Client-safe: only uses NEXT_PUBLIC_* values. */
@@ -9,17 +9,19 @@ export function isPaymentProviderConfiguredPublic(): boolean {
   );
 }
 
+/**
+ * Demo checkout only when NO payment provider is configured.
+ * If Square/Stripe keys are present, always run real hosted checkout
+ * (Square sandbox still uses test cards when SQUARE_ENVIRONMENT=sandbox).
+ */
 export function isDemoCheckout(): boolean {
-  // Server uses full secret checks; client falls back to public keys.
   if (typeof window === "undefined") {
-    return isDemoMode() || (!isSquareConfigured() && !isStripeConfigured());
+    return !isSquareConfigured() && !isStripeConfigured();
   }
-  return isDemoMode() || !isPaymentProviderConfiguredPublic();
+  return !isPaymentProviderConfiguredPublic();
 }
 
 export function getActivePaymentProvider(): "square" | "stripe" | "demo" {
-  if (isDemoCheckout()) return "demo";
-
   if (typeof window === "undefined") {
     if (isSquareConfigured()) return "square";
     if (isStripeConfigured()) return "stripe";

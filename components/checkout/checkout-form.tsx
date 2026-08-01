@@ -120,7 +120,8 @@ export function CheckoutForm() {
         <h1 className="font-heading text-4xl font-bold text-grocery">Checkout</h1>
         {demo && (
           <div className="mt-4 rounded-xl border border-warning/40 bg-[#fff7e8] p-4 text-sm text-warning">
-            Checkout is currently in demonstration mode. Card details are not collected and orders are not marked as paid.
+            Secure card checkout is not active yet because Square keys are missing on this deployment. After Square is
+            connected, you will be redirected to Square to pay by Visa, debit, or other supported cards.
           </div>
         )}
         <ol className="mt-6 flex flex-wrap gap-2" aria-label="Checkout steps">
@@ -197,13 +198,13 @@ export function CheckoutForm() {
               <h2 className="font-heading text-xl font-bold">Payment</h2>
               {demo ? (
                 <p className="text-sm text-muted">
-                  Checkout is in demonstration mode. Card details are not collected here. When Square is connected and
-                  live mode is enabled, customers are redirected to Square&apos;s secure hosted checkout.
+                  Card payment is unavailable until Square is connected on this deployment. No card numbers are collected
+                  on this page.
                 </p>
               ) : provider === "square" ? (
                 <p className="text-sm text-muted">
-                  You will be redirected to Square Checkout to enter payment details securely. Card numbers are never
-                  collected in ordinary text fields on this website.
+                  Click <strong>Pay securely</strong> to continue to Square Checkout. There you can pay with Visa, debit,
+                  Mastercard, and other cards Square supports. Card numbers are never typed into this website.
                 </p>
               ) : (
                 <p className="text-sm text-muted">
