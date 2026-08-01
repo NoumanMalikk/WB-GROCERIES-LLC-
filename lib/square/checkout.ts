@@ -53,12 +53,7 @@ export async function createSquareCheckoutUrl(order: OrderRecord): Promise<strin
     order: {
       locationId,
       referenceId: order.reference,
-      customerId: undefined,
       lineItems,
-      metadata: {
-        orderReference: order.reference,
-        customerEmail: order.email,
-      },
     },
     checkoutOptions: {
       allowTipping: false,
