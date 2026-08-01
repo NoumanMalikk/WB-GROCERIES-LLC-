@@ -6,11 +6,12 @@ const nextConfig: NextConfig = {
   // client bundle too, so nothing hydrates and every interactive test fails.
   allowedDevOrigins: ["127.0.0.1"],
   images: {
-    // Packshots are local WebP (see scripts/optimize-images.mjs); the optimizer
-    // resizes them per breakpoint and serves AVIF where supported. Brand assets
-    // are SVG, which next/image passes through untouched.
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31536000,
+    // Vercel's image optimizer is metered and returns 402
+    // (OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED) on this project's plan, which
+    // breaks every /_next/image request. Serve the assets directly instead:
+    // scripts/optimize-images.mjs already ships them as right-sized WebP, so
+    // there is nothing left for the optimizer to do.
+    unoptimized: true,
   },
   async headers() {
     return [
