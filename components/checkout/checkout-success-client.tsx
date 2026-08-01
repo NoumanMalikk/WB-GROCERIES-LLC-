@@ -19,20 +19,32 @@ export function CheckoutSuccessClient({
   paymentId?: string;
   paidHint?: boolean;
 }) {
-  const [verifiedOrder, setVerifiedOrder] = useState<OrderRecord | null>(order);
-  const [checking, setChecking] = useState(Boolean(!demo && (paymentId || paidHint) && order?.paymentStatus !== "paid"));
+  // An order the server already reports as paid needs no round trip, so both
+  // "is a check required" and "are we still checking" are derived from props
+  // rather than mirrored into state inside an effect.
+  const alreadyPaid = order?.paymentStatus === "paid";
+  const needsVerification = !demo && !alreadyPaid && Boolean(paymentId || paidHint);
+
+  const [result, setResult] = useState<{ settled: boolean; order: OrderRecord | null }>({
+    settled: false,
+    order: null,
+  });
+
+  // Re-run verification if the payment being confirmed changes.
+  const verifyKey = `${reference}|${email}|${paymentId ?? ""}|${paidHint ? 1 : 0}`;
+  const [lastVerifyKey, setLastVerifyKey] = useState(verifyKey);
+  if (verifyKey !== lastVerifyKey) {
+    setLastVerifyKey(verifyKey);
+    setResult({ settled: false, order: null });
+  }
+
+  const checking = needsVerification && !result.settled;
+  const verifiedOrder = result.order ?? order;
 
   useEffect(() => {
-    if (demo) return;
-    if (order?.paymentStatus === "paid") {
-      setVerifiedOrder(order);
-      setChecking(false);
-      return;
-    }
-    if (!paymentId && !paidHint) return;
+    if (!needsVerification) return;
 
     let cancelled = false;
-    setChecking(true);
     fetch("/api/payments/verify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -41,27 +53,28 @@ export function CheckoutSuccessClient({
       .then((res) => res.json())
       .then((data: { verified?: boolean; order?: OrderRecord | null }) => {
         if (cancelled) return;
-        if (data.verified) {
-          setVerifiedOrder(
-            data.order ??
+        setResult({
+          settled: true,
+          order: data.verified
+            ? data.order ??
               ({
                 reference,
                 email,
                 paymentStatus: "paid",
                 shippingMethodName: order?.shippingMethodName ?? "Shipping",
-              } as OrderRecord),
-          );
-        }
+              } as OrderRecord)
+            : null,
+        });
       })
-      .catch(() => undefined)
-      .finally(() => {
-        if (!cancelled) setChecking(false);
+      .catch(() => {
+        // A failed check must not imply payment succeeded; fall back to props.
+        if (!cancelled) setResult({ settled: true, order: null });
       });
 
     return () => {
       cancelled = true;
     };
-  }, [demo, order, reference, email, paymentId, paidHint]);
+  }, [needsVerification, order, reference, email, paymentId]);
 
   if (demo) {
     return (
