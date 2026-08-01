@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 !.env.example
+# any other *.env file (e.g. vercel-square.env) holds live provider secrets
+*.env
+!.env.example
 
 # vercel
 .vercel
