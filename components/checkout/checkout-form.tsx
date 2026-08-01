@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, type CheckoutFormValues, usStates } from "@/lib/validation/checkout";
@@ -24,10 +24,26 @@ export function CheckoutForm() {
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const demo = isDemoCheckout();
-  const provider = getActivePaymentProvider();
+  const [demo, setDemo] = useState(isDemoCheckout());
+  const [provider, setProvider] = useState<"square" | "stripe" | "demo">(getActivePaymentProvider());
   const methods = getShippingMethods();
 
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/payments/status")
+      .then((res) => res.json())
+      .then((data: { demoCheckout?: boolean; provider?: "square" | "stripe" | "demo" }) => {
+        if (cancelled) return;
+        if (typeof data.demoCheckout === "boolean") setDemo(data.demoCheckout);
+        if (data.provider === "square" || data.provider === "stripe" || data.provider === "demo") {
+          setProvider(data.provider);
+        }
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
