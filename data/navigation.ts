@@ -13,7 +13,9 @@ export const primaryNav: NavLink[] = [
 
 export const megaMenu: MegaMenuSection[] = [
   {
-    title: "Breakfast and drinks",
+    title: "Breakfast & Drinks",
+    href: "/category/breakfast",
+    imageSlug: "breakfast",
     links: [
       { label: "Cereal", href: "/category/breakfast" },
       { label: "Oats", href: "/category/breakfast" },
@@ -25,6 +27,8 @@ export const megaMenu: MegaMenuSection[] = [
   },
   {
     title: "Pantry",
+    href: "/category/pasta-pantry",
+    imageSlug: "pasta-pantry",
     links: [
       { label: "Pasta", href: "/category/pasta-pantry" },
       { label: "Sauces", href: "/category/pasta-pantry" },
@@ -35,6 +39,8 @@ export const megaMenu: MegaMenuSection[] = [
   },
   {
     title: "Snacks",
+    href: "/category/snacks",
+    imageSlug: "snacks",
     links: [
       { label: "Cookies", href: "/category/snacks" },
       { label: "Crackers", href: "/category/snacks" },
@@ -44,6 +50,8 @@ export const megaMenu: MegaMenuSection[] = [
   },
   {
     title: "Household",
+    href: "/category/household",
+    imageSlug: "household",
     links: [
       { label: "Laundry", href: "/category/household" },
       { label: "Dish Care", href: "/category/household" },

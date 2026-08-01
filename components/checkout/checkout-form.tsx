@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, type CheckoutFormValues, usStates } from "@/lib/validation/checkout";
@@ -12,6 +12,7 @@ import { formatPrice } from "@/lib/utilities/format";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { storeConfig } from "@/data/store-config";
+import { SquareCardFields, type SquareCardFieldsHandle } from "@/components/checkout/square-card-fields";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -26,24 +27,43 @@ export function CheckoutForm() {
   const [error, setError] = useState<string | null>(null);
   const [demo, setDemo] = useState(isDemoCheckout());
   const [provider, setProvider] = useState<"square" | "stripe" | "demo">(getActivePaymentProvider());
+  const [squareApplicationId, setSquareApplicationId] = useState<string | null>(null);
+  const [squareLocationId, setSquareLocationId] = useState<string | null>(null);
+  const [squareEnvironment, setSquareEnvironment] = useState<"sandbox" | "production">("sandbox");
+  const squareCardRef = useRef<SquareCardFieldsHandle | null>(null);
+  const [squareSourceId, setSquareSourceId] = useState<string | null>(null);
   const methods = getShippingMethods();
 
   useEffect(() => {
     let cancelled = false;
     fetch("/api/payments/status")
       .then((res) => res.json())
-      .then((data: { demoCheckout?: boolean; provider?: "square" | "stripe" | "demo" }) => {
-        if (cancelled) return;
-        if (typeof data.demoCheckout === "boolean") setDemo(data.demoCheckout);
-        if (data.provider === "square" || data.provider === "stripe" || data.provider === "demo") {
-          setProvider(data.provider);
-        }
-      })
+      .then(
+        (data: {
+          demoCheckout?: boolean;
+          provider?: "square" | "stripe" | "demo";
+          squareApplicationId?: string | null;
+          squareLocationId?: string | null;
+          squareEnvironment?: "sandbox" | "production" | null;
+        }) => {
+          if (cancelled) return;
+          if (typeof data.demoCheckout === "boolean") setDemo(data.demoCheckout);
+          if (data.provider === "square" || data.provider === "stripe" || data.provider === "demo") {
+            setProvider(data.provider);
+          }
+          if (data.squareApplicationId) setSquareApplicationId(data.squareApplicationId);
+          if (data.squareLocationId) setSquareLocationId(data.squareLocationId);
+          if (data.squareEnvironment === "sandbox" || data.squareEnvironment === "production") {
+            setSquareEnvironment(data.squareEnvironment);
+          }
+        },
+      )
       .catch(() => undefined);
     return () => {
       cancelled = true;
     };
   }, []);
+
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
@@ -82,6 +102,8 @@ export function CheckoutForm() {
     taxEstimate: 0,
   });
 
+  const squareReady = provider === "square" && !demo && Boolean(squareApplicationId && squareLocationId);
+
   if (lines.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-border bg-white p-10 text-center">
@@ -97,21 +119,30 @@ export function CheckoutForm() {
     setSubmitting(true);
     setError(null);
     try {
+      let sourceId: string | undefined;
+      if (squareReady) {
+        sourceId = squareSourceId ?? undefined;
+        if (!sourceId) {
+          throw new Error("Open the Payment step and enter your card details before paying.");
+        }
+      }
+
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
           items: items.map((item) => ({ productId: item.productId, quantity: item.quantity })),
+          sourceId,
         }),
       });
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || "Checkout failed");
 
       if (payload.demo) {
-        setError(null);
-        // Demo mode: do not mark paid or show fake success payment.
-        router.push(`/checkout/success?demo=1&reference=${encodeURIComponent(payload.reference)}&email=${encodeURIComponent(data.customer.email)}`);
+        router.push(
+          `/checkout/success?demo=1&reference=${encodeURIComponent(payload.reference)}&email=${encodeURIComponent(data.customer.email)}`,
+        );
         return;
       }
 
@@ -122,9 +153,17 @@ export function CheckoutForm() {
       }
 
       clearCart();
-      router.push(`/checkout/success?reference=${encodeURIComponent(payload.reference)}&email=${encodeURIComponent(data.customer.email)}`);
+      const params = new URLSearchParams({
+        reference: payload.reference,
+        email: data.customer.email,
+      });
+      if (payload.paymentId) params.set("paymentId", payload.paymentId);
+      if (payload.paid) params.set("paid", "1");
+      router.push(`/checkout/success?${params.toString()}`);
     } catch (err) {
+      setSquareSourceId(null);
       setError(err instanceof Error ? err.message : "Unable to complete checkout");
+      if (squareReady) setStep(4);
     } finally {
       setSubmitting(false);
     }
@@ -136,8 +175,7 @@ export function CheckoutForm() {
         <h1 className="font-heading text-4xl font-bold text-grocery">Checkout</h1>
         {demo && (
           <div className="mt-4 rounded-xl border border-warning/40 bg-[#fff7e8] p-4 text-sm text-warning">
-            Secure card checkout is not active yet because Square keys are missing on this deployment. After Square is
-            connected, you will be redirected to Square to pay by Visa, debit, or other supported cards.
+            Secure card checkout is not active yet because Square keys are missing on this deployment.
           </div>
         )}
         <ol className="mt-6 flex flex-wrap gap-2" aria-label="Checkout steps">
@@ -214,19 +252,21 @@ export function CheckoutForm() {
               <h2 className="font-heading text-xl font-bold">Payment</h2>
               {demo ? (
                 <p className="text-sm text-muted">
-                  Card payment is unavailable until Square is connected on this deployment. No card numbers are collected
-                  on this page.
+                  Card payment is unavailable until Square is connected on this deployment.
                 </p>
-              ) : provider === "square" ? (
+              ) : squareReady ? (
+                <SquareCardFields
+                  ref={squareCardRef}
+                  applicationId={squareApplicationId!}
+                  locationId={squareLocationId!}
+                  environment={squareEnvironment}
+                />
+              ) : provider === "stripe" ? (
                 <p className="text-sm text-muted">
-                  Click <strong>Pay securely</strong> to continue to Square Checkout. There you can pay with Visa, debit,
-                  Mastercard, and other cards Square supports. Card numbers are never typed into this website.
+                  You will be redirected to Stripe Checkout to enter payment details securely.
                 </p>
               ) : (
-                <p className="text-sm text-muted">
-                  You will be redirected to Stripe Checkout to enter payment details securely. Card information is never
-                  collected in ordinary custom text fields.
-                </p>
+                <p className="text-sm text-muted">Loading secure payment form…</p>
               )}
             </section>
           )}
@@ -234,6 +274,13 @@ export function CheckoutForm() {
           {step === 5 && (
             <section className="space-y-4 rounded-2xl border border-border bg-white p-5">
               <h2 className="font-heading text-xl font-bold">Order review</h2>
+              {squareReady && (
+                <p className="rounded-xl bg-mint px-3 py-2 text-sm text-grocery">
+                  {squareSourceId
+                    ? "Card details secured on this page. Confirm below to charge — no redirect to Square."
+                    : "Go back to Payment and enter your card before paying."}
+                </p>
+              )}
               <div className="space-y-2 text-sm">
                 <p>
                   <strong>Email:</strong> {values.customer.email}
@@ -297,7 +344,14 @@ export function CheckoutForm() {
 
           <div className="flex flex-wrap gap-3">
             {step > 0 && (
-              <Button type="button" variant="secondary" onClick={() => setStep((s) => s - 1)}>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => {
+                  if (step === 5) setSquareSourceId(null);
+                  setStep((s) => s - 1);
+                }}
+              >
                 Back
               </Button>
             )}
@@ -313,7 +367,24 @@ export function CheckoutForm() {
                     [],
                   ];
                   const valid = await form.trigger(fieldsByStep[step] as never);
-                  if (valid) setStep((s) => s + 1);
+                  if (!valid) return;
+
+                  if (step === 4 && squareReady) {
+                    try {
+                      setError(null);
+                      if (!squareCardRef.current) {
+                        throw new Error("Card form is still loading. Wait a moment, then try again.");
+                      }
+                      const token = await squareCardRef.current.tokenize();
+                      setSquareSourceId(token);
+                    } catch (err) {
+                      setError(err instanceof Error ? err.message : "Unable to validate card details");
+                      return;
+                    }
+                  }
+
+                  if (step < 4) setSquareSourceId(null);
+                  setStep((s) => s + 1);
                 }}
               >
                 Continue
@@ -328,10 +399,10 @@ export function CheckoutForm() {
       </div>
 
       <aside className="h-fit rounded-2xl border border-border bg-white p-5 lg:sticky lg:top-28">
-        <h2 className="font-heading text-xl font-bold text-grocery">Summary</h2>
-        <ul className="mt-4 space-y-3">
+        <h2 className="font-heading text-xl font-bold text-grocery">Order summary</h2>
+        <ul className="mt-4 space-y-3 text-sm">
           {lines.map(({ item, product }) => (
-            <li key={product.id} className="flex justify-between gap-3 text-sm">
+            <li key={product.id} className="flex justify-between gap-3">
               <span>
                 {item.quantity} × {product.title}
               </span>
@@ -356,8 +427,8 @@ export function CheckoutForm() {
             <span>Total</span>
             <span className="tabular-nums">{formatPrice(totals.total)}</span>
           </div>
-          <p className="pt-2 text-xs text-muted">{storeConfig.tax.message}</p>
         </div>
+        <p className="mt-3 text-xs text-muted">{storeConfig.tax.message}</p>
       </aside>
     </div>
   );
@@ -376,7 +447,7 @@ function Field({
     <label className="block text-sm">
       <span className="mb-1 block font-medium">{label}</span>
       {children}
-      {error && <span className="mt-1 block text-error">{error}</span>}
+      {error && <span className="text-error">{error}</span>}
     </label>
   );
 }
@@ -385,26 +456,22 @@ function AddressFields({
   form,
   prefix,
 }: {
-  form: {
-    register: ReturnType<typeof useForm<CheckoutFormValues>>["register"];
-    formState: ReturnType<typeof useForm<CheckoutFormValues>>["formState"];
-  };
+  form: ReturnType<typeof useForm<CheckoutFormValues>>;
   prefix: "shipping" | "billing";
 }) {
-  const errors = form.formState.errors[prefix];
   return (
-    <>
-      <Field label="Address line 1" error={errors?.line1?.message}>
+    <div className="space-y-4">
+      <Field label="Address line 1" error={form.formState.errors[prefix]?.line1?.message}>
         <Input {...form.register(`${prefix}.line1`)} />
       </Field>
-      <Field label="Address line 2 (optional)" error={errors?.line2?.message}>
+      <Field label="Address line 2">
         <Input {...form.register(`${prefix}.line2`)} />
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="City" error={errors?.city?.message}>
+        <Field label="City" error={form.formState.errors[prefix]?.city?.message}>
           <Input {...form.register(`${prefix}.city`)} />
         </Field>
-        <Field label="State" error={errors?.state?.message}>
+        <Field label="State" error={form.formState.errors[prefix]?.state?.message}>
           <select className="h-11 w-full rounded-xl border border-border bg-white px-3" {...form.register(`${prefix}.state`)}>
             {usStates.map((state) => (
               <option key={state} value={state}>
@@ -415,13 +482,13 @@ function AddressFields({
         </Field>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="ZIP code" error={errors?.zip?.message}>
+        <Field label="ZIP" error={form.formState.errors[prefix]?.zip?.message}>
           <Input {...form.register(`${prefix}.zip`)} />
         </Field>
-        <Field label="Country" error={errors?.country?.message}>
-          <Input {...form.register(`${prefix}.country`)} readOnly />
+        <Field label="Country" error={form.formState.errors[prefix]?.country?.message}>
+          <Input {...form.register(`${prefix}.country`)} />
         </Field>
       </div>
-    </>
+    </div>
   );
 }

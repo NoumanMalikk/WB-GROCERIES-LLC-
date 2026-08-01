@@ -14,12 +14,21 @@ export const metadata = buildPageMetadata({
 export default async function CheckoutSuccessPage({
   searchParams,
 }: {
-  searchParams: Promise<{ reference?: string; email?: string; demo?: string; session_id?: string }>;
+  searchParams: Promise<{
+    reference?: string;
+    email?: string;
+    demo?: string;
+    session_id?: string;
+    paymentId?: string;
+    paid?: string;
+  }>;
 }) {
   const params = await searchParams;
   const demo = params.demo === "1";
   const reference = params.reference;
   const email = params.email;
+  const paymentId = params.paymentId;
+  const paidHint = params.paid === "1";
 
   if (!reference || !email) {
     return (
@@ -39,7 +48,14 @@ export default async function CheckoutSuccessPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <CheckoutSuccessClient demo={demo} order={order} reference={reference} email={email} />
+      <CheckoutSuccessClient
+        demo={demo}
+        order={order}
+        reference={reference}
+        email={email}
+        paymentId={paymentId}
+        paidHint={paidHint}
+      />
       {order && (
         <div className="mt-8 rounded-2xl border border-border bg-white p-6">
           <h2 className="font-heading text-xl font-bold text-grocery">Order summary</h2>

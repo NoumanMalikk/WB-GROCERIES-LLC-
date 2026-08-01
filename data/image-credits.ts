@@ -3,7 +3,7 @@ import type { ImageCredit } from "./types";
 export const imageCredits: ImageCredit[] = [
   {
     "productId": "wbg-001",
-    "localFilename": "/products/quaker-old-fashioned-oats-42oz/main.png",
+    "localFilename": "/products/quaker-old-fashioned-oats-42oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Quaker",
     "supplierOrDistributor": null,
@@ -20,7 +20,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-001",
-    "localFilename": "/products/quaker-old-fashioned-oats-42oz/angle.png",
+    "localFilename": "/products/quaker-old-fashioned-oats-42oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Quaker",
     "supplierOrDistributor": null,
@@ -37,7 +37,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-002",
-    "localFilename": "/products/cheerios-original-cereal-18oz/main.png",
+    "localFilename": "/products/cheerios-original-cereal-18oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "General Mills",
     "supplierOrDistributor": null,
@@ -54,7 +54,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-002",
-    "localFilename": "/products/cheerios-original-cereal-18oz/angle.png",
+    "localFilename": "/products/cheerios-original-cereal-18oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "General Mills",
     "supplierOrDistributor": null,
@@ -71,7 +71,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-003",
-    "localFilename": "/products/kelloggs-frosted-flakes-17-3oz/main.png",
+    "localFilename": "/products/kelloggs-frosted-flakes-17-3oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "WK Kellogg Co",
     "supplierOrDistributor": null,
@@ -88,7 +88,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-003",
-    "localFilename": "/products/kelloggs-frosted-flakes-17-3oz/angle.png",
+    "localFilename": "/products/kelloggs-frosted-flakes-17-3oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "WK Kellogg Co",
     "supplierOrDistributor": null,
@@ -105,7 +105,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-004",
-    "localFilename": "/products/nature-valley-oats-honey-12-bars/main.png",
+    "localFilename": "/products/nature-valley-oats-honey-12-bars/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "General Mills",
     "supplierOrDistributor": null,
@@ -122,7 +122,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-004",
-    "localFilename": "/products/nature-valley-oats-honey-12-bars/angle.png",
+    "localFilename": "/products/nature-valley-oats-honey-12-bars/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "General Mills",
     "supplierOrDistributor": null,
@@ -139,7 +139,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-005",
-    "localFilename": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.png",
+    "localFilename": "/products/folgers-classic-roast-ground-coffee-25-9oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "The Folgers Coffee Company",
     "supplierOrDistributor": null,
@@ -156,7 +156,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-005",
-    "localFilename": "/products/folgers-classic-roast-ground-coffee-25-9oz/angle.png",
+    "localFilename": "/products/folgers-classic-roast-ground-coffee-25-9oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "The Folgers Coffee Company",
     "supplierOrDistributor": null,
@@ -173,7 +173,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-006",
-    "localFilename": "/products/lipton-black-tea-bags-100-count/main.png",
+    "localFilename": "/products/lipton-black-tea-bags-100-count/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Unilever",
     "supplierOrDistributor": null,
@@ -190,7 +190,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-006",
-    "localFilename": "/products/lipton-black-tea-bags-100-count/angle.png",
+    "localFilename": "/products/lipton-black-tea-bags-100-count/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Unilever",
     "supplierOrDistributor": null,
@@ -207,7 +207,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-007",
-    "localFilename": "/products/barilla-spaghetti-16oz-two-pack/main.png",
+    "localFilename": "/products/barilla-spaghetti-16oz-two-pack/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Barilla",
     "supplierOrDistributor": null,
@@ -224,7 +224,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-007",
-    "localFilename": "/products/barilla-spaghetti-16oz-two-pack/angle.png",
+    "localFilename": "/products/barilla-spaghetti-16oz-two-pack/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Barilla",
     "supplierOrDistributor": null,
@@ -241,7 +241,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-008",
-    "localFilename": "/products/prego-traditional-italian-sauce-24oz/main.png",
+    "localFilename": "/products/prego-traditional-italian-sauce-24oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Campbell Soup Company",
     "supplierOrDistributor": null,
@@ -258,7 +258,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-008",
-    "localFilename": "/products/prego-traditional-italian-sauce-24oz/angle.png",
+    "localFilename": "/products/prego-traditional-italian-sauce-24oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Campbell Soup Company",
     "supplierOrDistributor": null,
@@ -275,7 +275,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-009",
-    "localFilename": "/products/kraft-original-macaroni-cheese-five-pack/main.png",
+    "localFilename": "/products/kraft-original-macaroni-cheese-five-pack/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Kraft Heinz",
     "supplierOrDistributor": null,
@@ -292,7 +292,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-009",
-    "localFilename": "/products/kraft-original-macaroni-cheese-five-pack/angle.png",
+    "localFilename": "/products/kraft-original-macaroni-cheese-five-pack/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Kraft Heinz",
     "supplierOrDistributor": null,
@@ -309,7 +309,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-010",
-    "localFilename": "/products/jif-creamy-peanut-butter-16oz/main.png",
+    "localFilename": "/products/jif-creamy-peanut-butter-16oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "The J.M. Smucker Company",
     "supplierOrDistributor": null,
@@ -326,7 +326,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-010",
-    "localFilename": "/products/jif-creamy-peanut-butter-16oz/angle.png",
+    "localFilename": "/products/jif-creamy-peanut-butter-16oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "The J.M. Smucker Company",
     "supplierOrDistributor": null,
@@ -343,7 +343,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-011",
-    "localFilename": "/products/smuckers-strawberry-preserves-18oz/main.png",
+    "localFilename": "/products/smuckers-strawberry-preserves-18oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "The J.M. Smucker Company",
     "supplierOrDistributor": null,
@@ -360,7 +360,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-011",
-    "localFilename": "/products/smuckers-strawberry-preserves-18oz/angle.png",
+    "localFilename": "/products/smuckers-strawberry-preserves-18oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "The J.M. Smucker Company",
     "supplierOrDistributor": null,
@@ -377,7 +377,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-012",
-    "localFilename": "/products/heinz-tomato-ketchup-32oz/main.png",
+    "localFilename": "/products/heinz-tomato-ketchup-32oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Kraft Heinz",
     "supplierOrDistributor": null,
@@ -394,7 +394,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-012",
-    "localFilename": "/products/heinz-tomato-ketchup-32oz/angle.png",
+    "localFilename": "/products/heinz-tomato-ketchup-32oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Kraft Heinz",
     "supplierOrDistributor": null,
@@ -411,7 +411,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-013",
-    "localFilename": "/products/hellmanns-real-mayonnaise-30oz/main.png",
+    "localFilename": "/products/hellmanns-real-mayonnaise-30oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Unilever",
     "supplierOrDistributor": null,
@@ -428,7 +428,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-013",
-    "localFilename": "/products/hellmanns-real-mayonnaise-30oz/angle.png",
+    "localFilename": "/products/hellmanns-real-mayonnaise-30oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Unilever",
     "supplierOrDistributor": null,
@@ -445,7 +445,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-014",
-    "localFilename": "/products/bushs-original-baked-beans-28oz/main.png",
+    "localFilename": "/products/bushs-original-baked-beans-28oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Bush Brothers & Company",
     "supplierOrDistributor": null,
@@ -462,7 +462,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-014",
-    "localFilename": "/products/bushs-original-baked-beans-28oz/angle.png",
+    "localFilename": "/products/bushs-original-baked-beans-28oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Bush Brothers & Company",
     "supplierOrDistributor": null,
@@ -479,7 +479,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-015",
-    "localFilename": "/products/del-monte-whole-kernel-corn-four-pack/main.png",
+    "localFilename": "/products/del-monte-whole-kernel-corn-four-pack/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Del Monte Foods",
     "supplierOrDistributor": null,
@@ -496,7 +496,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-015",
-    "localFilename": "/products/del-monte-whole-kernel-corn-four-pack/angle.png",
+    "localFilename": "/products/del-monte-whole-kernel-corn-four-pack/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Del Monte Foods",
     "supplierOrDistributor": null,
@@ -513,7 +513,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-016",
-    "localFilename": "/products/starkist-chunk-light-tuna-four-pack/main.png",
+    "localFilename": "/products/starkist-chunk-light-tuna-four-pack/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "StarKist Co.",
     "supplierOrDistributor": null,
@@ -530,7 +530,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-016",
-    "localFilename": "/products/starkist-chunk-light-tuna-four-pack/angle.png",
+    "localFilename": "/products/starkist-chunk-light-tuna-four-pack/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "StarKist Co.",
     "supplierOrDistributor": null,
@@ -547,7 +547,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-017",
-    "localFilename": "/products/oreo-original-cookies-14-3oz/main.png",
+    "localFilename": "/products/oreo-original-cookies-14-3oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Mondelēz International",
     "supplierOrDistributor": null,
@@ -564,7 +564,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-017",
-    "localFilename": "/products/oreo-original-cookies-14-3oz/angle.png",
+    "localFilename": "/products/oreo-original-cookies-14-3oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Mondelēz International",
     "supplierOrDistributor": null,
@@ -581,7 +581,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-018",
-    "localFilename": "/products/ritz-original-crackers-13-7oz/main.png",
+    "localFilename": "/products/ritz-original-crackers-13-7oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Mondelēz International",
     "supplierOrDistributor": null,
@@ -598,7 +598,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-018",
-    "localFilename": "/products/ritz-original-crackers-13-7oz/angle.png",
+    "localFilename": "/products/ritz-original-crackers-13-7oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Mondelēz International",
     "supplierOrDistributor": null,
@@ -615,7 +615,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-019",
-    "localFilename": "/products/lays-classic-potato-chips-8oz/main.png",
+    "localFilename": "/products/lays-classic-potato-chips-8oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Frito-Lay / PepsiCo",
     "supplierOrDistributor": null,
@@ -632,7 +632,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-019",
-    "localFilename": "/products/lays-classic-potato-chips-8oz/angle.png",
+    "localFilename": "/products/lays-classic-potato-chips-8oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Frito-Lay / PepsiCo",
     "supplierOrDistributor": null,
@@ -649,7 +649,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-020",
-    "localFilename": "/products/doritos-nacho-cheese-9-25oz/main.png",
+    "localFilename": "/products/doritos-nacho-cheese-9-25oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Frito-Lay / PepsiCo",
     "supplierOrDistributor": null,
@@ -666,7 +666,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-020",
-    "localFilename": "/products/doritos-nacho-cheese-9-25oz/angle.png",
+    "localFilename": "/products/doritos-nacho-cheese-9-25oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Frito-Lay / PepsiCo",
     "supplierOrDistributor": null,
@@ -683,7 +683,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-021",
-    "localFilename": "/products/coca-cola-original-12-pack/main.png",
+    "localFilename": "/products/coca-cola-original-12-pack/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "The Coca-Cola Company",
     "supplierOrDistributor": null,
@@ -700,7 +700,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-021",
-    "localFilename": "/products/coca-cola-original-12-pack/angle.png",
+    "localFilename": "/products/coca-cola-original-12-pack/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "The Coca-Cola Company",
     "supplierOrDistributor": null,
@@ -717,7 +717,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-022",
-    "localFilename": "/products/gatorade-variety-pack-12-count/main.png",
+    "localFilename": "/products/gatorade-variety-pack-12-count/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "PepsiCo",
     "supplierOrDistributor": null,
@@ -734,7 +734,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-022",
-    "localFilename": "/products/gatorade-variety-pack-12-count/angle.png",
+    "localFilename": "/products/gatorade-variety-pack-12-count/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "PepsiCo",
     "supplierOrDistributor": null,
@@ -751,7 +751,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-023",
-    "localFilename": "/products/tide-simply-clean-fresh-84oz/main.png",
+    "localFilename": "/products/tide-simply-clean-fresh-84oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Procter & Gamble",
     "supplierOrDistributor": null,
@@ -768,7 +768,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-023",
-    "localFilename": "/products/tide-simply-clean-fresh-84oz/angle.png",
+    "localFilename": "/products/tide-simply-clean-fresh-84oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Procter & Gamble",
     "supplierOrDistributor": null,
@@ -785,7 +785,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-024",
-    "localFilename": "/products/dawn-ultra-dishwashing-liquid-18oz/main.png",
+    "localFilename": "/products/dawn-ultra-dishwashing-liquid-18oz/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Procter & Gamble",
     "supplierOrDistributor": null,
@@ -802,7 +802,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-024",
-    "localFilename": "/products/dawn-ultra-dishwashing-liquid-18oz/angle.png",
+    "localFilename": "/products/dawn-ultra-dishwashing-liquid-18oz/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Procter & Gamble",
     "supplierOrDistributor": null,
@@ -819,7 +819,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-025",
-    "localFilename": "/products/bounty-essentials-six-double-rolls/main.png",
+    "localFilename": "/products/bounty-essentials-six-double-rolls/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "Procter & Gamble",
     "supplierOrDistributor": null,
@@ -836,7 +836,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-025",
-    "localFilename": "/products/bounty-essentials-six-double-rolls/angle.png",
+    "localFilename": "/products/bounty-essentials-six-double-rolls/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "Procter & Gamble",
     "supplierOrDistributor": null,
@@ -853,7 +853,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-026",
-    "localFilename": "/products/glad-forceflexplus-13-gallon-40-count/main.png",
+    "localFilename": "/products/glad-forceflexplus-13-gallon-40-count/main.webp",
     "originalSourceUrl": null,
     "manufacturer": "The Clorox Company",
     "supplierOrDistributor": null,
@@ -870,7 +870,7 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     "productId": "wbg-026",
-    "localFilename": "/products/glad-forceflexplus-13-gallon-40-count/angle.png",
+    "localFilename": "/products/glad-forceflexplus-13-gallon-40-count/angle.webp",
     "originalSourceUrl": null,
     "manufacturer": "The Clorox Company",
     "supplierOrDistributor": null,

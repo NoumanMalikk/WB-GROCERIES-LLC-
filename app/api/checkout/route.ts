@@ -3,10 +3,10 @@ import { checkoutSchema } from "@/lib/validation/checkout";
 import { getProductById } from "@/data/products";
 import { getActivePaymentProvider, getShippingMethods, isDemoCheckout } from "@/lib/checkout/demo";
 import { computeOrderTotals } from "@/lib/checkout/totals";
-import { createOrder } from "@/lib/orders/store";
+import { createOrder, markOrderPaid } from "@/lib/orders/store";
 import { sendOrderConfirmationEmail } from "@/lib/email/send";
 import { getStripeServer } from "@/lib/stripe/server";
-import { createSquareCheckoutUrl } from "@/lib/square/checkout";
+import { chargeSquareCardPayment } from "@/lib/square/payments";
 import { getSiteUrl, storeConfig } from "@/data/store-config";
 import { rateLimit } from "@/lib/utilities/rate-limit";
 import { lineTotal } from "@/lib/pricing";
@@ -15,6 +15,7 @@ import { z } from "zod";
 const bodySchema = checkoutSchema.and(
   z.object({
     items: z.array(z.object({ productId: z.string(), quantity: z.number().int().positive() })).min(1),
+    sourceId: z.string().min(8).optional(),
   }),
 );
 
@@ -149,12 +150,23 @@ export async function POST(request: Request) {
 
   try {
     if (provider === "square") {
-      const checkoutUrl = await createSquareCheckoutUrl(order);
+      if (!data.sourceId) {
+        return NextResponse.json(
+          { error: "Card details are required. Enter your card on the Payment step, then pay." },
+          { status: 400 },
+        );
+      }
+
+      const paymentId = await chargeSquareCardPayment(order, data.sourceId);
+      const paid = markOrderPaid(order.reference) ?? order;
+      await sendOrderConfirmationEmail(paid);
+
       return NextResponse.json({
         demo: false,
         provider: "square",
+        paid: true,
         reference: order.reference,
-        checkoutUrl,
+        paymentId,
       });
     }
 

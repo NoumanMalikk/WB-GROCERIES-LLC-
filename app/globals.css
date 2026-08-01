@@ -71,6 +71,45 @@ h6 {
   font-variant-numeric: tabular-nums;
 }
 
+/* Horizontal category rail: scrollable on small screens without a visible track. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes wb-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wb-menu-in {
+  animation: wb-menu-in 160ms ease-out;
+}
+
+@keyframes wb-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.wb-float {
+  animation: wb-float 6s ease-in-out infinite;
+}
+
 .product-card-brand {
   min-height: 1rem;
 }

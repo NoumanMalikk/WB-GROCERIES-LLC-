@@ -88,7 +88,7 @@ export function ProductDetail({
                 onClick={() => setActiveImage(index)}
                 aria-label={`View image ${index + 1}`}
               >
-                <Image src={img.src} alt="" fill className="object-contain p-2" />
+                <Image src={img.src} alt="" fill sizes="80px" className="object-contain p-2" />
               </button>
             ))}
           </div>
@@ -230,7 +230,7 @@ export function ProductDetail({
             Close
           </button>
           <div className="relative h-[80vh] w-full max-w-3xl">
-            <Image src={image.src} alt={image.alt} fill className="object-contain" />
+            <Image src={image.src} alt={image.alt} fill sizes="(max-width: 768px) 92vw, 768px" className="object-contain" />
           </div>
         </div>
       )}

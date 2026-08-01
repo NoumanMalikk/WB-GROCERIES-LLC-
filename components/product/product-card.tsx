@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import type { ProductCardData } from "@/data/catalog";
@@ -22,14 +23,12 @@ export function ProductCard({ product }: { product: ProductCardData }) {
       <div className="relative shrink-0">
         <Link href={`/product/${product.slug}`} className="block p-3">
           <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white ring-1 ring-border/60">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={product.image}
               alt={product.imageAlt}
-              width={400}
-              height={400}
-              className="h-full w-full object-contain p-4 transition duration-300 group-hover:scale-[1.03]"
-              loading="lazy"
+              fill
+              sizes="(max-width: 768px) 45vw, (max-width: 1280px) 30vw, 22vw"
+              className="object-contain p-4 transition duration-300 group-hover:scale-[1.03]"
             />
           </div>
         </Link>

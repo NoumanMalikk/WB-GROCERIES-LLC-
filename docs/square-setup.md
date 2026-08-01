@@ -7,7 +7,8 @@
 | `SQUARE_APPLICATION_ID` | Developer Dashboard → your app → **Credentials** → Application ID | Copy also to `NEXT_PUBLIC_SQUARE_APPLICATION_ID` |
 | `NEXT_PUBLIC_SQUARE_APPLICATION_ID` | Same Application ID as above | Yes (safe in browser) |
 | `SQUARE_ACCESS_TOKEN` | Credentials → **Sandbox Access Token** (test) or **Production Access Token** (live) | **SECRET — server only** |
-| `SQUARE_LOCATION_ID` | Developer Dashboard → **Locations** (or Square Dashboard → Account & Settings → Business → Locations) → Location ID | Server only |
+| `SQUARE_LOCATION_ID` | Developer Dashboard → **Locations** (or Square Dashboard → Account & Settings → Business → Locations) → Location ID | Copy also to `NEXT_PUBLIC_SQUARE_LOCATION_ID` |
+| `NEXT_PUBLIC_SQUARE_LOCATION_ID` | Same Location ID as above | Yes (needed for on-page card form) |
 | `SQUARE_ENVIRONMENT` | `sandbox` for testing, `production` for live cards | Server only |
 | `SQUARE_WEBHOOK_SIGNATURE_KEY` | Developer Dashboard → your app → **Webhooks** → create subscription → Signature Key | **SECRET — server only** |
 | `NEXT_PUBLIC_STORE_MODE` | Set `demo` until tests pass, then `live` | Public |
@@ -20,7 +21,7 @@
 3. Open the app → **Credentials**:
    - Copy **Sandbox Application ID** → paste as both `SQUARE_APPLICATION_ID` and `NEXT_PUBLIC_SQUARE_APPLICATION_ID`
    - Copy **Sandbox Access Token** → paste as `SQUARE_ACCESS_TOKEN`
-4. Open **Locations** and copy the **Location ID** → `SQUARE_LOCATION_ID`
+4. Open **Locations** and copy the **Location ID** → paste as both `SQUARE_LOCATION_ID` and `NEXT_PUBLIC_SQUARE_LOCATION_ID`
 5. Set `SQUARE_ENVIRONMENT=sandbox`
 6. Open **Webhooks** → **Add subscription**:
    - URL: `https://www.wbgroceries.com/api/square/webhook`
@@ -39,7 +40,7 @@
 ## Security rules already built into this site
 
 - Access token and webhook signature key are **server-only** (never exposed to the browser).
-- Customers pay on **Square-hosted checkout** (card data does not touch our form fields).
+- Customers enter card details **on your checkout page** via Square Web Payments SDK (card data is tokenized by Square; raw PAN never hits our servers).
 - Webhook requests must pass Square HMAC signature verification.
 - Checkout API is rate-limited.
 - Demo mode blocks live charging until `NEXT_PUBLIC_STORE_MODE=live` and Square keys are present.

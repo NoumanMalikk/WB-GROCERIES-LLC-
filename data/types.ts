@@ -81,6 +81,10 @@ export interface NavLink {
 
 export interface MegaMenuSection {
   title: string;
+  /** Landing page for the whole section heading. */
+  href: string;
+  /** Category whose packshot illustrates the section in the desktop mega menu. */
+  imageSlug: ProductCategorySlug;
   links: NavLink[];
 }
 
