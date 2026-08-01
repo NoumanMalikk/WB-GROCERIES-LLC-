@@ -45,13 +45,14 @@ Demonstration mode is the default when Stripe/Supabase/Resend credentials are ab
 - [Product editing](docs/product-editing.md)
 - [Image sourcing](docs/image-sourcing.md)
 - [Payment setup](docs/payment-setup.md)
+- [Square setup](docs/square-setup.md)
 - [Launch checklist](docs/launch-checklist.md)
 
 ## Important launch notes
 
 1. Replace every product image placeholder with authorized exact packshots.
 2. Confirm supplier, size, pack count, price, weight, ingredients, nutrition and allergens with the owner.
-3. Connect Stripe, tax, shipping, Resend and optional Supabase before accepting real orders.
+3. Connect Square (primary), tax, shipping, Resend and optional Supabase before accepting real orders.
 4. Have legal templates reviewed before launch.
 
 Legal business name used in footer copyright, policies, checkout documentation, emails and organization schema: **WB GROCERIES LLC**.

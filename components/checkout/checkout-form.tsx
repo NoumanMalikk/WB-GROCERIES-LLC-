@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, type CheckoutFormValues, usStates } from "@/lib/validation/checkout";
 import { useCartStore } from "@/lib/cart/store";
 import { getCardById } from "@/data/catalog";
-import { getShippingMethods, isDemoCheckout } from "@/lib/checkout/demo";
+import { getActivePaymentProvider, getShippingMethods, isDemoCheckout } from "@/lib/checkout/demo";
 import { computeOrderTotals } from "@/lib/checkout/totals";
 import { formatPrice } from "@/lib/utilities/format";
 import { Input } from "@/components/ui/input";
@@ -25,6 +25,7 @@ export function CheckoutForm() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const demo = isDemoCheckout();
+  const provider = getActivePaymentProvider();
   const methods = getShippingMethods();
 
   const form = useForm<CheckoutFormValues>({
@@ -196,8 +197,13 @@ export function CheckoutForm() {
               <h2 className="font-heading text-xl font-bold">Payment</h2>
               {demo ? (
                 <p className="text-sm text-muted">
-                  In demonstration mode, WB Groceries does not collect card numbers through this form. When Stripe is
-                  connected, payment is handled by Stripe Checkout or the Stripe Payment Element.
+                  Checkout is in demonstration mode. Card details are not collected here. When Square is connected and
+                  live mode is enabled, customers are redirected to Square&apos;s secure hosted checkout.
+                </p>
+              ) : provider === "square" ? (
+                <p className="text-sm text-muted">
+                  You will be redirected to Square Checkout to enter payment details securely. Card numbers are never
+                  collected in ordinary text fields on this website.
                 </p>
               ) : (
                 <p className="text-sm text-muted">

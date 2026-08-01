@@ -24,7 +24,7 @@ export function CheckoutSuccessClient({
         </p>
         <p className="mt-2 text-sm text-muted">Email on file: {email}</p>
         <p className="mt-4 text-sm">
-          When Stripe and order services are connected, verified payments will show a paid confirmation here.
+          When Square (or Stripe) and order services are connected, verified payments will show a paid confirmation here.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link href="/shop" className="rounded-xl bg-gold px-5 py-3 font-semibold text-forest">

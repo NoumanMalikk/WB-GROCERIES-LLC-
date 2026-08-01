@@ -72,3 +72,18 @@ export function getOrderByReferenceAndEmail(reference: string, email: string): O
 export function getOrderByReference(reference: string): OrderRecord | null {
   return orders.get(reference.trim().toUpperCase()) ?? null;
 }
+
+export function markOrderPaid(reference: string): OrderRecord | null {
+  const existing = getOrderByReference(reference);
+  if (!existing) return null;
+  if (existing.paymentStatus === "paid") return existing;
+
+  const updated: OrderRecord = {
+    ...existing,
+    paymentStatus: "paid",
+    fulfillmentStatus: "payment_received",
+    demo: false,
+  };
+  orders.set(existing.reference.toUpperCase(), updated);
+  return updated;
+}

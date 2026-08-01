@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getStripeServer } from "@/lib/stripe/server";
-import { getOrderByReference, createOrder } from "@/lib/orders/store";
+import { getOrderByReference, markOrderPaid } from "@/lib/orders/store";
 import { sendOrderConfirmationEmail } from "@/lib/email/send";
 import type Stripe from "stripe";
 
@@ -30,14 +30,8 @@ export async function POST(request: Request) {
     if (reference) {
       const existing = getOrderByReference(reference);
       if (existing && existing.paymentStatus !== "paid") {
-        const paid = createOrder({
-          ...existing,
-          reference: existing.reference,
-          paymentStatus: "paid",
-          fulfillmentStatus: "payment_received",
-          demo: false,
-        });
-        await sendOrderConfirmationEmail(paid);
+        const paid = markOrderPaid(reference);
+        if (paid) await sendOrderConfirmationEmail(paid);
       }
     }
   }

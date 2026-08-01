@@ -1,11 +1,31 @@
 # Payment setup
 
-1. Create a Stripe account.
-2. Add `STRIPE_SECRET_KEY` and `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`.
-3. Add `STRIPE_WEBHOOK_SECRET` for `/api/stripe/webhook`.
-4. Keep `NEXT_PUBLIC_STORE_MODE=demo` until end-to-end payment tests pass.
-5. Configure Stripe Tax or another tax provider; do not hardcode one rate for every customer.
-6. Configure shipping methods in `data/store-config.ts` or a connected provider.
-7. Test checkout, webhook verification, order creation, success page and confirmation email.
+Primary provider for this storefront: **Square** (hosted Payment Link checkout).
 
-In demo mode the store never collects card numbers through custom fields and never marks an order paid.
+See the full walkthrough: [square-setup.md](./square-setup.md)
+
+## Quick path
+
+1. Create a Square Developer app.
+2. Add these env vars (Vercel or `.env.local`):
+   - `SQUARE_APPLICATION_ID`
+   - `NEXT_PUBLIC_SQUARE_APPLICATION_ID` (same value)
+   - `SQUARE_ACCESS_TOKEN` (secret)
+   - `SQUARE_LOCATION_ID`
+   - `SQUARE_ENVIRONMENT=sandbox` (then `production`)
+   - `SQUARE_WEBHOOK_SIGNATURE_KEY` (secret)
+   - `NEXT_PUBLIC_SITE_URL=https://your-domain`
+   - Keep `NEXT_PUBLIC_STORE_MODE=demo` until sandbox tests pass, then `live`
+3. Webhook endpoint: `https://your-domain/api/square/webhook`  
+   Events: `payment.updated`, `order.updated`
+4. Redeploy and run a sandbox checkout test.
+5. Switch to production credentials + `SQUARE_ENVIRONMENT=production` + `NEXT_PUBLIC_STORE_MODE=live`.
+
+## Security
+
+- Never commit secrets.
+- Never put `SQUARE_ACCESS_TOKEN` or `SQUARE_WEBHOOK_SIGNATURE_KEY` in `NEXT_PUBLIC_*` vars.
+- Card data is collected on Square’s hosted page, not in custom site inputs.
+- Webhooks reject unsigned / invalid signatures.
+
+Stripe remains an optional fallback if Square is not configured and Stripe keys are present.
