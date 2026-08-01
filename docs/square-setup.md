@@ -23,7 +23,7 @@
 4. Open **Locations** and copy the **Location ID** → `SQUARE_LOCATION_ID`
 5. Set `SQUARE_ENVIRONMENT=sandbox`
 6. Open **Webhooks** → **Add subscription**:
-   - URL: `https://wb-groceries-llc.vercel.app/api/square/webhook`
+   - URL: `https://www.wbgroceries.com/api/square/webhook`
    - Events: at least `payment.updated` and `order.updated`
    - Copy the **Signature Key** → `SQUARE_WEBHOOK_SIGNATURE_KEY`
 7. Put all values in **Vercel → Project → Settings → Environment Variables** (Production + Preview), then Redeploy.
