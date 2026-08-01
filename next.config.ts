@@ -8,10 +8,13 @@ const nextConfig: NextConfig = {
   images: {
     // Vercel's image optimizer is metered and returns 402
     // (OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED) on this project's plan, which
-    // breaks every /_next/image request. Serve the assets directly instead:
-    // scripts/optimize-images.mjs already ships them as right-sized WebP, so
-    // there is nothing left for the optimizer to do.
-    unoptimized: true,
+    // breaks every /_next/image request. Serve pre-generated sizes instead —
+    // see image-loader.ts and scripts/optimize-images.mjs. These two lists are
+    // the widths the loader can resolve; keep all three in sync.
+    loader: "custom",
+    loaderFile: "./image-loader.ts",
+    imageSizes: [64, 128, 256],
+    deviceSizes: [384, 640, 1000],
   },
   async headers() {
     return [
