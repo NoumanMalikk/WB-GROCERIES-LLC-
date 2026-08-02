@@ -28,7 +28,7 @@ test.describe("WB Groceries storefront", () => {
 
   test("shop lists products and filters breakfast", async ({ page }) => {
     await page.goto("/shop");
-    await expect(page.getByText(/Showing 26 products/i)).toBeVisible();
+    await expect(page.getByText(/Showing 68 products/i)).toBeVisible();
     await page.goto("/category/breakfast");
     await expect(page.getByRole("heading", { name: "Breakfast" })).toBeVisible();
   });
@@ -106,7 +106,7 @@ test.describe("WB Groceries storefront", () => {
     await expect(page.getByRole("dialog", { name: /Mobile navigation/i })).toBeVisible();
 
     await page.goto("/shop");
-    await expect(page.getByText(/Showing 26 products/i)).toBeVisible();
+    await expect(page.getByText(/Showing 68 products/i)).toBeVisible();
 
     const response = await page.goto("/admin");
     expect(response?.status()).toBeGreaterThanOrEqual(400);

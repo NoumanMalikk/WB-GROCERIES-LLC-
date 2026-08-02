@@ -8,7 +8,7 @@
 
 ## Demo mode behavior
 
-- All 26 products load
+- All 68 products load
 - Search, filters, sorting, wishlist and cart work
 - Checkout UI is testable
 - No real card collection

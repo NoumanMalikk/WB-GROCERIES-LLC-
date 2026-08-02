@@ -5,7 +5,7 @@
 - [ ] Add final support email
 - [ ] Confirm address visibility (`NEXT_PUBLIC_SHOW_FULL_ADDRESS`)
 - [ ] Confirm phone number
-- [ ] Confirm all 26 products
+- [ ] Confirm all 68 products
 - [ ] Confirm actual suppliers
 - [ ] Confirm exact product sizes
 - [ ] Confirm exact pack counts

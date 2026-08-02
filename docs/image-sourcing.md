@@ -1,6 +1,6 @@
 # Image sourcing — WB Groceries
 
-**Status:** All 26 products now use white-background studio packshots matched to catalogue titles. Prefer authorized manufacturer/distributor media before commercial launch.
+**Status:** All 68 products now use white-background studio packshots matched to catalogue titles. Prefer authorized manufacturer/distributor media before commercial launch.
 
 Authorized source priority:
 1. Verified wholesaler/distributor photographs
