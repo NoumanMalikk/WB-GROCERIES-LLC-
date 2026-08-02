@@ -12,10 +12,12 @@ export default function Page() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 prose-store">
       <h1 className="font-heading text-4xl font-bold text-grocery">Return and Refund Policy</h1>
-      <p className="mt-2 text-sm text-muted">Template for owner or qualified legal review before launch.</p>
       <div className="mt-8 space-y-4 text-sm leading-relaxed text-foreground">
         
-        <p>This return and refund policy is a template and requires owner or qualified legal review before launch.</p>
+        <p>
+          Returns are reviewed case by case. Contact support with your order reference if an item arrives damaged,
+          incorrect, or incomplete.
+        </p>
         <p>Eligibility varies by product type and condition. Potential exclusions include opened food, consumed food, packaging damaged after delivery, opened household cleaning products, used household products, returns outside the configured period, and clearly marked final-sale items.</p>
         <p>Separate review processes apply for damaged products, incorrect products, missing products, duplicate charges, cancelled orders and refunds.</p>
         <p>Refunds are not automatic before review. Not all sales are final in every circumstance; contact support with your order reference and supporting details.</p>

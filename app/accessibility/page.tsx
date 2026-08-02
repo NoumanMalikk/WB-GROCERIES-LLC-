@@ -12,7 +12,6 @@ export default function Page() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 prose-store">
       <h1 className="font-heading text-4xl font-bold text-grocery">Accessibility Statement</h1>
-      <p className="mt-2 text-sm text-muted">Template for owner or qualified legal review before launch.</p>
       <div className="mt-8 space-y-4 text-sm leading-relaxed text-foreground">
         
         <p>WB Groceries aims to provide a storefront that works for keyboard and screen-reader users and targets WCAG 2.2 AA practices.</p>
