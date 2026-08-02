@@ -7,19 +7,24 @@ export const usStates = [
 ] as const;
 
 export const customerInfoSchema = z.object({
-  email: z.string().email("Enter a valid email address"),
-  firstName: z.string().min(1, "First name is required").max(80),
-  lastName: z.string().min(1, "Last name is required").max(80),
-  phone: z.string().min(7, "Enter a valid phone number").max(30),
+  email: z.string().trim().email("Enter a valid email address"),
+  firstName: z.string().trim().min(1, "First name is required").max(80),
+  lastName: z.string().trim().min(1, "Last name is required").max(80),
+  phone: z
+    .string()
+    .trim()
+    .min(7, "Enter a valid phone number")
+    .max(30)
+    .refine((value) => value.replace(/\D/g, "").length >= 7, "Enter a valid phone number"),
 });
 
 export const addressSchema = z.object({
-  line1: z.string().min(1, "Address is required").max(120),
-  line2: z.string().max(120).optional().or(z.literal("")),
-  city: z.string().min(1, "City is required").max(80),
-  state: z.enum(usStates),
-  zip: z.string().regex(/^\d{5}(-\d{4})?$/, "Enter a valid ZIP code"),
-  country: z.literal("United States"),
+  line1: z.string().trim().min(1, "Address is required").max(120),
+  line2: z.string().trim().max(120).optional().or(z.literal("")),
+  city: z.string().trim().min(1, "City is required").max(80),
+  state: z.enum(usStates, { message: "Select a state" }),
+  zip: z.string().trim().regex(/^\d{5}(-\d{4})?$/, "Enter a valid US ZIP code"),
+  country: z.literal("United States", { message: "Shipping is available in the United States only" }),
 });
 
 export const checkoutSchema = z

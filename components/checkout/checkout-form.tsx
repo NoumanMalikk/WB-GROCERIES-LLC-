@@ -193,35 +193,59 @@ export function CheckoutForm() {
         <form className="mt-8 space-y-6" onSubmit={form.handleSubmit(onSubmit)} noValidate>
           {step === 0 && (
             <section className="space-y-4 rounded-2xl border border-border bg-white p-5">
-              <h2 className="font-heading text-xl font-bold">Customer information</h2>
-              <Field label="Email" error={form.formState.errors.customer?.email?.message}>
-                <Input type="email" {...form.register("customer.email")} />
+              <div className="flex items-end justify-between gap-3">
+                <h2 className="font-heading text-xl font-bold">Customer information</h2>
+                <p className="text-xs text-muted">
+                  <span className="text-error" aria-hidden>
+                    *
+                  </span>{" "}
+                  Required
+                </p>
+              </div>
+              <Field label="Email" required error={form.formState.errors.customer?.email?.message}>
+                <Input type="email" autoComplete="email" aria-required="true" {...form.register("customer.email")} />
               </Field>
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="First name" error={form.formState.errors.customer?.firstName?.message}>
-                  <Input {...form.register("customer.firstName")} />
+                <Field label="First name" required error={form.formState.errors.customer?.firstName?.message}>
+                  <Input autoComplete="given-name" aria-required="true" {...form.register("customer.firstName")} />
                 </Field>
-                <Field label="Last name" error={form.formState.errors.customer?.lastName?.message}>
-                  <Input {...form.register("customer.lastName")} />
+                <Field label="Last name" required error={form.formState.errors.customer?.lastName?.message}>
+                  <Input autoComplete="family-name" aria-required="true" {...form.register("customer.lastName")} />
                 </Field>
               </div>
-              <Field label="Phone" error={form.formState.errors.customer?.phone?.message}>
-                <Input {...form.register("customer.phone")} />
+              <Field label="Phone" required error={form.formState.errors.customer?.phone?.message}>
+                <Input type="tel" autoComplete="tel" aria-required="true" {...form.register("customer.phone")} />
               </Field>
             </section>
           )}
 
           {step === 1 && (
             <section className="space-y-4 rounded-2xl border border-border bg-white p-5">
-              <h2 className="font-heading text-xl font-bold">Shipping address</h2>
+              <div className="flex items-end justify-between gap-3">
+                <h2 className="font-heading text-xl font-bold">Shipping address</h2>
+                <p className="text-xs text-muted">
+                  <span className="text-error" aria-hidden>
+                    *
+                  </span>{" "}
+                  Required
+                </p>
+              </div>
               <AddressFields form={form} prefix="shipping" />
             </section>
           )}
 
           {step === 2 && (
             <section className="space-y-4 rounded-2xl border border-border bg-white p-5">
-              <h2 className="font-heading text-xl font-bold">Shipping method</h2>
-              <div className="space-y-3">
+              <div className="flex items-end justify-between gap-3">
+                <h2 className="font-heading text-xl font-bold">Shipping method</h2>
+                <p className="text-xs text-muted">
+                  <span className="text-error" aria-hidden>
+                    *
+                  </span>{" "}
+                  Required
+                </p>
+              </div>
+              <div className="space-y-3" role="radiogroup" aria-required="true" aria-label="Shipping method">
                 {methods.map((method) => (
                   <label key={method.id} className="flex cursor-pointer gap-3 rounded-xl border border-border p-3">
                     <input type="radio" value={method.id} {...form.register("shippingMethodId")} />
@@ -233,13 +257,26 @@ export function CheckoutForm() {
                   </label>
                 ))}
               </div>
+              {form.formState.errors.shippingMethodId?.message && (
+                <p className="text-sm text-error">{form.formState.errors.shippingMethodId.message}</p>
+              )}
               <p className="text-xs text-muted">{storeConfig.shipping.carrierEstimateText}</p>
             </section>
           )}
 
           {step === 3 && (
             <section className="space-y-4 rounded-2xl border border-border bg-white p-5">
-              <h2 className="font-heading text-xl font-bold">Billing address</h2>
+              <div className="flex items-end justify-between gap-3">
+                <h2 className="font-heading text-xl font-bold">Billing address</h2>
+                {!values.billingSameAsShipping && (
+                  <p className="text-xs text-muted">
+                    <span className="text-error" aria-hidden>
+                      *
+                    </span>{" "}
+                    Required
+                  </p>
+                )}
+              </div>
               <label className="flex items-center gap-2 text-sm">
                 <input type="checkbox" {...form.register("billingSameAsShipping")} />
                 Same as shipping address
@@ -308,8 +345,11 @@ export function CheckoutForm() {
                 ))}
               </ul>
               <label className="flex items-start gap-2 text-sm">
-                <input type="checkbox" {...form.register("termsAccepted")} />
+                <input type="checkbox" aria-required="true" {...form.register("termsAccepted")} />
                 <span>
+                  <span className="text-error" aria-hidden>
+                    *
+                  </span>{" "}
                   I accept the{" "}
                   <Link href="/terms" className="underline">
                     Terms and Conditions
@@ -320,8 +360,11 @@ export function CheckoutForm() {
                 <p className="text-sm text-error">{form.formState.errors.termsAccepted.message}</p>
               )}
               <label className="flex items-start gap-2 text-sm">
-                <input type="checkbox" {...form.register("privacyAcknowledged")} />
+                <input type="checkbox" aria-required="true" {...form.register("privacyAcknowledged")} />
                 <span>
+                  <span className="text-error" aria-hidden>
+                    *
+                  </span>{" "}
                   I acknowledge the{" "}
                   <Link href="/privacy" className="underline">
                     Privacy Policy
@@ -366,11 +409,24 @@ export function CheckoutForm() {
                     ["customer.email", "customer.firstName", "customer.lastName", "customer.phone"],
                     ["shipping.line1", "shipping.city", "shipping.state", "shipping.zip", "shipping.country"],
                     ["shippingMethodId"],
-                    ["billingSameAsShipping"],
+                    values.billingSameAsShipping
+                      ? ["billingSameAsShipping"]
+                      : [
+                          "billingSameAsShipping",
+                          "billing.line1",
+                          "billing.city",
+                          "billing.state",
+                          "billing.zip",
+                          "billing.country",
+                        ],
                     [],
                   ];
                   const valid = await form.trigger(fieldsByStep[step] as never);
-                  if (!valid) return;
+                  if (!valid) {
+                    setError("Please complete all required fields marked with * before continuing.");
+                    return;
+                  }
+                  setError(null);
 
                   if (step === 4 && squareReady) {
                     try {
@@ -393,7 +449,16 @@ export function CheckoutForm() {
                 {step === 4 && squareReady && !squareCardReady ? "Loading card…" : "Continue"}
               </Button>
             ) : (
-              <Button type="submit" disabled={submitting}>
+              <Button
+                type="submit"
+                disabled={submitting}
+                onClick={async () => {
+                  const valid = await form.trigger(["termsAccepted", "privacyAcknowledged"]);
+                  if (!valid) {
+                    setError("Please accept the required Terms and Privacy checkboxes before paying.");
+                  }
+                }}
+              >
                 {submitting ? "Processing..." : demo ? "Place demo order request" : "Pay securely"}
               </Button>
             )}
@@ -440,17 +505,31 @@ export function CheckoutForm() {
 function Field({
   label,
   error,
+  required,
   children,
 }: {
   label: string;
   error?: string;
+  required?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <label className="block text-sm">
-      <span className="mb-1 block font-medium">{label}</span>
+      <span className="mb-1 block font-medium">
+        {label}
+        {required && (
+          <span className="ml-0.5 text-error" aria-hidden>
+            *
+          </span>
+        )}
+        {required && <span className="sr-only"> (required)</span>}
+      </span>
       {children}
-      {error && <span className="text-error">{error}</span>}
+      {error && (
+        <span className="mt-1 block text-error" role="alert">
+          {error}
+        </span>
+      )}
     </label>
   );
 }
@@ -464,18 +543,23 @@ function AddressFields({
 }) {
   return (
     <div className="space-y-4">
-      <Field label="Address line 1" error={form.formState.errors[prefix]?.line1?.message}>
-        <Input {...form.register(`${prefix}.line1`)} />
+      <Field label="Address line 1" required error={form.formState.errors[prefix]?.line1?.message}>
+        <Input autoComplete="address-line1" aria-required="true" {...form.register(`${prefix}.line1`)} />
       </Field>
       <Field label="Address line 2">
-        <Input {...form.register(`${prefix}.line2`)} />
+        <Input autoComplete="address-line2" {...form.register(`${prefix}.line2`)} />
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="City" error={form.formState.errors[prefix]?.city?.message}>
-          <Input {...form.register(`${prefix}.city`)} />
+        <Field label="City" required error={form.formState.errors[prefix]?.city?.message}>
+          <Input autoComplete="address-level2" aria-required="true" {...form.register(`${prefix}.city`)} />
         </Field>
-        <Field label="State" error={form.formState.errors[prefix]?.state?.message}>
-          <select className="h-11 w-full rounded-xl border border-border bg-white px-3" {...form.register(`${prefix}.state`)}>
+        <Field label="State" required error={form.formState.errors[prefix]?.state?.message}>
+          <select
+            className="h-11 w-full rounded-xl border border-border bg-white px-3"
+            aria-required="true"
+            autoComplete="address-level1"
+            {...form.register(`${prefix}.state`)}
+          >
             {usStates.map((state) => (
               <option key={state} value={state}>
                 {state}
@@ -485,11 +569,11 @@ function AddressFields({
         </Field>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="ZIP" error={form.formState.errors[prefix]?.zip?.message}>
-          <Input {...form.register(`${prefix}.zip`)} />
+        <Field label="ZIP" required error={form.formState.errors[prefix]?.zip?.message}>
+          <Input autoComplete="postal-code" aria-required="true" {...form.register(`${prefix}.zip`)} />
         </Field>
-        <Field label="Country" error={form.formState.errors[prefix]?.country?.message}>
-          <Input {...form.register(`${prefix}.country`)} />
+        <Field label="Country" required error={form.formState.errors[prefix]?.country?.message}>
+          <Input autoComplete="country-name" aria-required="true" {...form.register(`${prefix}.country`)} />
         </Field>
       </div>
     </div>
