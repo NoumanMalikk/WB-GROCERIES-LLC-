@@ -179,7 +179,7 @@ export default function HomePage() {
               },
               {
                 title: "Secure checkout",
-                text: "Payment information is processed through a trusted payment provider when connected.",
+                text: "Pay securely with Visa, debit and other major cards processed through Square on our checkout page.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-[var(--radius-card)] bg-white p-5 shadow-[var(--shadow-card)]">
@@ -198,7 +198,7 @@ export default function HomePage() {
             ["Browse products", "Search the catalogue or explore organized grocery categories."],
             ["Build your cart", "Choose products and quantities, then review your complete basket."],
             ["Enter delivery details", "Provide shipping and contact information through the secure checkout."],
-            ["Complete payment", "Use the connected secure payment provider and receive an order confirmation."],
+            ["Complete payment", "Enter your card details on our secure checkout page and receive an order confirmation."],
           ].map(([title, text], index) => (
             <li key={title} className="rounded-[var(--radius-card)] border border-border bg-white p-5">
               <p className="text-sm font-bold text-gold">Step {index + 1}</p>

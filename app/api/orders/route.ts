@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         found: false,
         message:
-          "Online order tracking will become available after checkout and order services are connected. No matching local demo order was found for that reference and email.",
+          "No order matched that reference and email. Double-check both fields, or contact support if you just completed checkout.",
       });
     }
     return NextResponse.json({ found: false, message: "No order matched that reference and email." });

@@ -9,7 +9,7 @@ export const faqItems = [
     id: "shipping",
     question: "Where does WB Groceries ship?",
     answer:
-      "Available shipping options and costs are shown during checkout based on the customer’s address, product weight and quantity. Shipping settings are configured in the store and may change as carrier services are connected.",
+      "Shipping options and costs are shown during checkout based on your address, product weight and quantity.",
   },
   {
     id: "visit",
@@ -45,7 +45,7 @@ export const faqItems = [
     id: "tracking",
     question: "How do I track an order?",
     answer:
-      "Use the Order Tracking page with your order reference and the email address used at checkout when tracking services are connected. Until those services are live, support can assist with order status questions.",
+      "Use the Order Tracking page with your order reference and the email address used at checkout. If you need help, contact support with your reference number.",
   },
   {
     id: "prices",

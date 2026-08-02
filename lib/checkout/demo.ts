@@ -11,8 +11,7 @@ export function isPaymentProviderConfiguredPublic(): boolean {
 
 /**
  * Demo checkout only when NO payment provider is configured.
- * If Square/Stripe keys are present, always run real hosted checkout
- * (Square sandbox still uses test cards when SQUARE_ENVIRONMENT=sandbox).
+ * If Square/Stripe keys are present, always run real card checkout.
  */
 export function isDemoCheckout(): boolean {
   if (typeof window === "undefined") {
@@ -34,5 +33,5 @@ export function getActivePaymentProvider(): "square" | "stripe" | "demo" {
 }
 
 export function getShippingMethods(): ShippingMethod[] {
-  return storeConfig.shipping.demoMethods.map((method) => ({ ...method }));
+  return storeConfig.shipping.methods.map((method) => ({ ...method }));
 }

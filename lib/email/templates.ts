@@ -36,7 +36,7 @@ export function orderReceivedEmail(data: {
      ${data.itemsHtml}
      <p>Subtotal: ${data.subtotal}<br/>Shipping: ${data.shipping}<br/>Tax: ${data.tax}<br/><strong>Total: ${data.total}</strong></p>
      <p>Shipping to:<br/>${data.shippingAddress}</p>
-     <p>Track updates with your order reference and email when tracking is available. Questions? Contact ${data.supportEmail}.</p>`,
+     <p>Track your order anytime with your order reference and email. Questions? Contact ${data.supportEmail}.</p>`,
   );
 }
 
@@ -47,7 +47,7 @@ export function orderProcessingEmail(reference: string) {
   return layout("Order processing", `<p>Order <strong>${reference}</strong> is now being processed.</p>`);
 }
 export function orderShippedEmail(reference: string) {
-  return layout("Order shipped", `<p>Order <strong>${reference}</strong> has shipped. Tracking details will appear when carrier services are connected.</p>`);
+  return layout("Order shipped", `<p>Order <strong>${reference}</strong> has shipped. Watch for delivery updates by email, or use Order Tracking with your reference and email.</p>`);
 }
 export function deliveryUpdateEmail(reference: string, status: string) {
   return layout("Delivery update", `<p>Order <strong>${reference}</strong> status update: ${status}.</p>`);

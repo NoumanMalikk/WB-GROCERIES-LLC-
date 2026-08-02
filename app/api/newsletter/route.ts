@@ -29,6 +29,6 @@ export async function POST(request: Request) {
   await sendNewsletterConfirmation(parsed.data.email);
   return NextResponse.json({
     success: true,
-    message: "You are on the list. Check your inbox when email delivery is connected.",
+    message: "You are on the list. Thank you for subscribing.",
   });
 }

@@ -43,7 +43,7 @@ const heroTiles = [
 
 const trustPoints = [
   { icon: PackageCheck, label: "Exact pack sizes listed" },
-  { icon: ShieldCheck, label: "Secure hosted checkout" },
+  { icon: ShieldCheck, label: "Secure card checkout" },
   { icon: Sparkles, label: "Real product photography" },
 ];
 

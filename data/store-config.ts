@@ -38,31 +38,29 @@ export const storeConfig = {
     heavyItemWeightThreshold: 10,
     maximumOrderWeight: 70,
     processingTimeText:
-      "Orders are typically prepared for shipment after payment is confirmed. Processing timelines are confirmed during checkout when shipping services are connected.",
+      "Orders are typically prepared for shipment after payment is confirmed. You will receive updates as your order moves toward delivery.",
     carrierEstimateText:
-      "Available shipping methods and costs are calculated during checkout based on product weight, quantity and destination.",
+      "Shipping options and costs are calculated at checkout based on product weight, quantity and destination.",
     shippingMessage:
-      "Available shipping methods and costs are calculated during checkout based on product weight, quantity and destination.",
+      "Shipping options and costs are calculated at checkout based on product weight, quantity and destination.",
     restrictedStates: [] as string[],
     excludedDestinations: [] as string[],
-    demoMethods: [
+    methods: [
       {
-        id: "demo-standard",
-        name: "Standard Shipping (Demonstration)",
-        description:
-          "Demonstration rate only. Real carrier rates apply when shipping is connected.",
+        id: "standard",
+        name: "Standard Shipping",
+        description: "Reliable ground shipping. Typically arrives in 3–7 business days after your order ships.",
         price: 8.99,
-        estimatedDays: null,
-        demoOnly: true,
+        estimatedDays: "3-7 business days",
+        demoOnly: false,
       },
       {
-        id: "demo-economy",
-        name: "Economy Shipping (Demonstration)",
-        description:
-          "Demonstration rate only. Delivery timing is not guaranteed in demonstration mode.",
+        id: "economy",
+        name: "Economy Shipping",
+        description: "Lower-cost ground shipping. Typically arrives in 5–10 business days after your order ships.",
         price: 5.99,
-        estimatedDays: null,
-        demoOnly: true,
+        estimatedDays: "5-10 business days",
+        demoOnly: false,
       },
     ],
   },
@@ -70,8 +68,7 @@ export const storeConfig = {
     enabled: true,
     provider: "manual" as "manual" | "stripe_tax" | "external",
     message: "Taxes are calculated during checkout.",
-    demoNote:
-      "Tax estimates shown in demonstration mode are illustrative and are recalculated when tax services are connected.",
+    demoNote: "Applicable sales tax is calculated during checkout based on your shipping address.",
   },
   returns: {
     windowDays: 14,

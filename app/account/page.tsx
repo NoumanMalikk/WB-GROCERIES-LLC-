@@ -22,10 +22,10 @@ export default function AccountPage() {
       ) : (
         <div className="mt-6 rounded-2xl border border-border bg-white p-6 text-sm text-muted">
           <p>
-            Guest checkout remains available. Optional customer accounts, magic-link login, order history and saved
-            addresses become available when Supabase is connected.
+            Guest checkout is available now. You can place orders without creating an account, and use Order Tracking with
+            your reference and email.
           </p>
-          <p className="mt-3">Cart and wishlist continue to work locally on this device.</p>
+          <p className="mt-3">Cart and wishlist are saved on this device for your next visit.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/checkout" className="rounded-xl bg-gold px-4 py-2 font-semibold text-forest">Continue as guest</Link>
             <Link href="/order-tracking" className="rounded-xl border border-border px-4 py-2 font-semibold text-grocery">Track an order</Link>
