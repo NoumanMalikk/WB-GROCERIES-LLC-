@@ -112,9 +112,7 @@ async function main() {
       }
       const ext = found.url.includes(".png") ? "png" : found.url.includes(".webp") ? "webp" : "jpg";
       const mainPath = path.join(dir, `main.${ext}`);
-      const anglePath = path.join(dir, `angle.${ext}`);
       const size = await download(found.url, mainPath);
-      fs.copyFileSync(mainPath, anglePath);
       console.log(`OK (${found.source} ${found.code}) ${size}b -> ${ext}`);
       credits.push({ slug: item.slug, url: found.url, code: found.code, ext });
       await new Promise((r) => setTimeout(r, 350));

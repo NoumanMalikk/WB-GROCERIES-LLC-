@@ -79,8 +79,8 @@ describe("checkout validation", () => {
 });
 
 describe("catalogue integrity", () => {
-  it("contains exactly 26 active products", () => {
-    expect(getActiveProducts()).toHaveLength(26);
+  it("contains exactly 68 active products", () => {
+    expect(getActiveProducts()).toHaveLength(68);
   });
 
   it("uses 1:1 product image paths and replacement flags", () => {

@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/forms/contact-form";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { getSupportEmail, shouldShowFullAddress, storeConfig } from "@/data/store-config";
+import { getSupportEmail, hasSupportEmail, shouldShowFullAddress, storeConfig } from "@/data/store-config";
 
 export const metadata = buildPageMetadata({
   title: "Contact WB Groceries",
@@ -29,7 +29,7 @@ export default function ContactPage() {
             </p>
           )}
           <p>Phone: {storeConfig.phone}</p>
-          <p>Support email: {getSupportEmail()}</p>
+          {hasSupportEmail() && <p>Support email: {getSupportEmail()}</p>}
         </div>
       </div>
       <ContactForm />

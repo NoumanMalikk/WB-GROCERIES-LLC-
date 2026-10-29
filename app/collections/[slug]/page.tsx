@@ -9,18 +9,24 @@ import type { Metadata } from "next";
 const collections = {
   "under-10": {
     title: "Products under $10",
-    description: "Useful grocery essentials priced under ten dollars.",
+    description: "Everyday staples priced under ten dollars.",
     products: getUnderTenProducts,
+    tone: "butter",
+    image: undefined,
   },
   "weekly-essentials": {
     title: "Weekly essentials",
-    description: "Everyday favorites for the week ahead.",
+    description: "The items most people restock first, collected in one place.",
     products: getWeeklyEssentials,
+    tone: "sage",
+    image: undefined,
   },
   "pantry-staples": {
     title: "Pantry staples",
-    description: "Packaged pantry essentials for breakfasts, meals and snacks.",
+    description: "Pasta, sauces, spreads and canned basics for easy meals.",
     products: getPantryStaples,
+    tone: "blush",
+    image: "/categories/pasta-pantry.webp",
   },
 } as const;
 
@@ -51,6 +57,9 @@ export default async function CollectionPage({ params }: Props) {
         products={toProductCards(collection.products())}
         title={collection.title}
         description={collection.description}
+        eyebrow="Collection"
+        tone={collection.tone}
+        image={collection.image}
       />
     </Suspense>
   );

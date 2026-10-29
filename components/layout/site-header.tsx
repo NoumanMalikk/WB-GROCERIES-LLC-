@@ -33,12 +33,12 @@ export function SiteHeader() {
   return (
     <>
     <header className="sticky top-0 z-40 border-b border-border/70 bg-grocery text-white shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 lg:gap-6">
+      <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 sm:gap-3 lg:gap-6">
         <Button
           type="button"
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-white/10 lg:hidden"
+          className="-ml-2 min-w-10 text-white hover:bg-white/10 lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -52,10 +52,10 @@ export function SiteHeader() {
           <SearchBox />
         </div>
 
-        <nav className="ml-auto flex items-center gap-1 sm:gap-2" aria-label="Account and cart">
+        <nav className="ml-auto flex items-center sm:gap-1" aria-label="Account and cart">
           <Link
             href="/wishlist"
-            className="relative inline-flex h-11 min-w-11 items-center justify-center rounded-xl hover:bg-white/10"
+            className="relative inline-flex h-11 min-w-10 items-center justify-center rounded-xl hover:bg-white/10 sm:min-w-11"
             aria-label={`Wishlist, ${wishlistCount} items`}
           >
             <Heart className="h-5 w-5" />
@@ -67,7 +67,7 @@ export function SiteHeader() {
           </Link>
           <Link
             href={isSupabaseConfigured() ? "/account" : "/account"}
-            className="inline-flex h-11 min-w-11 items-center justify-center rounded-xl hover:bg-white/10"
+            className="inline-flex h-11 min-w-10 items-center justify-center rounded-xl hover:bg-white/10 sm:min-w-11"
             aria-label="Account"
           >
             <User className="h-5 w-5" />
@@ -75,7 +75,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={openCart}
-            className="relative inline-flex h-11 min-w-11 items-center justify-center rounded-xl hover:bg-white/10"
+            className="relative inline-flex h-11 min-w-10 items-center justify-center rounded-xl hover:bg-white/10 sm:min-w-11"
             aria-label={`Cart, ${count} items`}
           >
             <ShoppingBasket className="h-5 w-5" />

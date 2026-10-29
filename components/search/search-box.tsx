@@ -92,7 +92,7 @@ export function SearchBox({ onNavigate }: { onNavigate?: () => void }) {
           aria-autocomplete="list"
           aria-activedescendant={open ? `search-option-${active}` : undefined}
           className="h-11 w-full rounded-xl border border-transparent bg-white pl-10 pr-10 text-sm text-foreground placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-          placeholder="Search oats, coffee, pasta, snacks..."
+          placeholder="Search oats, coffee, pasta, snacks"
           value={query}
           onFocus={() => setOpen(true)}
           onChange={(e) => {

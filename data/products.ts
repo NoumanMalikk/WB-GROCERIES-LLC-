@@ -61,12 +61,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Quaker Old Fashioned Oats, 42 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/quaker-old-fashioned-oats-42oz/angle.webp",
-        "alt": "Quaker Old Fashioned Oats, 42 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Quaker Old Fashioned Oats, 42 oz product package",
@@ -128,12 +122,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Cheerios Original Cereal, 18 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/cheerios-original-cereal-18oz/angle.webp",
-        "alt": "Cheerios Original Cereal, 18 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Cheerios Original Cereal, 18 oz product package",
@@ -194,12 +182,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/kelloggs-frosted-flakes-17-3oz/main.webp",
         "alt": "Kellogg's Frosted Flakes Cereal, 17.3 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/kelloggs-frosted-flakes-17-3oz/angle.webp",
-        "alt": "Kellogg's Frosted Flakes Cereal, 17.3 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -267,12 +249,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Nature Valley Oats 'n Honey Crunchy Granola Bars, 12 Bars product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/nature-valley-oats-honey-12-bars/angle.webp",
-        "alt": "Nature Valley Oats 'n Honey Crunchy Granola Bars, 12 Bars alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Nature Valley Oats 'n Honey Crunchy Granola Bars, 12 Bars product package",
@@ -335,12 +311,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Folgers Classic Roast Ground Coffee, 25.9 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/folgers-classic-roast-ground-coffee-25-9oz/angle.webp",
-        "alt": "Folgers Classic Roast Ground Coffee, 25.9 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Folgers Classic Roast Ground Coffee, 25.9 oz product package",
@@ -400,12 +370,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/lipton-black-tea-bags-100-count/main.webp",
         "alt": "Lipton Black Tea Bags, 100 Count product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/lipton-black-tea-bags-100-count/angle.webp",
-        "alt": "Lipton Black Tea Bags, 100 Count alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -470,12 +434,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Barilla Spaghetti Pasta, 16 oz, Two-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/barilla-spaghetti-16oz-two-pack/angle.webp",
-        "alt": "Barilla Spaghetti Pasta, 16 oz, Two-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Barilla Spaghetti Pasta, 16 oz, Two-Pack product package",
@@ -538,12 +496,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Prego Traditional Italian Sauce, 24 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/prego-traditional-italian-sauce-24oz/angle.webp",
-        "alt": "Prego Traditional Italian Sauce, 24 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Prego Traditional Italian Sauce, 24 oz product package",
@@ -604,12 +556,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/kraft-original-macaroni-cheese-five-pack/main.webp",
         "alt": "Kraft Original Macaroni and Cheese Dinner, Five-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/kraft-original-macaroni-cheese-five-pack/angle.webp",
-        "alt": "Kraft Original Macaroni and Cheese Dinner, Five-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -674,12 +620,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Jif Creamy Peanut Butter, 16 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/jif-creamy-peanut-butter-16oz/angle.webp",
-        "alt": "Jif Creamy Peanut Butter, 16 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Jif Creamy Peanut Butter, 16 oz product package",
@@ -740,12 +680,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/smuckers-strawberry-preserves-18oz/main.webp",
         "alt": "Smucker's Strawberry Preserves, 18 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/smuckers-strawberry-preserves-18oz/angle.webp",
-        "alt": "Smucker's Strawberry Preserves, 18 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -809,12 +743,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Heinz Tomato Ketchup, 32 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/heinz-tomato-ketchup-32oz/angle.webp",
-        "alt": "Heinz Tomato Ketchup, 32 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Heinz Tomato Ketchup, 32 oz product package",
@@ -874,12 +802,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/hellmanns-real-mayonnaise-30oz/main.webp",
         "alt": "Hellmann's Real Mayonnaise, 30 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/hellmanns-real-mayonnaise-30oz/angle.webp",
-        "alt": "Hellmann's Real Mayonnaise, 30 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -944,12 +866,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Bush's Original Baked Beans, 28 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/bushs-original-baked-beans-28oz/angle.webp",
-        "alt": "Bush's Original Baked Beans, 28 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Bush's Original Baked Beans, 28 oz product package",
@@ -1010,12 +926,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/del-monte-whole-kernel-corn-four-pack/main.webp",
         "alt": "Del Monte Whole Kernel Corn, 15.25 oz, Four-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/del-monte-whole-kernel-corn-four-pack/angle.webp",
-        "alt": "Del Monte Whole Kernel Corn, 15.25 oz, Four-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -1078,12 +988,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/starkist-chunk-light-tuna-four-pack/main.webp",
         "alt": "StarKist Chunk Light Tuna in Water, 5 oz, Four-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/starkist-chunk-light-tuna-four-pack/angle.webp",
-        "alt": "StarKist Chunk Light Tuna in Water, 5 oz, Four-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -1149,12 +1053,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Oreo Original Chocolate Sandwich Cookies, 14.3 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/oreo-original-cookies-14-3oz/angle.webp",
-        "alt": "Oreo Original Chocolate Sandwich Cookies, 14.3 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Oreo Original Chocolate Sandwich Cookies, 14.3 oz product package",
@@ -1214,12 +1112,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/ritz-original-crackers-13-7oz/main.webp",
         "alt": "Ritz Original Crackers, 13.7 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/ritz-original-crackers-13-7oz/angle.webp",
-        "alt": "Ritz Original Crackers, 13.7 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -1282,12 +1174,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Lay's Classic Potato Chips, 8 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/lays-classic-potato-chips-8oz/angle.webp",
-        "alt": "Lay's Classic Potato Chips, 8 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Lay's Classic Potato Chips, 8 oz product package",
@@ -1349,12 +1235,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/doritos-nacho-cheese-9-25oz/main.webp",
         "alt": "Doritos Nacho Cheese Flavored Tortilla Chips, 9.25 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/doritos-nacho-cheese-9-25oz/angle.webp",
-        "alt": "Doritos Nacho Cheese Flavored Tortilla Chips, 9.25 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -1420,12 +1300,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Coca-Cola Original Taste, 12 fl oz Cans, 12-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/coca-cola-original-12-pack/angle.webp",
-        "alt": "Coca-Cola Original Taste, 12 fl oz Cans, 12-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Coca-Cola Original Taste, 12 fl oz Cans, 12-Pack product package",
@@ -1486,12 +1360,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/gatorade-variety-pack-12-count/main.webp",
         "alt": "Gatorade Thirst Quencher Variety Pack, 12 fl oz Bottles, 12-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/gatorade-variety-pack-12-count/angle.webp",
-        "alt": "Gatorade Thirst Quencher Variety Pack, 12 fl oz Bottles, 12-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -1556,12 +1424,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Tide Simply Clean and Fresh Liquid Laundry Detergent, 84 fl oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/tide-simply-clean-fresh-84oz/angle.webp",
-        "alt": "Tide Simply Clean and Fresh Liquid Laundry Detergent, 84 fl oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Tide Simply Clean and Fresh Liquid Laundry Detergent, 84 fl oz product package",
@@ -1625,12 +1487,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Dawn Ultra Dishwashing Liquid, 18 fl oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/dawn-ultra-dishwashing-liquid-18oz/angle.webp",
-        "alt": "Dawn Ultra Dishwashing Liquid, 18 fl oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Dawn Ultra Dishwashing Liquid, 18 fl oz product package",
@@ -1693,12 +1549,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Bounty Essentials Paper Towels, Six Double Rolls product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/bounty-essentials-six-double-rolls/angle.webp",
-        "alt": "Bounty Essentials Paper Towels, Six Double Rolls alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Bounty Essentials Paper Towels, Six Double Rolls product package",
@@ -1760,12 +1610,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Glad ForceFlexPlus Tall Kitchen Trash Bags, 13 Gallon, 40 Count product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/glad-forceflexplus-13-gallon-40-count/angle.webp",
-        "alt": "Glad ForceFlexPlus Tall Kitchen Trash Bags, 13 Gallon, 40 Count alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Glad ForceFlexPlus Tall Kitchen Trash Bags, 13 Gallon, 40 Count product package",
@@ -1813,12 +1657,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/honey-nut-cheerios-cereal-18-8oz/main.webp",
         "alt": "Honey Nut Cheerios Cereal, 18.8 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/honey-nut-cheerios-cereal-18-8oz/angle.webp",
-        "alt": "Honey Nut Cheerios Cereal, 18.8 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -1883,12 +1721,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Kellogg's Rice Krispies Cereal, 12 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/kelloggs-rice-krispies-12oz/angle.webp",
-        "alt": "Kellogg's Rice Krispies Cereal, 12 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Kellogg's Rice Krispies Cereal, 12 oz product package",
@@ -1951,12 +1783,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/quaker-instant-oatmeal-variety-48-count/main.webp",
         "alt": "Quaker Instant Oatmeal Variety Pack, 48 Packets product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/quaker-instant-oatmeal-variety-48-count/angle.webp",
-        "alt": "Quaker Instant Oatmeal Variety Pack, 48 Packets alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2021,12 +1847,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Pop-Tarts Frosted Strawberry, 8 Count product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/pop-tarts-frosted-strawberry-8-count/angle.webp",
-        "alt": "Pop-Tarts Frosted Strawberry, 8 Count alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Pop-Tarts Frosted Strawberry, 8 Count product package",
@@ -2089,12 +1909,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/special-k-original-cereal-12oz/main.webp",
         "alt": "Special K Original Cereal, 12 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/special-k-original-cereal-12oz/angle.webp",
-        "alt": "Special K Original Cereal, 12 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2159,12 +1973,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Maxwell House Original Roast Ground Coffee, 30.6 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/maxwell-house-original-roast-coffee-30-6oz/angle.webp",
-        "alt": "Maxwell House Original Roast Ground Coffee, 30.6 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Maxwell House Original Roast Ground Coffee, 30.6 oz product package",
@@ -2227,12 +2035,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/twinings-english-breakfast-tea-50-count/main.webp",
         "alt": "Twinings English Breakfast Tea Bags, 50 Count product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/twinings-english-breakfast-tea-50-count/angle.webp",
-        "alt": "Twinings English Breakfast Tea Bags, 50 Count alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2297,12 +2099,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Swiss Miss Milk Chocolate Hot Cocoa Mix, 60 Packets product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/swiss-miss-milk-chocolate-cocoas-60-count/angle.webp",
-        "alt": "Swiss Miss Milk Chocolate Hot Cocoa Mix, 60 Packets alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Swiss Miss Milk Chocolate Hot Cocoa Mix, 60 Packets product package",
@@ -2365,12 +2161,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/celestial-seasonings-sleepytime-tea-40-count/main.webp",
         "alt": "Celestial Seasonings Sleepytime Tea, 40 Count product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/celestial-seasonings-sleepytime-tea-40-count/angle.webp",
-        "alt": "Celestial Seasonings Sleepytime Tea, 40 Count alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2435,12 +2225,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Barilla Penne Pasta, 16 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/barilla-penne-16oz/angle.webp",
-        "alt": "Barilla Penne Pasta, 16 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Barilla Penne Pasta, 16 oz product package",
@@ -2503,12 +2287,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/campbells-condensed-tomato-soup-10-75oz-four-pack/main.webp",
         "alt": "Campbell's Condensed Tomato Soup, 10.75 oz, Four-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/campbells-condensed-tomato-soup-10-75oz-four-pack/angle.webp",
-        "alt": "Campbell's Condensed Tomato Soup, 10.75 oz, Four-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2573,12 +2351,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Progresso Traditional Chicken Noodle Soup, 19 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/progresso-traditional-chicken-noodle-19oz/angle.webp",
-        "alt": "Progresso Traditional Chicken Noodle Soup, 19 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Progresso Traditional Chicken Noodle Soup, 19 oz product package",
@@ -2641,12 +2413,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/uncle-bens-original-ready-rice-8-8oz/main.webp",
         "alt": "Ben's Original Ready Rice Original, 8.8 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/uncle-bens-original-ready-rice-8-8oz/angle.webp",
-        "alt": "Ben's Original Ready Rice Original, 8.8 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2711,12 +2477,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Knorr Pasta Sides Butter, Four-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/knorr-pasta-sides-butter-4-pack/angle.webp",
-        "alt": "Knorr Pasta Sides Butter, Four-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Knorr Pasta Sides Butter, Four-Pack product package",
@@ -2779,12 +2539,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/betty-crocker-fudge-brownie-mix-18-3oz/main.webp",
         "alt": "Betty Crocker Fudge Brownie Mix, 18.3 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/betty-crocker-fudge-brownie-mix-18-3oz/angle.webp",
-        "alt": "Betty Crocker Fudge Brownie Mix, 18.3 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2849,12 +2603,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "French's Classic Yellow Mustard, 20 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/frenchs-classic-yellow-mustard-20oz/angle.webp",
-        "alt": "French's Classic Yellow Mustard, 20 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "French's Classic Yellow Mustard, 20 oz product package",
@@ -2917,12 +2665,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/hidden-valley-original-ranch-24oz/main.webp",
         "alt": "Hidden Valley Original Ranch Dressing, 24 fl oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/hidden-valley-original-ranch-24oz/angle.webp",
-        "alt": "Hidden Valley Original Ranch Dressing, 24 fl oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -2987,12 +2729,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Frank's RedHot Original Cayenne Pepper Sauce, 12 fl oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/franks-redhot-original-cayenne-12oz/angle.webp",
-        "alt": "Frank's RedHot Original Cayenne Pepper Sauce, 12 fl oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Frank's RedHot Original Cayenne Pepper Sauce, 12 fl oz product package",
@@ -3055,12 +2791,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/welchs-concord-grape-jelly-30oz/main.webp",
         "alt": "Welch's Concord Grape Jelly, 30 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/welchs-concord-grape-jelly-30oz/angle.webp",
-        "alt": "Welch's Concord Grape Jelly, 30 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3125,12 +2855,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Skippy Creamy Peanut Butter, 40 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/skippy-creamy-peanut-butter-40oz/angle.webp",
-        "alt": "Skippy Creamy Peanut Butter, 40 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Skippy Creamy Peanut Butter, 40 oz product package",
@@ -3193,12 +2917,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/hunts-diced-tomatoes-14-5oz-four-pack/main.webp",
         "alt": "Hunt's Diced Tomatoes, 14.5 oz, Four-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/hunts-diced-tomatoes-14-5oz-four-pack/angle.webp",
-        "alt": "Hunt's Diced Tomatoes, 14.5 oz, Four-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3263,12 +2981,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Green Giant Sweet Peas, 15 oz, Four-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/green-giant-sweet-peas-15oz-four-pack/angle.webp",
-        "alt": "Green Giant Sweet Peas, 15 oz, Four-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Green Giant Sweet Peas, 15 oz, Four-Pack product package",
@@ -3331,12 +3043,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/hormel-chili-with-beans-15oz-four-pack/main.webp",
         "alt": "Hormel Chili with Beans, 15 oz, Four-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/hormel-chili-with-beans-15oz-four-pack/angle.webp",
-        "alt": "Hormel Chili with Beans, 15 oz, Four-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3401,12 +3107,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Chicken of the Sea Chunk Light Tuna in Water, 5 oz, Four-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/chicken-of-the-sea-chunk-light-tuna-5oz-four-pack/angle.webp",
-        "alt": "Chicken of the Sea Chunk Light Tuna in Water, 5 oz, Four-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Chicken of the Sea Chunk Light Tuna in Water, 5 oz, Four-Pack product package",
@@ -3469,12 +3169,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/spaghettios-original-15-8oz-four-pack/main.webp",
         "alt": "SpaghettiOs Original, 15.8 oz, Four-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/spaghettios-original-15-8oz-four-pack/angle.webp",
-        "alt": "SpaghettiOs Original, 15.8 oz, Four-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3539,12 +3233,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Cheez-It Original Baked Snack Crackers, 12.4 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/cheez-it-original-baked-snack-crackers-12-4oz/angle.webp",
-        "alt": "Cheez-It Original Baked Snack Crackers, 12.4 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Cheez-It Original Baked Snack Crackers, 12.4 oz product package",
@@ -3607,12 +3295,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/goldfish-cheddar-crackers-30oz/main.webp",
         "alt": "Goldfish Cheddar Crackers, 30 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/goldfish-cheddar-crackers-30oz/angle.webp",
-        "alt": "Goldfish Cheddar Crackers, 30 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3677,12 +3359,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Chips Ahoy! Original Chocolate Chip Cookies, 13 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/chips-ahoy-original-chocolate-chip-cookies-13oz/angle.webp",
-        "alt": "Chips Ahoy! Original Chocolate Chip Cookies, 13 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Chips Ahoy! Original Chocolate Chip Cookies, 13 oz product package",
@@ -3745,12 +3421,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/pringles-original-potato-crisps-5-2oz/main.webp",
         "alt": "Pringles Original Potato Crisps, 5.2 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/pringles-original-potato-crisps-5-2oz/angle.webp",
-        "alt": "Pringles Original Potato Crisps, 5.2 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3815,12 +3485,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Snyder's of Hanover Mini Pretzels, 12 oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/snyders-of-hanover-mini-pretzels-12oz/angle.webp",
-        "alt": "Snyder's of Hanover Mini Pretzels, 12 oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Snyder's of Hanover Mini Pretzels, 12 oz product package",
@@ -3883,12 +3547,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/triscuit-original-crackers-8-5oz/main.webp",
         "alt": "Triscuit Original Crackers, 8.5 oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/triscuit-original-crackers-8-5oz/angle.webp",
-        "alt": "Triscuit Original Crackers, 8.5 oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -3953,12 +3611,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Pepsi Cola, 12 fl oz Cans, 12-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/pepsi-cola-12-pack-12oz-cans/angle.webp",
-        "alt": "Pepsi Cola, 12 fl oz Cans, 12-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Pepsi Cola, 12 fl oz Cans, 12-Pack product package",
@@ -4021,12 +3673,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/sprite-lemon-lime-12-pack-12oz-cans/main.webp",
         "alt": "Sprite Lemon-Lime, 12 fl oz Cans, 12-Pack product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/sprite-lemon-lime-12-pack-12oz-cans/angle.webp",
-        "alt": "Sprite Lemon-Lime, 12 fl oz Cans, 12-Pack alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -4091,12 +3737,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Dasani Purified Water, 16.9 fl oz Bottles, 24-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/dasani-purified-water-16-9oz-24-pack/angle.webp",
-        "alt": "Dasani Purified Water, 16.9 fl oz Bottles, 24-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Dasani Purified Water, 16.9 fl oz Bottles, 24-Pack product package",
@@ -4159,12 +3799,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/tropicana-pure-premium-orange-juice-59oz/main.webp",
         "alt": "Tropicana Pure Premium Orange Juice, 59 fl oz product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/tropicana-pure-premium-orange-juice-59oz/angle.webp",
-        "alt": "Tropicana Pure Premium Orange Juice, 59 fl oz alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -4229,12 +3863,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "AriZona Iced Tea with Lemon, 23 fl oz Cans, Four-Pack product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/arizona-iced-tea-with-lemon-23oz-four-pack/angle.webp",
-        "alt": "AriZona Iced Tea with Lemon, 23 fl oz Cans, Four-Pack alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "AriZona Iced Tea with Lemon, 23 fl oz Cans, Four-Pack product package",
@@ -4297,12 +3925,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/charmin-essential-soft-toilet-paper-12-mega-rolls/main.webp",
         "alt": "Charmin Essential Soft Toilet Paper, 12 Mega Rolls product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/charmin-essential-soft-toilet-paper-12-mega-rolls/angle.webp",
-        "alt": "Charmin Essential Soft Toilet Paper, 12 Mega Rolls alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -4367,12 +3989,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Clorox Disinfecting Wipes, 75 Count, Fresh Scent product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/clorox-disinfecting-wipes-75-count-fresh-scent/angle.webp",
-        "alt": "Clorox Disinfecting Wipes, 75 Count, Fresh Scent alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Clorox Disinfecting Wipes, 75 Count, Fresh Scent product package",
@@ -4435,12 +4051,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/reynolds-wrap-aluminum-foil-75-sq-ft/main.webp",
         "alt": "Reynolds Wrap Aluminum Foil, 75 sq ft product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/reynolds-wrap-aluminum-foil-75-sq-ft/angle.webp",
-        "alt": "Reynolds Wrap Aluminum Foil, 75 sq ft alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],
@@ -4505,12 +4115,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Ziploc Sandwich Bags, 90 Count product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/ziploc-sandwich-bags-90-count/angle.webp",
-        "alt": "Ziploc Sandwich Bags, 90 Count alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Ziploc Sandwich Bags, 90 Count product package",
@@ -4574,12 +4178,6 @@ export const products: Product[] = assertMinimumPrices([
         "alt": "Softsoap Liquid Hand Soap Refill, 50 fl oz product package",
         "type": "main",
         "replacementRequired": true
-      },
-      {
-        "src": "/products/softsoap-liquid-hand-soap-refill-50oz/angle.webp",
-        "alt": "Softsoap Liquid Hand Soap Refill, 50 fl oz alternate package view",
-        "type": "angle",
-        "replacementRequired": true
       }
     ],
     "imageAltText": "Softsoap Liquid Hand Soap Refill, 50 fl oz product package",
@@ -4642,12 +4240,6 @@ export const products: Product[] = assertMinimumPrices([
         "src": "/products/cascade-platinum-dishwasher-pods-42-count/main.webp",
         "alt": "Cascade Platinum Dishwasher Detergent Pods, 42 Count product package",
         "type": "main",
-        "replacementRequired": true
-      },
-      {
-        "src": "/products/cascade-platinum-dishwasher-pods-42-count/angle.webp",
-        "alt": "Cascade Platinum Dishwasher Detergent Pods, 42 Count alternate package view",
-        "type": "angle",
         "replacementRequired": true
       }
     ],

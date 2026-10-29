@@ -48,23 +48,6 @@ const credits = products.flatMap(([id, slug, mfr, title, size, pack]) => [
     altText: `${title} product package`,
     notes: `Placeholder labeled for exact ${size}, pack count ${pack}. Replace with authorized white-background packshot.`,
   },
-  {
-    productId: id,
-    localFilename: `/products/${slug}/angle.svg`,
-    originalSourceUrl: null,
-    manufacturer: mfr,
-    supplierOrDistributor: null,
-    licenseOrUsagePermission: "Development placeholder only — replacement required before launch.",
-    dateObtained: "2026-07-13",
-    exactProductMatch: false,
-    exactFlavorMatch: false,
-    exactPackageSizeMatch: false,
-    exactPackCountMatch: false,
-    whiteBackground: true,
-    replacementRequired: true,
-    altText: `${title} alternate package view`,
-    notes: "Secondary angle placeholder.",
-  },
 ]);
 
 fs.writeFileSync(

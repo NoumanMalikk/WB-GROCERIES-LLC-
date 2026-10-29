@@ -81,7 +81,7 @@ test.describe("WB Groceries storefront", () => {
 
     await page.getByLabel("Address line 1").fill("100 Main St");
     await page.getByLabel("City").fill("Crockett");
-    await page.getByLabel("ZIP", { exact: true }).fill("75835");
+    await page.getByLabel(/^ZIP/).fill("75835");
     await page.getByRole("button", { name: "Continue" }).click();
 
     // Reaching the shipping-method step proves the earlier steps validated.
@@ -115,10 +115,10 @@ test.describe("WB Groceries storefront", () => {
   test("product images and equal cards", async ({ page }) => {
     await page.goto("/shop");
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(26);
+    await expect(cards).toHaveCount(68);
 
     const boxes = page.locator("article .aspect-square");
-    await expect(boxes).toHaveCount(26);
+    await expect(boxes).toHaveCount(68);
     await expect(boxes.first()).toBeVisible();
 
     const first = await boxes.first().boundingBox();

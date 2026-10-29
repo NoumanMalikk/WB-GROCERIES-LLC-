@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { getCategoryBySlug } from "@/data/categories";
 import { getProductsByCategory } from "@/data/products";
 import { toProductCards } from "@/data/product-mappers";
+import { categoryTones } from "@/data/category-tones";
 import { ShopCatalog } from "@/components/commerce/shop-catalog";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
@@ -33,7 +34,15 @@ export default async function CategoryPage({ params }: Props) {
   const products = toProductCards(getProductsByCategory(slug));
   return (
     <Suspense fallback={<div className="p-10">Loading...</div>}>
-      <ShopCatalog products={products} title={category.name} description={category.description} hideCategoryFilter />
+      <ShopCatalog
+        products={products}
+        title={category.name}
+        description={category.description}
+        hideCategoryFilter
+        eyebrow={`${products.length} products`}
+        image={category.image}
+        tone={categoryTones[slug]}
+      />
     </Suspense>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -15,10 +15,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const manrope = Manrope({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-manrope",
-  weight: ["600", "700", "800"],
+  variable: "--font-fraunces",
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -52,7 +52,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} antialiased`}>
+      <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

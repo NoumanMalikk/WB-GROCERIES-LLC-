@@ -30,7 +30,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mx-auto w-full max-w-xl space-y-3 text-left">
+    <form onSubmit={onSubmit} className="w-full space-y-3 text-left">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <label htmlFor="newsletter-email" className="sr-only">
           Email address
@@ -39,13 +39,13 @@ export function NewsletterForm() {
           id="newsletter-email"
           type="email"
           required
-          placeholder="you@example.com"
+          placeholder="Email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="min-w-0 flex-1"
         />
         <Button type="submit" disabled={status === "loading"} className="shrink-0 whitespace-nowrap px-6 sm:min-w-[9.5rem]">
-          {status === "loading" ? "Joining..." : "Join the List"}
+          {status === "loading" ? "Joining..." : "Subscribe"}
         </Button>
       </div>
       {message && (

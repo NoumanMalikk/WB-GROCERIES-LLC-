@@ -1,5 +1,5 @@
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { storeConfig, getSupportEmail } from "@/data/store-config";
+import { storeConfig, getSupportEmail, hasSupportEmail } from "@/data/store-config";
 
 export const metadata = buildPageMetadata({
   title: "Return and Refund Policy | WB Groceries",
@@ -25,7 +25,7 @@ export default function Page() {
         <p>
           Contact: {storeConfig.legalName}, {storeConfig.address.street}, {storeConfig.address.city},{" "}
           {storeConfig.address.state} {storeConfig.address.zip}, {storeConfig.address.country}. Phone{" "}
-          {storeConfig.phone}. Email {support}.
+          {storeConfig.phone}.{hasSupportEmail() ? ` Email ${support}.` : ""}
         </p>
       </div>
     </article>

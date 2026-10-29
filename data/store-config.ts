@@ -112,6 +112,11 @@ export function getSupportEmail(): string {
   return process.env.SUPPORT_EMAIL ?? "support@example.com";
 }
 
+/** False while SUPPORT_EMAIL is unset, so pages can skip the placeholder address instead of printing it. */
+export function hasSupportEmail(): boolean {
+  return !getSupportEmail().endsWith("@example.com");
+}
+
 export function shouldShowFullAddress(): boolean {
   return process.env.NEXT_PUBLIC_SHOW_FULL_ADDRESS === "true";
 }

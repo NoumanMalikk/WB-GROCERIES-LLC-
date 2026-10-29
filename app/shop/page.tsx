@@ -17,7 +17,9 @@ export default function ShopPage() {
       <ShopCatalog
         products={products}
         title="Shop all products"
-        description="Search, filter and sort the complete WB Groceries catalogue."
+        description="Every product in the store. Filter by aisle, brand or price, or sort to find what you need."
+        eyebrow={`${products.length} products`}
+        tone="sage"
       />
     </Suspense>
   );

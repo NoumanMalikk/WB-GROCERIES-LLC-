@@ -81,7 +81,7 @@ export function CartPageClient() {
         {crossSells.length > 0 && (
           <div className="mt-10">
             <h2 className="mb-4 font-heading text-2xl font-bold text-grocery">Related products</h2>
-            <ProductGrid products={crossSells} />
+            <ProductGrid products={crossSells} columns="two" />
           </div>
         )}
       </div>

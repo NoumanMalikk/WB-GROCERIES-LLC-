@@ -1330,12 +1330,6 @@ function toProductRecord(item, index) {
         type: "main",
         replacementRequired: true,
       },
-      {
-        src: `/products/${item.slug}/angle.webp`,
-        alt: `${item.title} alternate package view`,
-        type: "angle",
-        replacementRequired: true,
-      },
     ],
     imageAltText: alt,
     imageSource:
@@ -1379,9 +1373,7 @@ async function main() {
       }
       const ext = found.url.includes(".png") ? "png" : found.url.includes(".webp") ? "webp" : "jpg";
       const mainPath = path.join(dir, `main.${ext}`);
-      const anglePath = path.join(dir, `angle.${ext}`);
       const size = await download(found.url, mainPath);
-      fs.copyFileSync(mainPath, anglePath);
       console.log(`OK (${found.source} ${found.code}) ${size}b`);
       report.push({ slug: item.slug, status: "ok", code: found.code, url: found.url, ext });
       await new Promise((r) => setTimeout(r, 400));
