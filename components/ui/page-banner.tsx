@@ -33,7 +33,7 @@ export function PageBanner({
       <div className="mx-auto grid max-w-7xl items-center gap-4 px-4 py-9 md:grid-cols-[1fr_minmax(0,20rem)] md:py-8 lg:grid-cols-[1fr_minmax(0,24rem)]">
         <div>
           {eyebrow && (
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-fresh">{eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-fresh">{eyebrow}</p>
           )}
           <h1 className="mt-2 font-heading text-4xl font-bold leading-tight text-grocery md:text-5xl">{title}</h1>
           {description && <p className="mt-3 max-w-xl text-base leading-relaxed text-muted">{description}</p>}

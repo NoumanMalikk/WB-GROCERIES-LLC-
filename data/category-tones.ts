@@ -1,11 +1,11 @@
 import type { BannerTone } from "@/components/ui/page-banner";
 
-/** Pastel backdrop per category, chosen to flatter the packaging colours in its collage. */
+/** Soft brand-tinted backdrops — stay within the green / cool-surface system. */
 export const categoryTones: Record<string, BannerTone> = {
   breakfast: "butter",
   "coffee-tea": "peach",
-  "pasta-pantry": "blush",
-  "condiments-spreads": "sage",
+  "pasta-pantry": "sage",
+  "condiments-spreads": "blush",
   "canned-goods": "sky",
   snacks: "peach",
   beverages: "butter",

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utilities/cn";
 
 export const metadata = buildPageMetadata({
   title: "About WB Groceries",
-  description: "Learn about WB GROCERIES LLC, a Crockett, Texas-based online grocery retailer.",
+  description: "Learn about WB GROCERIES LLC, a Brick Township, New Jersey-based online grocery retailer.",
   path: "/about",
 });
 
@@ -20,10 +20,10 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="bg-butter">
+      <section className="border-b border-border/60 bg-mint">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 md:grid-cols-[1.1fr_1fr] md:py-20">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-fresh">About us</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-fresh">About us</p>
             <h1 className="mt-3 font-heading text-4xl font-bold leading-[1.08] text-grocery md:text-5xl">
               Everyday groceries without the endless search.
             </h1>
@@ -93,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       <section className="px-4 py-16">
-        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 rounded-[2rem] bg-grocery p-8 text-white md:flex-row md:items-center md:p-12">
+        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 rounded-2xl bg-grocery p-8 text-white md:flex-row md:items-center md:p-12">
           <div>
             <h2 className="font-heading text-3xl font-bold md:text-4xl">{storeConfig.tagline}</h2>
             <p className="mt-2 text-white/80">Questions about an order or a product? We are happy to help.</p>
@@ -101,13 +101,13 @@ export default function AboutPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/shop"
-              className="inline-flex h-12 items-center rounded-xl bg-gold px-6 font-semibold text-forest transition hover:bg-[#e5b03d]"
+              className="inline-flex h-12 items-center rounded-lg bg-gold px-6 font-semibold text-forest transition hover:bg-[#c4840a] hover:text-white"
             >
               Start shopping
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center rounded-xl border border-white/30 px-6 font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex h-12 items-center rounded-lg border border-white/30 px-6 font-semibold text-white transition hover:bg-white/10"
             >
               Contact us
             </Link>

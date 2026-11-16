@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -9,15 +9,15 @@ import { Providers } from "@/components/layout/providers";
 import { buildPageMetadata, organizationJsonLd, websiteJsonLd, onlineStoreJsonLd } from "@/lib/seo/metadata";
 import { getSiteUrl, storeConfig } from "@/data/store-config";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-outfit",
   weight: ["500", "600", "700"],
   display: "swap",
 });
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#184C35",
+  themeColor: "#0B3D2E",
   width: "device-width",
   initialScale: 1,
 };
@@ -52,7 +52,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
+      <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

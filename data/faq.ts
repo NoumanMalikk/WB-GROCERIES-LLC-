@@ -13,9 +13,9 @@ export const faqItems = [
   },
   {
     id: "visit",
-    question: "Can I visit the Crockett address?",
+    question: "Can I visit the Brick Township address?",
     answer:
-      "The Crockett, Texas address is the registered business or mailing address for WB GROCERIES LLC. This website does not advertise that address as a public walk-in supermarket, pickup counter or customer showroom.",
+      "The Brick Township, New Jersey address is the registered business or mailing address for WB GROCERIES LLC. This website does not advertise that address as a public walk-in supermarket, pickup counter or customer showroom.",
   },
   {
     id: "images",

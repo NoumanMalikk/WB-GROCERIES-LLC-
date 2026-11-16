@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="WB Groceries icon">
-  <rect width="128" height="128" rx="28" fill="#184C35"/>
-  <text x="64" y="82" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="48" font-weight="800" fill="#FFF9EE">WB</text>
-  <circle cx="96" cy="28" r="8" fill="#F2BE4B"/>
+  <rect width="128" height="128" rx="28" fill="#0B3D2E"/>
+  <text x="64" y="82" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-size="48" font-weight="800" fill="#F3F5F4">WB</text>
+  <circle cx="96" cy="28" r="8" fill="#E39B0E"/>
 </svg>

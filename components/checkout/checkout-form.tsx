@@ -69,7 +69,7 @@ export function CheckoutForm() {
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
       customer: { email: "", firstName: "", lastName: "", phone: "" },
-      shipping: { line1: "", line2: "", city: "", state: "TX", zip: "", country: "United States" },
+      shipping: { line1: "", line2: "", city: "", state: "NJ", zip: "", country: "United States" },
       billingSameAsShipping: true,
       shippingMethodId: methods[0]?.id ?? "",
       termsAccepted: false,

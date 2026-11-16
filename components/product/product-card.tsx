@@ -18,8 +18,8 @@ export function ProductCard({ product, priority = false }: { product: ProductCar
   const unavailable = product.stockStatus !== "in_stock";
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-white transition duration-300 hover:-translate-y-0.5 hover:border-fresh/40 hover:shadow-[0_18px_36px_-18px_rgba(16,47,36,0.35)]">
-      <div className="relative shrink-0 bg-[#faf7ef]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border/80 bg-white transition duration-300 hover:-translate-y-0.5 hover:border-fresh/35 hover:shadow-[0_16px_32px_-18px_rgba(6,38,29,0.28)]">
+      <div className="relative shrink-0 bg-paper">
         <Link href={`/product/${product.slug}`} className="block" aria-label={product.title}>
           <div className="relative aspect-square w-full">
             <Image
@@ -73,7 +73,7 @@ export function ProductCard({ product, priority = false }: { product: ProductCar
             type="button"
             disabled={unavailable}
             className={cn(
-              "mt-3 inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-xl text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:bg-border disabled:text-muted",
+              "mt-3 inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-lg text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:bg-border disabled:text-muted",
               added ? "bg-fresh text-white" : "bg-grocery text-white hover:bg-forest",
             )}
             onClick={() => {

@@ -46,31 +46,30 @@ export function HomeHero() {
 
   return (
     <section className="relative overflow-hidden bg-paper">
-      <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pb-12 pt-8 lg:grid-cols-[1.02fr_1fr] lg:gap-12 lg:pb-20 lg:pt-14">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pb-12 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-20 lg:pt-14">
         <div className="wb-rise">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-fresh">
-            <span className="h-px w-8 bg-fresh" aria-hidden />
-            {storeConfig.address.city}, {storeConfig.address.state}
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-fresh">
+            {storeConfig.brandName}
           </p>
-          <h1 className="mt-4 font-heading text-[2.6rem] font-bold leading-[1.04] text-grocery sm:text-6xl lg:text-[4.1rem]">
+          <h1 className="mt-3 font-heading text-[2.55rem] font-bold leading-[1.05] text-grocery sm:text-5xl lg:text-[3.75rem]">
             {storeConfig.tagline}
           </h1>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-muted md:text-lg">
             Breakfast staples, pantry basics, snacks, drinks and household supplies from brands you already
-            know, ordered in a few taps and shipped to your door.
+            know — ordered online and shipped from {storeConfig.address.city}, {storeConfig.address.state}.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/shop"
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-grocery px-6 font-semibold text-white shadow-[0_10px_24px_-10px_rgba(24,76,53,0.8)] transition hover:bg-forest"
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-grocery px-6 font-semibold text-white transition hover:bg-forest"
             >
               Start shopping
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </Link>
             <Link
               href="/collections/under-10"
-              className="inline-flex h-12 items-center justify-center rounded-xl border border-grocery/25 bg-white px-6 font-semibold text-grocery transition hover:border-grocery hover:bg-mint"
+              className="inline-flex h-12 items-center justify-center rounded-lg border border-grocery/20 bg-white px-6 font-semibold text-grocery transition hover:border-grocery hover:bg-mint"
             >
               Under $10
             </Link>
@@ -95,18 +94,12 @@ export function HomeHero() {
               <p className="text-xs text-muted">shipping from</p>
             </div>
           </dl>
-
-          <p className="mt-6 text-sm font-medium text-muted">{storeConfig.locationPhrase}</p>
         </div>
 
         <div className="relative">
           <div
             aria-hidden
-            className="absolute inset-x-2 inset-y-4 rounded-[2.5rem] bg-butter sm:inset-x-4 lg:rounded-[3rem]"
-          />
-          <div
-            aria-hidden
-            className="absolute -right-3 top-2 h-24 w-24 rounded-full bg-gold/50 blur-2xl sm:h-32 sm:w-32"
+            className="absolute inset-x-2 inset-y-4 rounded-[1.75rem] bg-mint sm:inset-x-4 lg:rounded-[2rem]"
           />
           <div className="relative grid aspect-square grid-cols-6 grid-rows-6 gap-2 p-5 sm:gap-3 sm:p-8">
             {tiles.map(({ slug, className, sizes, priority, product }) => (
@@ -122,9 +115,9 @@ export function HomeHero() {
                   fill
                   sizes={sizes}
                   priority={priority}
-                  className="object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.05]"
+                  className="object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.04]"
                 />
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full bg-grocery px-2.5 py-1 text-[11px] font-bold tabular-nums text-white shadow-md transition group-hover:bg-forest">
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-md bg-grocery px-2.5 py-1 text-[11px] font-bold tabular-nums text-white shadow-sm transition group-hover:bg-forest">
                   {formatPrice(product!.price)}
                 </span>
               </Link>
@@ -132,7 +125,7 @@ export function HomeHero() {
 
             <Link
               href="/shop"
-              className="group col-span-3 col-start-4 row-start-6 flex items-center justify-between gap-2 self-end rounded-2xl bg-grocery px-4 py-3 text-white shadow-[0_14px_30px_-14px_rgba(16,47,36,0.7)] transition hover:bg-forest"
+              className="group col-span-3 col-start-4 row-start-6 flex items-center justify-between gap-2 self-end rounded-xl bg-grocery px-4 py-3 text-white transition hover:bg-forest"
             >
               <span className="text-sm font-semibold leading-tight">See all {catalogueSize} products</span>
               <ArrowRight className="h-4 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-0.5" aria-hidden />

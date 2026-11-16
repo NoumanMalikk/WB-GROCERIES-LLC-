@@ -1,19 +1,19 @@
 const brand = {
-  green: "#184C35",
-  cream: "#FFF9EE",
-  text: "#17221C",
-  muted: "#606B64",
+  green: "#0B3D2E",
+  surface: "#F3F5F4",
+  text: "#14201B",
+  muted: "#5A6B63",
 };
 
 function layout(title: string, body: string) {
   return `<!DOCTYPE html><html><head><meta charset="utf-8" /><title>${title}</title></head>
-<body style="margin:0;background:${brand.cream};font-family:Inter,Arial,sans-serif;color:${brand.text}">
+<body style="margin:0;background:${brand.surface};font-family:Arial,Helvetica,sans-serif;color:${brand.text}">
   <table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr><td align="center" style="padding:24px">
-  <table width="600" cellpadding="0" cellspacing="0" role="presentation" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #DCE5DE">
+  <table width="600" cellpadding="0" cellspacing="0" role="presentation" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid #D5DED9">
     <tr><td style="background:${brand.green};color:#fff;padding:20px 24px;font-size:20px;font-weight:700">WB Groceries</td></tr>
     <tr><td style="padding:24px">${body}</td></tr>
-    <tr><td style="padding:16px 24px;background:#E8F2E9;color:${brand.muted};font-size:12px">
-      WB GROCERIES LLC · Crockett, Texas 75835 · Groceries & Everyday Essentials
+    <tr><td style="padding:16px 24px;background:#E7F0EB;color:${brand.muted};font-size:12px">
+      WB GROCERIES LLC · 198 Chambers Brg Rd · Brick Township, NJ 08723 · Groceries & Everyday Essentials
     </td></tr>
   </table></td></tr></table></body></html>`;
 }

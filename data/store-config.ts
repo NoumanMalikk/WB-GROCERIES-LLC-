@@ -8,13 +8,13 @@ export const storeConfig = {
   supportingStatement:
     "Shop familiar pantry staples, breakfast products, snacks, drinks and household essentials through one clear and convenient online store.",
   organizationDescription:
-    "WB GROCERIES LLC is a Crockett, Texas-based grocery retailer offering packaged groceries and everyday household essentials through an online storefront.",
-  locationPhrase: "Crockett, Texas-based online grocery retailer",
+    "WB GROCERIES LLC is a Brick Township, New Jersey-based grocery retailer offering packaged groceries and everyday household essentials through an online storefront.",
+  locationPhrase: "Brick Township, New Jersey-based online grocery retailer",
   address: {
-    street: "1407 Hooks St",
-    city: "Crockett",
-    state: "TX",
-    zip: "75835",
+    street: "198 Chambers Brg Rd",
+    city: "Brick Township",
+    state: "NJ",
+    zip: "08723",
     country: "United States",
     countryCode: "US",
   },
@@ -118,7 +118,9 @@ export function hasSupportEmail(): boolean {
 }
 
 export function shouldShowFullAddress(): boolean {
-  return process.env.NEXT_PUBLIC_SHOW_FULL_ADDRESS === "true";
+  // Default on so the registered Brick Township address is always visible.
+  // Set NEXT_PUBLIC_SHOW_FULL_ADDRESS=false to hide the street line only.
+  return process.env.NEXT_PUBLIC_SHOW_FULL_ADDRESS !== "false";
 }
 
 export function isStripeConfigured(): boolean {

@@ -23,7 +23,7 @@ test.describe("WB Groceries storefront", () => {
   test("homepage loads with brand messaging", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("heading", { name: /Stock the kitchen/i })).toBeVisible();
-    await expect(main(page).getByText(/Crockett, Texas-based online grocery retailer/i)).toBeVisible();
+    await expect(main(page).getByText(/Brick Township, New Jersey-based online grocery retailer/i)).toBeVisible();
   });
 
   test("shop lists products and filters breakfast", async ({ page }) => {
@@ -80,8 +80,8 @@ test.describe("WB Groceries storefront", () => {
     await page.getByRole("button", { name: "Continue" }).click();
 
     await page.getByLabel("Address line 1").fill("100 Main St");
-    await page.getByLabel("City").fill("Crockett");
-    await page.getByLabel(/^ZIP/).fill("75835");
+    await page.getByLabel("City").fill("Brick Township");
+    await page.getByLabel(/^ZIP/).fill("08723");
     await page.getByRole("button", { name: "Continue" }).click();
 
     // Reaching the shipping-method step proves the earlier steps validated.

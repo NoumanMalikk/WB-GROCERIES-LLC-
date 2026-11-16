@@ -1,21 +1,10 @@
 /**
- * Convert the raw PNG packshots in /public into web-sized WebP files.
+ * Convert / recompress storefront images into static WebP variants.
  *
- * The source packshots are 1536x1024 PNGs of ~1.5 MB each. They are never
- * displayed above ~600 CSS pixels, so shipping them as-is costs roughly 89 MB
- * across the storefront. This rewrites them as WebP at a sensible cap and
- * removes the PNG originals (recoverable from git history).
+ * Vercel's Image Optimization is metered and 402s on free plans, so next/image
+ * uses image-loader.ts to pick these pre-built files — no runtime resize cost.
  *
- * The studio shots also carry a lot of dead white margin, which makes products
- * render small inside `object-contain` tiles. Trimming that margin and adding a
- * uniform pad back lets every packshot fill its card consistently.
- *
- * Finally it emits a `-<width>.webp` variant per breakpoint. Vercel's image
- * optimizer is metered and 402s on this project, so next/image runs through
- * image-loader.ts, which swaps in these files instead. Keep VARIANT_WIDTHS in
- * sync with `images.deviceSizes` + `images.imageSizes` in next.config.ts.
- *
- * Usage: node scripts/optimize-images.mjs [--keep-png]
+ * Usage: node scripts/optimize-images.mjs [--keep-png] [--force]
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -23,21 +12,23 @@ import sharp from "sharp";
 
 const ROOT = process.cwd();
 const KEEP_PNG = process.argv.includes("--keep-png");
+const FORCE = process.argv.includes("--force");
 
 const WHITE = "#ffffff";
-/** Pixels within this distance of white are treated as backdrop, not product. */
 const TRIM_THRESHOLD = 10;
-/** Breathing room re-added around the trimmed subject, as a share of its longest edge. */
 const PAD_RATIO = 0.05;
 
+/**
+ * Cap full-size masters small enough that even the loader fallback stays cheap.
+ * Variants cover the breakpoints next/image requests.
+ */
 const TARGETS = [
-  { dir: "public/products", maxSize: 1000, quality: 80 },
-  { dir: "public/categories", maxSize: 1000, quality: 80 },
+  { dir: "public/products", maxSize: 720, quality: 72 },
+  { dir: "public/categories", maxSize: 720, quality: 72 },
 ];
 
-/** Widths emitted alongside each full-size WebP. Must match next.config.ts. */
+/** Must match image-loader.ts and next.config.ts imageSizes + deviceSizes. */
 const VARIANT_WIDTHS = [64, 128, 256, 384, 640];
-/** Matches files this script generated, so they are never re-processed. */
 const VARIANT_RE = new RegExp(`-(${VARIANT_WIDTHS.join("|")})\\.webp$`);
 
 function collectPngs(dir) {
@@ -53,7 +44,6 @@ function collectPngs(dir) {
     });
 }
 
-/** Full-size WebP files, excluding the `-<width>.webp` variants we generate. */
 function collectFullSizeWebps(dir) {
   const absolute = path.join(ROOT, dir);
   if (!fs.existsSync(absolute)) return [];
@@ -68,15 +58,6 @@ function collectFullSizeWebps(dir) {
     });
 }
 
-/**
- * Emits `name-<width>.webp` for every breakpoint.
- *
- * A variant is written even when the source is narrower than the breakpoint —
- * `withoutEnlargement` caps it at the source width, so the file is no bigger,
- * and the loader can address every width without risking a 404. Tall packshots
- * (Dawn, Heinz, Prego, Quaker) are under 640px wide once trimmed and would
- * otherwise have no -640 file to serve.
- */
 async function emitVariants(relativePath, { quality }) {
   const source = path.join(ROOT, relativePath);
   let bytes = 0;
@@ -95,7 +76,7 @@ async function emitVariants(relativePath, { quality }) {
   return { bytes, written };
 }
 
-async function convert(relativePath, { maxSize, quality }) {
+async function convertPng(relativePath, { maxSize, quality }) {
   const source = path.join(ROOT, relativePath);
   const destination = source.replace(/\.png$/i, ".webp");
   const before = fs.statSync(source).size;
@@ -120,24 +101,59 @@ async function convert(relativePath, { maxSize, quality }) {
   return { before, after };
 }
 
+/** Recompress an existing master WebP down to the current size/quality budget. */
+async function recompressWebp(relativePath, { maxSize, quality }) {
+  const source = path.join(ROOT, relativePath);
+  const before = fs.statSync(source).size;
+  const temp = `${source}.tmp.webp`;
+
+  const meta = await sharp(source).metadata();
+  const needsResize = (meta.width ?? 0) > maxSize || (meta.height ?? 0) > maxSize;
+
+  let pipeline = sharp(source);
+  if (needsResize) {
+    pipeline = pipeline.resize({
+      width: maxSize,
+      height: maxSize,
+      fit: "inside",
+      withoutEnlargement: true,
+    });
+  }
+
+  await pipeline.webp({ quality, effort: 6 }).toFile(temp);
+
+  const after = fs.statSync(temp).size;
+  if (FORCE || after < before) {
+    fs.renameSync(temp, source);
+    return { before, after: fs.statSync(source).size, rewritten: true };
+  }
+
+  fs.unlinkSync(temp);
+  return { before, after: before, rewritten: false };
+}
+
 let totalBefore = 0;
 let totalAfter = 0;
 let count = 0;
+let recompressed = 0;
 
 let variantBytes = 0;
 let variantCount = 0;
 
 for (const target of TARGETS) {
   for (const file of collectPngs(target.dir)) {
-    const { before, after } = await convert(file, target);
+    const { before, after } = await convertPng(file, target);
     totalBefore += before;
     totalAfter += after;
     count += 1;
   }
 
-  // Runs whether or not PNGs were present, so variants can be regenerated
-  // from the committed WebP originals alone.
   for (const file of collectFullSizeWebps(target.dir)) {
+    const result = await recompressWebp(file, target);
+    totalBefore += result.before;
+    totalAfter += result.after;
+    if (result.rewritten) recompressed += 1;
+
     const { bytes, written } = await emitVariants(file, target);
     variantBytes += bytes;
     variantCount += written;
@@ -149,7 +165,7 @@ const saved = totalBefore - totalAfter;
 const percent = totalBefore ? Math.round((saved / totalBefore) * 100) : 0;
 
 console.log(`Wrote ${variantCount} responsive variants (${mb(variantBytes)})`);
-console.log(`Converted ${count} images`);
+console.log(`Converted ${count} PNGs; recompressed ${recompressed} WebP masters`);
 console.log(`  before: ${mb(totalBefore)}`);
 console.log(`  after:  ${mb(totalAfter)}`);
 console.log(`  saved:  ${mb(saved)} (${percent}%)`);

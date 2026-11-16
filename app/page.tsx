@@ -51,7 +51,7 @@ const householdSlugs = [
 const lowestShipping = Math.min(...storeConfig.shipping.methods.map((method) => method.price));
 
 const assurances = [
-  { icon: Truck, title: "Shipped from Texas", text: `Orders ship from ${storeConfig.address.city}, ${storeConfig.address.state}` },
+  { icon: Truck, title: "Shipped from New Jersey", text: `Orders ship from ${storeConfig.address.city}, ${storeConfig.address.state}` },
   { icon: PackageCheck, title: "Exact pack sizes", text: "Count and weight on every listing" },
   { icon: CreditCard, title: "Secure card payment", text: "Processed through Square" },
   { icon: PackageSearch, title: "Track your order", text: "Look it up any time with your reference" },
@@ -127,7 +127,7 @@ export default function HomePage() {
               key={category.slug}
               href={`/category/${category.slug}`}
               className={cn(
-                "group relative flex flex-col overflow-hidden rounded-3xl p-4 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-22px_rgba(16,47,36,0.5)]",
+                "group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 p-4 transition duration-300 hover:-translate-y-1 hover:border-fresh/40 hover:shadow-[0_18px_36px_-22px_rgba(6,38,29,0.35)]",
                 toneClasses[categoryTones[category.slug] ?? "butter"],
               )}
             >
@@ -136,7 +136,7 @@ export default function HomePage() {
                   src={category.image}
                   alt=""
                   fill
-                  className="object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.06]"
+                  className="object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.04]"
                   sizes="(max-width:768px) 45vw, 22vw"
                 />
               </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
                   <h3 className="font-heading text-lg font-bold leading-tight text-grocery">{category.name}</h3>
                   <p className="text-xs text-grocery/70">{getProductsByCategory(category.slug).length} products</p>
                 </div>
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-grocery transition group-hover:bg-grocery group-hover:text-white">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/90 text-grocery transition group-hover:bg-grocery group-hover:text-white">
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </span>
               </div>
@@ -169,15 +169,15 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-7xl gap-4 px-4 py-16 md:grid-cols-2">
         <Link
           href="/collections/under-10"
-          className="group relative flex min-h-[26rem] flex-col justify-start overflow-hidden sm:min-h-[22rem] rounded-3xl bg-butter p-7 sm:p-9"
+          className="group relative flex min-h-[26rem] flex-col justify-start overflow-hidden rounded-2xl border border-border/60 bg-butter p-7 sm:min-h-[22rem] sm:p-9"
         >
           <div className="relative z-10 max-w-[16rem]">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-grocery/70">Budget friendly</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-grocery/70">Budget friendly</p>
             <h2 className="mt-2 font-heading text-4xl font-bold leading-[1.05] text-grocery">
               {underTen.length} staples under $10
             </h2>
           </div>
-          <span className="relative z-10 mt-6 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-grocery px-5 text-sm font-semibold text-white transition group-hover:bg-forest">
+          <span className="relative z-10 mt-6 inline-flex h-11 w-fit items-center gap-2 rounded-lg bg-grocery px-5 text-sm font-semibold text-white transition group-hover:bg-forest">
             Shop under $10 <ArrowRight className="h-4 w-4" aria-hidden />
           </span>
           <div className="pointer-events-none absolute bottom-0 right-4 flex h-[42%] w-[78%] items-end gap-1 sm:h-[72%] sm:w-[50%]">
@@ -200,15 +200,15 @@ export default function HomePage() {
 
         <Link
           href="/collections/pantry-staples"
-          className="group relative flex min-h-[26rem] flex-col justify-start overflow-hidden sm:min-h-[22rem] rounded-3xl bg-sage p-7 sm:p-9"
+          className="group relative flex min-h-[26rem] flex-col justify-start overflow-hidden rounded-2xl border border-border/60 bg-sage p-7 sm:min-h-[22rem] sm:p-9"
         >
           <div className="relative z-10 max-w-[16rem]">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-grocery/70">Pantry</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-grocery/70">Pantry</p>
             <h2 className="mt-2 font-heading text-4xl font-bold leading-[1.05] text-grocery">
               A full cupboard, one order
             </h2>
           </div>
-          <span className="relative z-10 mt-6 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-grocery px-5 text-sm font-semibold text-white transition group-hover:bg-forest">
+          <span className="relative z-10 mt-6 inline-flex h-11 w-fit items-center gap-2 rounded-lg bg-grocery px-5 text-sm font-semibold text-white transition group-hover:bg-forest">
             Shop pantry staples <ArrowRight className="h-4 w-4" aria-hidden />
           </span>
           <div className="pointer-events-none absolute bottom-0 right-3 h-[40%] w-[80%] sm:h-[76%] sm:w-[56%]">
@@ -235,7 +235,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/category/breakfast"
-              className="mt-7 inline-flex h-12 items-center gap-2 rounded-xl bg-gold px-6 font-semibold text-forest transition hover:bg-[#e5b03d]"
+              className="mt-7 inline-flex h-12 items-center gap-2 rounded-lg bg-gold px-6 font-semibold text-forest transition hover:bg-[#c4840a] hover:text-white"
             >
               Shop breakfast <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
@@ -261,7 +261,7 @@ export default function HomePage() {
       </section>
 
       <section className="px-4 py-16">
-        <div className="mx-auto grid max-w-5xl items-center gap-8 overflow-hidden rounded-[2rem] bg-mint p-8 md:grid-cols-[1fr_1.1fr] md:p-12">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 overflow-hidden rounded-2xl border border-border/70 bg-mint p-8 md:grid-cols-[1fr_1.1fr] md:p-12">
           <div>
             <h2 className="font-heading text-3xl font-bold leading-tight text-grocery md:text-4xl">
               New arrivals, straight to your inbox.

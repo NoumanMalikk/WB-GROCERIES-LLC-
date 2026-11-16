@@ -60,7 +60,7 @@ export function SiteHeader() {
           >
             <Heart className="h-5 w-5" />
             {wishlistCount > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[11px] font-bold text-forest">
+              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-md bg-gold px-1 text-[11px] font-bold text-forest">
                 {wishlistCount}
               </span>
             )}
@@ -80,7 +80,7 @@ export function SiteHeader() {
           >
             <ShoppingBasket className="h-5 w-5" />
             {count > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[11px] font-bold text-forest">
+              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-md bg-gold px-1 text-[11px] font-bold text-forest">
                 {count}
               </span>
             )}

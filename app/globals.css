@@ -1,51 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --grocery-green: #184c35;
-  --forest: #102f24;
-  --fresh: #3f7a4e;
-  --cream: #fff9ee;
-  --mint: #e8f2e9;
-  --gold: #f2be4b;
-  --orange: #e8793e;
-  --tomato: #c84a42;
+  /* Two brand pillars + one accent */
+  --grocery-green: #0b3d2e;
+  --forest: #06261d;
+  --fresh: #1f6b4a;
+  --surface: #f3f5f4;
+  --mint: #e7f0eb;
+  --amber: #e39b0e;
+  --amber-deep: #c4840a;
   --white: #ffffff;
-  --text: #17221c;
-  --text-secondary: #606b64;
-  --border: #dce5de;
-  --success: #2d7d4f;
-  --warning: #a96a16;
+  --text: #14201b;
+  --text-secondary: #5a6b63;
+  --border: #d5ded9;
+  --success: #1f6b4a;
+  --warning: #b7791f;
   --error: #b93e3e;
-  --radius-card: 14px;
-  --shadow-card: 0 8px 24px rgba(16, 47, 36, 0.08);
-  --background: var(--cream);
+  --radius-card: 12px;
+  --shadow-card: 0 10px 28px rgba(6, 38, 29, 0.08);
+  --background: var(--surface);
   --foreground: var(--text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-grocery: #184c35;
-  --color-forest: #102f24;
-  --color-fresh: #3f7a4e;
-  --color-cream: #fff9ee;
-  --color-mint: #e8f2e9;
-  --color-gold: #f2be4b;
-  --color-orange: #e8793e;
+  --color-grocery: #0b3d2e;
+  --color-forest: #06261d;
+  --color-fresh: #1f6b4a;
+  --color-cream: #f3f5f4;
+  --color-mint: #e7f0eb;
+  --color-gold: #e39b0e;
+  --color-orange: #e39b0e;
   --color-tomato: #c84a42;
-  --color-butter: #fbeec6;
-  --color-sage: #e0eddf;
-  --color-blush: #fbe3da;
-  --color-sky: #dfecf2;
-  --color-peach: #fce5d0;
-  --color-paper: #fffcf6;
-  --color-muted: #5b665f;
-  --color-border: #dce5de;
-  --color-success: #2d7d4f;
-  --color-warning: #a96a16;
+  --color-butter: #eef3f0;
+  --color-sage: #e4eee8;
+  --color-blush: #edf2ef;
+  --color-sky: #e8eef2;
+  --color-peach: #eef1ec;
+  --color-paper: #f7f9f8;
+  --color-muted: #5a6b63;
+  --color-border: #d5ded9;
+  --color-success: #1f6b4a;
+  --color-warning: #b7791f;
   --color-error: #b93e3e;
-  --font-heading: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+  --font-sans: var(--font-dm-sans);
 }
 
 * {
@@ -58,8 +58,8 @@ html {
 
 body {
   background: var(--color-paper);
-  color: #17221c;
-  font-family: var(--font-inter), Inter, sans-serif;
+  color: var(--text);
+  font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -69,14 +69,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  letter-spacing: -0.015em;
+  font-family: var(--font-outfit), Outfit, system-ui, sans-serif;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-/* Product names and compact labels read better in the sans face. */
 .font-sans-heading {
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
   letter-spacing: -0.01em;
 }
 
@@ -84,7 +83,6 @@ h6 {
   font-variant-numeric: tabular-nums;
 }
 
-/* Horizontal category rail: scrollable on small screens without a visible track. */
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -109,11 +107,10 @@ h6 {
   animation: wb-menu-in 160ms ease-out;
 }
 
-/* Gentle entrance for hero content; skipped under prefers-reduced-motion below. */
 @keyframes wb-rise {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -122,7 +119,7 @@ h6 {
 }
 
 .wb-rise {
-  animation: wb-rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: wb-rise 520ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 .product-card-brand {
@@ -134,7 +131,6 @@ h6 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  /* Exactly two lines of text-sm/leading-snug, so no third line peeks below the clamp. */
   min-height: 2.4rem;
   max-height: 2.4rem;
 }
@@ -160,11 +156,11 @@ h6 {
   color: var(--grocery-green);
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--amber);
 }
 
 :focus-visible {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--amber);
   outline-offset: 2px;
 }
 
