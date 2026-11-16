@@ -6,14 +6,10 @@ const nextConfig: NextConfig = {
   // client bundle too, so nothing hydrates and every interactive test fails.
   allowedDevOrigins: ["127.0.0.1"],
   images: {
-    // Never hit Vercel's metered Image Optimization API (402 on free plans).
-    // image-loader.ts swaps in prebuilt -64/-128/-256/-384/-640.webp files.
-    loader: "custom",
-    loaderFile: "./image-loader.ts",
-    imageSizes: [64, 128, 256],
-    deviceSizes: [384, 640],
-    formats: ["image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30,
+    // Hard-disable Next/Vercel Image Optimization. Free-plan metering returns
+    // 402 and blanks every packshot. All resizing is done at build time by
+    // scripts/optimize-images.mjs; components pick sizedWebp(...) paths.
+    unoptimized: true,
   },
   async headers() {
     return [

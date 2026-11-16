@@ -52,7 +52,13 @@ export function CartPageClient() {
           {lines.map(({ item, product }) => (
             <li key={product.id} className="flex flex-col gap-4 rounded-2xl border border-border bg-white p-4 sm:flex-row">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={product.image} alt={product.imageAlt} width={100} height={100} className="rounded-xl object-contain" />
+              <img
+                src={product.image.replace(/-\d+\.webp$/, "-128.webp")}
+                alt={product.imageAlt}
+                width={100}
+                height={100}
+                className="rounded-xl object-contain"
+              />
               <div className="min-w-0 flex-1">
                 <p className="text-xs font-semibold uppercase text-muted">{product.brand}</p>
                 <Link href={`/product/${product.slug}`} className="font-semibold hover:text-grocery">

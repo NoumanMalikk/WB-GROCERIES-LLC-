@@ -8,11 +8,14 @@ import { ChevronDown, LayoutGrid } from "lucide-react";
 import { categories } from "@/data/categories";
 import { megaMenu, primaryNav } from "@/data/navigation";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 const OPEN_DELAY_MS = 70;
 const CLOSE_DELAY_MS = 160;
 
-const categoryImages = new Map(categories.map((category) => [category.slug, category.image]));
+const categoryImages = new Map(
+  categories.map((category) => [category.slug, sizedWebp(category.image, 256)]),
+);
 
 const quickLinks = [
   { label: "Shop all products", href: "/shop" },
@@ -244,7 +247,10 @@ export function CategoryNav() {
             <aside className="hidden border-t border-border bg-mint/40 p-5 lg:block lg:border-l lg:border-t-0">
               <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-xl bg-white">
                 <Image
-                  src={categoryImages.get(activeSection.imageSlug) ?? "/categories/pasta-pantry.webp"}
+                  src={
+                    categoryImages.get(activeSection.imageSlug) ??
+                    sizedWebp("/categories/pasta-pantry.webp", 256)
+                  }
                   alt=""
                   fill
                   sizes="232px"

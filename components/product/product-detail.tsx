@@ -15,6 +15,7 @@ import { ProductGrid } from "@/components/product/product-card";
 import { Check, CreditCard, Heart, PackageSearch, Truck } from "lucide-react";
 import { getCategoryBySlug } from "@/data/categories";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 const RECENT_KEY = "wb-groceries-recently-viewed";
 
@@ -70,12 +71,12 @@ export function ProductDetail({
         <div>
           <button
             type="button"
-            className="relative aspect-square w-full cursor-zoom-in overflow-hidden rounded-3xl bg-[#faf7ef] ring-1 ring-border/70"
+            className="relative aspect-square w-full cursor-zoom-in overflow-hidden rounded-3xl bg-paper ring-1 ring-border/70"
             onClick={() => setZoom(true)}
             aria-label="Zoom product image"
           >
             <Image
-              src={image.src}
+              src={sizedWebp(image.src, 640)}
               alt={image.alt}
               fill
               className="object-contain p-10 mix-blend-multiply"
@@ -90,13 +91,19 @@ export function ProductDetail({
                   key={img.src}
                   type="button"
                   className={cn(
-                    "relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-[#faf7ef] ring-1",
+                    "relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-paper ring-1",
                     activeImage === index ? "ring-2 ring-grocery" : "ring-border",
                   )}
                   onClick={() => setActiveImage(index)}
                   aria-label={`View image ${index + 1}`}
                 >
-                  <Image src={img.src} alt="" fill sizes="80px" className="object-contain p-2 mix-blend-multiply" />
+                  <Image
+                    src={sizedWebp(img.src, 128)}
+                    alt=""
+                    fill
+                    sizes="80px"
+                    className="object-contain p-2 mix-blend-multiply"
+                  />
                 </button>
               ))}
             </div>
@@ -280,7 +287,13 @@ export function ProductDetail({
             Close
           </button>
           <div className="relative h-[80vh] w-full max-w-3xl">
-            <Image src={image.src} alt={image.alt} fill sizes="(max-width: 768px) 92vw, 768px" className="object-contain" />
+            <Image
+              src={sizedWebp(image.src, 640)}
+              alt={image.alt}
+              fill
+              sizes="(max-width: 768px) 92vw, 768px"
+              className="object-contain"
+            />
           </div>
         </div>
       )}

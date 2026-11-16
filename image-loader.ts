@@ -1,21 +1,12 @@
 /**
- * next/image loader for statically pre-sized assets.
+ * Legacy custom loader — unused.
  *
- * Vercel's Image Optimization is metered and returns 402 on free plans, which
- * blanked every product image in production. Rather than pay per request to
- * resize files we control, `scripts/optimize-images.mjs` emits a
- * `-<width>.webp` next to each packshot and this loader picks the right one.
+ * next.config.ts sets `images.unoptimized: true`, so Next/Vercel never runs
+ * Image Optimization. Components call `sizedWebp()` and request prebuilt
+ * `-<width>.webp` files from /public instead.
  *
- * Keep VARIANT_WIDTHS in sync with the script and with `images.deviceSizes` +
- * `images.imageSizes` in next.config.ts.
+ * Kept so older deploys that still reference loaderFile do not break builds.
  */
-const VARIANT_WIDTHS = [64, 128, 256, 384, 640];
-
-export default function wbImageLoader({ src, width }: { src: string; width: number }): string {
-  // SVG brand assets are resolution-independent; anything remote or already
-  // variant-suffixed is passed through untouched.
-  if (!src.endsWith(".webp") || /-\d+\.webp$/.test(src)) return src;
-
-  const variant = VARIANT_WIDTHS.find((candidate) => candidate >= width) ?? VARIANT_WIDTHS[VARIANT_WIDTHS.length - 1];
-  return src.replace(/\.webp$/, `-${variant}.webp`);
+export default function wbImageLoader({ src }: { src: string; width: number }): string {
+  return src;
 }

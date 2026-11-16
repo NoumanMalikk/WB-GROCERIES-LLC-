@@ -10,7 +10,7 @@ export function MiniProduct({ product, sizes = "(max-width: 768px) 40vw, 200px" 
       href={`/product/${product.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl bg-white text-foreground shadow-[0_14px_30px_-18px_rgba(16,47,36,0.5)] transition duration-300 hover:-translate-y-1"
     >
-      <div className="relative aspect-[4/5] bg-[#faf7ef]">
+      <div className="relative aspect-[4/5] bg-paper">
         <Image
           src={product.image}
           alt={product.imageAlt}

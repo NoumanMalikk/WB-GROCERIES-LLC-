@@ -11,6 +11,7 @@ import { storeConfig } from "@/data/store-config";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { HomeHero } from "@/components/home/home-hero";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 function pick(slugs: string[]) {
   return toProductCards(slugs.map((slug) => getProductBySlug(slug)).filter((p) => p !== undefined));
@@ -133,7 +134,7 @@ export default function HomePage() {
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={category.image}
+                  src={sizedWebp(category.image, 384)}
                   alt=""
                   fill
                   className="object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.04]"
@@ -213,7 +214,7 @@ export default function HomePage() {
           </span>
           <div className="pointer-events-none absolute bottom-0 right-3 h-[40%] w-[80%] sm:h-[76%] sm:w-[56%]">
             <Image
-              src="/categories/pasta-pantry.webp"
+              src={sizedWebp("/categories/pasta-pantry.webp", 640)}
               alt=""
               fill
               sizes="(max-width: 640px) 80vw, 30vw"

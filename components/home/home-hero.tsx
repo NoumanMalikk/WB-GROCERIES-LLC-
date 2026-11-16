@@ -5,6 +5,7 @@ import { getActiveProducts, getProductBySlug } from "@/data/products";
 import { storeConfig } from "@/data/store-config";
 import { formatPrice } from "@/lib/utilities/format";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 /**
  * Packshots for the hero collage: recognisable everyday brands with strong,
@@ -110,7 +111,11 @@ export function HomeHero() {
                 aria-label={product!.title}
               >
                 <Image
-                  src={product!.images[0]?.src ?? "/brand/logo-icon.svg"}
+                  src={
+                    product!.images[0]?.src
+                      ? sizedWebp(product!.images[0].src, 640)
+                      : "/brand/logo-icon.svg"
+                  }
                   alt={product!.imageAltText}
                   fill
                   sizes={sizes}

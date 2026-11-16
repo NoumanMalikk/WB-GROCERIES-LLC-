@@ -1,8 +1,9 @@
 /**
- * Convert / recompress storefront images into static WebP variants.
+ * Build-time image pipeline — zero Vercel Image Optimization usage.
  *
- * Vercel's Image Optimization is metered and 402s on free plans, so next/image
- * uses image-loader.ts to pick these pre-built files — no runtime resize cost.
+ * Emits static `-<width>.webp` variants and rewrites each master WebP so it is
+ * no larger than the 640px variant. The app uses `images.unoptimized: true`
+ * and `sizedWebp()` to pick these files directly.
  *
  * Usage: node scripts/optimize-images.mjs [--keep-png] [--force]
  */
@@ -18,16 +19,11 @@ const WHITE = "#ffffff";
 const TRIM_THRESHOLD = 10;
 const PAD_RATIO = 0.05;
 
-/**
- * Cap full-size masters small enough that even the loader fallback stays cheap.
- * Variants cover the breakpoints next/image requests.
- */
 const TARGETS = [
-  { dir: "public/products", maxSize: 720, quality: 72 },
-  { dir: "public/categories", maxSize: 720, quality: 72 },
+  { dir: "public/products", maxSize: 640, quality: 68 },
+  { dir: "public/categories", maxSize: 640, quality: 68 },
 ];
 
-/** Must match image-loader.ts and next.config.ts imageSizes + deviceSizes. */
 const VARIANT_WIDTHS = [64, 128, 256, 384, 640];
 const VARIANT_RE = new RegExp(`-(${VARIANT_WIDTHS.join("|")})\\.webp$`);
 
@@ -73,6 +69,10 @@ async function emitVariants(relativePath, { quality }) {
     written += 1;
   }
 
+  // Master must never be larger than the biggest variant — overwrite it.
+  const largest = source.replace(/\.webp$/i, "-640.webp");
+  fs.copyFileSync(largest, source);
+
   return { bytes, written };
 }
 
@@ -101,7 +101,6 @@ async function convertPng(relativePath, { maxSize, quality }) {
   return { before, after };
 }
 
-/** Recompress an existing master WebP down to the current size/quality budget. */
 async function recompressWebp(relativePath, { maxSize, quality }) {
   const source = path.join(ROOT, relativePath);
   const before = fs.statSync(source).size;
@@ -123,7 +122,7 @@ async function recompressWebp(relativePath, { maxSize, quality }) {
   await pipeline.webp({ quality, effort: 6 }).toFile(temp);
 
   const after = fs.statSync(temp).size;
-  if (FORCE || after < before) {
+  if (FORCE || after <= before) {
     fs.renameSync(temp, source);
     return { before, after: fs.statSync(source).size, rewritten: true };
   }
@@ -136,7 +135,6 @@ let totalBefore = 0;
 let totalAfter = 0;
 let count = 0;
 let recompressed = 0;
-
 let variantBytes = 0;
 let variantCount = 0;
 
@@ -151,12 +149,14 @@ for (const target of TARGETS) {
   for (const file of collectFullSizeWebps(target.dir)) {
     const result = await recompressWebp(file, target);
     totalBefore += result.before;
-    totalAfter += result.after;
     if (result.rewritten) recompressed += 1;
 
     const { bytes, written } = await emitVariants(file, target);
     variantBytes += bytes;
     variantCount += written;
+
+    // Master was replaced with the 640 variant during emitVariants.
+    totalAfter += fs.statSync(path.join(ROOT, file)).size;
   }
 }
 
@@ -166,6 +166,6 @@ const percent = totalBefore ? Math.round((saved / totalBefore) * 100) : 0;
 
 console.log(`Wrote ${variantCount} responsive variants (${mb(variantBytes)})`);
 console.log(`Converted ${count} PNGs; recompressed ${recompressed} WebP masters`);
-console.log(`  before: ${mb(totalBefore)}`);
-console.log(`  after:  ${mb(totalAfter)}`);
+console.log(`  masters before: ${mb(totalBefore)}`);
+console.log(`  masters after:  ${mb(totalAfter)}`);
 console.log(`  saved:  ${mb(saved)} (${percent}%)`);

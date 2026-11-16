@@ -7,6 +7,7 @@ import { categoryTones, toneClasses } from "@/data/category-tones";
 import { getActiveProducts } from "@/data/products";
 import { storeConfig } from "@/data/store-config";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 export const metadata = buildPageMetadata({
   title: "About WB Groceries",
@@ -34,7 +35,7 @@ export default function AboutPage() {
           </div>
           <div className="relative mx-auto aspect-[4/3] w-full max-w-lg">
             <Image
-              src="/categories/pasta-pantry.webp"
+              src={sizedWebp("/categories/pasta-pantry.webp", 640)}
               alt="Pasta, sauce and macaroni and cheese boxes"
               fill
               priority

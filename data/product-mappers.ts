@@ -1,7 +1,9 @@
 import type { Product } from "./types";
 import type { ProductCardData } from "./catalog";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 export function toProductCard(product: Product): ProductCardData {
+  const master = product.images[0]?.src ?? "/brand/logo-icon.svg";
   return {
     id: product.id,
     slug: product.slug,
@@ -11,7 +13,8 @@ export function toProductCard(product: Product): ProductCardData {
     packCount: product.packCount,
     price: product.price,
     unitPrice: product.unitPrice,
-    image: product.images[0]?.src ?? "/brand/logo-icon.svg",
+    // Card grids never need more than ~384 CSS px — serve the prebuilt file.
+    image: master.endsWith(".webp") ? sizedWebp(master, 384) : master,
     imageAlt: product.imageAltText,
     stockStatus: product.stockStatus,
     maximumOrderQuantity: product.maximumOrderQuantity,

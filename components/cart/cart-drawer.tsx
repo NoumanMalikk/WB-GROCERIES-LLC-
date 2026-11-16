@@ -91,7 +91,13 @@ export function CartDrawer() {
               {lines.map(({ item, product }) => (
                 <li key={product.id} className="flex gap-3 rounded-2xl border border-border bg-white p-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={product.image} alt="" width={72} height={72} className="rounded-xl object-contain" />
+                  <img
+                    src={product.image.replace(/-\d+\.webp$/, "-128.webp")}
+                    alt=""
+                    width={72}
+                    height={72}
+                    className="rounded-xl object-contain"
+                  />
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-semibold uppercase text-muted">{product.brand}</p>
                     <Link href={`/product/${product.slug}`} className="line-clamp-2 text-sm font-semibold hover:text-grocery" onClick={() => setOpen(false)}>

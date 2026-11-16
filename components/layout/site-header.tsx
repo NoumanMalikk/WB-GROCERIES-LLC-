@@ -14,8 +14,11 @@ import { useWishlistStore } from "@/lib/cart/wishlist-store";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utilities/cn";
 import { isSupabaseConfigured } from "@/data/store-config";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
-const categoryImages = new Map(categories.map((category) => [category.slug, category.image]));
+const categoryImages = new Map(
+  categories.map((category) => [category.slug, sizedWebp(category.image, 64)]),
+);
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);

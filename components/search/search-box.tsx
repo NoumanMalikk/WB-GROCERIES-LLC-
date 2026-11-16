@@ -194,7 +194,13 @@ export function SearchBox({ onNavigate }: { onNavigate?: () => void }) {
                 onNavigate?.();
               }}
             >
-              <Image src={product.image} alt="" width={44} height={44} className="rounded-lg bg-white object-contain" />
+              <Image
+                src={product.image.replace(/-\d+\.webp$/, "-64.webp")}
+                alt=""
+                width={44}
+                height={44}
+                className="rounded-lg bg-white object-contain"
+              />
               <span className="min-w-0">
                 <span className="block truncate text-sm font-semibold">{product.title}</span>
                 <span className="block text-xs text-muted">{product.brand}</span>

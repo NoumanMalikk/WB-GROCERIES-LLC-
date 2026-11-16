@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 const tones = {
   butter: "bg-butter",
@@ -41,7 +42,7 @@ export function PageBanner({
         {image && (
           <div className="relative hidden aspect-[5/3] md:block">
             <Image
-              src={image}
+              src={sizedWebp(image, 640)}
               alt=""
               fill
               priority

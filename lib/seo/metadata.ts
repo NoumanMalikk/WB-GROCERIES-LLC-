@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSiteUrl, storeConfig } from "@/data/store-config";
 import type { Product } from "@/data/types";
 import { formatPrice } from "@/lib/utilities/format";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 export function buildPageMetadata(input: {
   title: string;
@@ -85,7 +86,7 @@ export function productJsonLd(product: Product) {
     brand: { "@type": "Brand", name: product.brand },
     sku: product.sku,
     description: product.shortDescription,
-    image: product.images.map((image) => `${getSiteUrl()}${image.src}`),
+    image: product.images.map((image) => `${getSiteUrl()}${sizedWebp(image.src, 640)}`),
     offers: {
       "@type": "Offer",
       priceCurrency: product.currency,

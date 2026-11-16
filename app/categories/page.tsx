@@ -7,6 +7,7 @@ import { getProductsByCategory } from "@/data/products";
 import { PageBanner } from "@/components/ui/page-banner";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { cn } from "@/lib/utilities/cn";
+import { sizedWebp } from "@/lib/utilities/static-image";
 
 export const metadata = buildPageMetadata({
   title: "Grocery Categories | WB Groceries",
@@ -36,7 +37,7 @@ export default function CategoriesPage() {
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={category.image}
+                  src={sizedWebp(category.image, 384)}
                   alt=""
                   fill
                   className="object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.06]"

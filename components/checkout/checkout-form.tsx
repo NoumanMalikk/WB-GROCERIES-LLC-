@@ -336,7 +336,13 @@ export function CheckoutForm() {
                 {lines.map(({ item, product }) => (
                   <li key={product.id} className="flex items-center gap-3 p-3 text-sm">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={product.image} alt="" width={48} height={48} className="rounded-lg object-contain" />
+                    <img
+                      src={product.image.replace(/-\d+\.webp$/, "-64.webp")}
+                      alt=""
+                      width={48}
+                      height={48}
+                      className="rounded-lg object-contain"
+                    />
                     <span className="flex-1">
                       {item.quantity} × {product.title} ({product.packageSize})
                     </span>
